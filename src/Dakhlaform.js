@@ -229,11 +229,12 @@ const Dakhlaform = () => {
 </span>(۵)
  غیر اخلاقی و غیر شرعی حرکتوں پر جامعہ کو باز پرس کرنے کا پورا پورا حق ہوگا ، اس پر کسی کو قانونی چارہ جوئی کا حق نہ ہوگا۔
         </h3> 
-        <h3>
-          جامعہ کے شعبہ {product?.shoba} داخلہ کا خواہش مند ہوں ، میں نے
+        <h3 style={{direction:"rtl"}}>
+        میں  {product?.studentname} بن  {product?.studentfathername} 
+
+          جامعہ کے شعبہ      {product?.shoba}                     داخلہ کا خواہش مند ہوں ، میں نے
               جامعہ کے قواعد وضوابط کا بغور مطالعہ کیا ہے، میں اپنی رضا ، ہوش و
              حواس کے ساتھ 
-             {product?.studentname} بن  {product?.studentfathername} میں
         </h3>
         <h3 style={{ marginTop: -10, direction:"rtl" }}>
            عہد کرتا ہوں کہ جامعہ کے قوانین کی پابندی کروں گا ، جامعہ
@@ -249,21 +250,21 @@ const Dakhlaform = () => {
           تاریخ شمسی : {product?.dateshamsi}
        
 
-         <span style={{direction:"rtl"}}> تا سرخ قمری {product?.datekamari}</span>
+         <span style={{direction:"rtl"}}> تا سرخ قمری :{product?.datekamari}</span>
          
           </h3>
               <table style={{width:"100%"}}> 
               <tr>
-              <td style={{textAlign:"right",fontSize:15}}>{product?.beforethis} اس سے قبل کہاں تعلیم حاصل کی ہے</td>
-              <td style={{textAlign:"right",fontSize:15}}>{"                       "} {product?.darjarequested}کس درجہ میں داخلہ مطلوب ہے:۔</td>
+              <td style={{textAlign:"right",fontSize:15,direction:"rtl"}}> اس سے قبل کہاں تعلیم حاصل کی ہے :{product?.beforethis}</td>
+              <td style={{textAlign:"right",fontSize:15,direction:"rtl"}}>{"                       "} کس درجہ میں داخلہ مطلوب ہے:۔ :{product?.darjarequested}</td>
               </tr>
             </table>
             <table style={{width:"100%",border:"2px solid black",height:50}}> 
             <tr>
             <td style={{textAlign:"right",border:"none",fontSize:15}}>دستخط ناظم تعلیمات :۔</td>
-            <td style={{textAlign:"right",border:"none",fontSize:15}}> 
-             اس طالب علم کو درجہ 
-             {product?.darjagiven}میں داخلہ دیا جائے 
+            <td style={{textAlign:"right",border:"none",fontSize:15,direction:"rtl"}}> 
+            اس طالب علم کو درجہ  {" "+product?.darjagiven+" "}
+             میں داخلہ دیا جائے 
              
              </td>
            
