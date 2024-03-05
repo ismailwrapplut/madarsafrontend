@@ -33,7 +33,7 @@ class Dashboard extends Component {
       sarparastname: "",
       sarparastfathername: "",
       formDate: "",
-      formnumber:"",
+      formnumber: "",
 
       sarparastvillage: "",
       sarparastpost: "",
@@ -59,8 +59,17 @@ class Dashboard extends Component {
       studentdistt2: "",
       studentstate2: "",
       studentaadharno2: "",
+      shoba: "",
+      dateshamsi: "",
+      datekamari: "",
+      darjarequested: "",
+      darjagiven: "",
+      beforethis: "",
+      talibilmrishta: "",
+      sarparastmobileno: "",
+      sarparastwhatsappno: "",
       file: "",
-      file2:"",
+      file2: "",
       fileName: "",
       fileName2: "",
 
@@ -162,26 +171,31 @@ class Dashboard extends Component {
   // };
 
   onChange = (e) => {
-    if(e.target.name==="firstfile"){
-      console.log(e.target.files[0])
-      this.setState({ file: e.target?.files[0],fileName:e.target.files[0]?.name }, () => {
-        console.log(this.state.file);
-      });
+    if (e.target.name === "firstfile") {
+      console.log(e.target.files[0]);
+      this.setState(
+        { file: e.target?.files[0], fileName: e.target.files[0]?.name },
+        () => {
+          console.log(this.state.file);
+        }
+      );
     }
-    if(e.target.name==="secondfile"){
-      console.log(e.target.files[0])
+    if (e.target.name === "secondfile") {
+      console.log(e.target.files[0]);
 
-      this.setState({ 
-        file2: e.target?.files[0],
-        fileName2:e.target.files[0]?.name 
-      },()=>{
-        console.log(this.state.file2)
-      })
-      
+      this.setState(
+        {
+          file2: e.target?.files[0],
+          fileName2: e.target.files[0]?.name,
+        },
+        () => {
+          console.log(this.state.file2);
+        }
+      );
     }
-  
+
     this.setState({ [e.target.name]: e.target.value }, () => {});
-  
+
     if (e.target.name === "search") {
       this.setState({ page: 1 }, () => {
         this.getProduct();
@@ -189,19 +203,17 @@ class Dashboard extends Component {
     }
   };
 
-
   addProduct = () => {
     //  console.log(fileInput)
     const file = new FormData();
-    const fileArray=[this.state.file,this.state.file2]
-    console.log(this.state)
+    const fileArray = [this.state.file, this.state.file2];
+    console.log(this.state);
     file.append("studentprofilepic", this.state.file);
     file.append("sarparastprofilepic", this.state.file2);
     file.append("sarparastname", this.state.sarparastname);
     file.append("sarparastfathername", this.state.sarparastfathername);
     file.append("formDate", this.state.formDate);
     file.append("formnumber", this.state.formnumber);
-
 
     file.append("sarparastvillage", this.state.sarparastvillage);
     file.append("sarparastpost", this.state.sarparastpost);
@@ -227,7 +239,17 @@ class Dashboard extends Component {
     file.append("studentdistt2", this.state.studentdistt2);
     file.append("studentstate2", this.state.studentstate2);
     file.append("studentaadharno2", this.state.studentaadharno2);
-    console.log(this.state.file2)
+    file.append("shoba", this.state.shoba);
+    file.append("dateshamsi", this.state.dateshamsi);
+    file.append("datekamari", this.state.datekamari);
+    file.append("darjarequested", this.state.darjarequested);
+    file.append("darjagiven", this.state.darjagiven);
+    file.append("beforethis", this.state.beforethis);
+    file.append("talibilmrishta", this.state.talibilmrishta);
+    file.append("sarparastmobileno", this.state.sarparastmobileno);
+    file.append("sarparastwhatsappno", this.state.sarparastwhatsappno);
+
+    console.log(this.state.file2);
 
     axios
       .post("https://madarsabackend.onrender.com/add-product", file, {
@@ -274,6 +296,15 @@ class Dashboard extends Component {
             studentdistt2: "",
             studentstate2: "",
             studentaadharno2: "",
+            shoba: "",
+            dateshamsi: "",
+            datekamari: "",
+            darjarequested: "",
+            darjagiven: "",
+            beforethis: "",
+            talibilmrishta: "",
+            sarparastmobileno: "",
+            sarparastwhatsappno: "",
             file: null,
             file2: null,
 
@@ -306,7 +337,6 @@ class Dashboard extends Component {
     file.append("formDate", this.state.formDate);
     file.append("formnumber", this.state.formnumber);
 
-
     file.append("sarparastvillage", this.state.sarparastvillage);
     file.append("sarparastpost", this.state.sarparastpost);
     file.append("sarparasttehseel", this.state.sarparasttehseel);
@@ -331,6 +361,15 @@ class Dashboard extends Component {
     file.append("studentdistt2", this.state.studentdistt2);
     file.append("studentstate2", this.state.studentstate2);
     file.append("studentaadharno2", this.state.studentaadharno2);
+    file.append("shoba", this.state.shoba);
+    file.append("dateshamsi", this.state.dateshamsi);
+    file.append("datekamari", this.state.datekamari);
+    file.append("darjarequested", this.state.darjarequested);
+    file.append("darjagiven", this.state.darjagiven);
+    file.append("beforethis", this.state.beforethis);
+    file.append("talibilmrishta", this.state.talibilmrishta);
+    file.append("sarparastmobileno", this.state.sarparastmobileno);
+    file.append("sarparastwhatsappno", this.state.sarparastwhatsappno);
 
     axios
       .post("https://madarsabackend.onrender.com/update-product", file, {
@@ -377,9 +416,17 @@ class Dashboard extends Component {
             studentdistt2: "",
             studentstate2: "",
             studentaadharno2: "",
+            shoba: "",
+            dateshamsi: "",
+            datekamari: "",
+            darjarequested: "",
+            darjagiven: "",
+            beforethis: "",
+            talibilmrishta: "",
+            sarparastmobileno: "",
+            sarparastwhatsappno: "",
             file: null,
             file2: null,
-
           },
           () => {
             this.getProduct();
@@ -406,7 +453,6 @@ class Dashboard extends Component {
       formDate: "",
       formnumber: "",
 
-
       sarparastvillage: "",
       sarparastpost: "",
       sarparasttehseel: "",
@@ -431,9 +477,17 @@ class Dashboard extends Component {
       studentdistt2: "",
       studentstate2: "",
       studentaadharno2: "",
+      shoba: "",
+      dateshamsi: "",
+      datekamari: "",
+      darjarequested: "",
+      darjagiven: "",
+      beforethis: "",
+      talibilmrishta: "",
+      sarparastmobileno: "",
+      sarparastwhatsappno: "",
       fileName: "",
       fileName2: "",
-
     });
   };
 
@@ -452,7 +506,6 @@ class Dashboard extends Component {
       sarparastfathername: data.sarparastfathername,
       formDate: data.formDate,
       formnumber: data.formnumber,
-
 
       sarparastvillage: data.sarparastvillage,
       sarparastpost: data.sarparastpost,
@@ -478,7 +531,15 @@ class Dashboard extends Component {
       studentdistt2: data.studentdistt2,
       studentstate2: data.studentstate2,
       studentaadharno2: data.studentaadharno2,
-      
+      shoba: "",
+      dateshamsi: "",
+      datekamari: "",
+      darjarequested: "",
+      darjagiven: "",
+      beforethis: "",
+      talibilmrishta: "",
+      sarparastmobileno: "",
+      sarparastwhatsappno: "",
     });
   };
 
@@ -501,7 +562,6 @@ class Dashboard extends Component {
           >
             Add Student
           </Button>
-         
         </div>
 
         {/* Edit Product */}
@@ -851,6 +911,114 @@ class Dashboard extends Component {
               required
             />
             <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="shoba"
+              value={this.state.shoba}
+              onChange={this.onChange}
+              placeholder="جامعہ کے شعبہ "
+              required
+            />
+            <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="dateshamsi"
+              value={this.state.dateshamsi}
+              onChange={this.onChange}
+              placeholder="تاریخ شمسی "
+              required
+            />
+            <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="datekamari"
+              value={this.state.datekamari}
+              onChange={this.onChange}
+              placeholder="تا سرخ قمری"
+              required
+            />
+            <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="darjarequested"
+              value={this.state.darjarequested}
+              onChange={this.onChange}
+              placeholder="کس درجہ میں داخلہ مطلوب ہے"
+              required
+            />
+            <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="darjagiven"
+              value={this.state.darjagiven}
+              onChange={this.onChange}
+              placeholder="س طالب علم کو درجہ کس میں داخلہ دیا جائے۔"
+              required
+            />
+            <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="beforethis"
+              value={this.state.beforethis}
+              onChange={this.onChange}
+              placeholder="اس سے قبل کہاں تعلیم حاصل کی ہے"
+              required
+            />
+            <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="talibilmrishta"
+              value={this.state.talibilmrishta}
+              onChange={this.onChange}
+              placeholder="طالب علم سے رشتہ "
+              required
+            />
+            <br />            
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="sarparastmobileno"
+              value={this.state.sarparastmobileno}
+              onChange={this.onChange}
+              placeholder="موبائل نمبر  سرپرست"
+              required
+            />
+            <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="sarparastwhatsappno"
+              value={this.state.sarparastwhatsappno}
+              onChange={this.onChange}
+              placeholder="واٹسپ نمبر سرپرست"
+              required
+            />
+            <br />            
             <div>
               <label for="fileInput" class="btn">
                 Select Student Photo
@@ -862,8 +1030,7 @@ class Dashboard extends Component {
                 name="firstfile"
                 style={{ visibility: "hidden" }}
                 // value={this.state.fileName}
-                onChange= {(e)=>this.onChange(e)}
-
+                onChange={(e) => this.onChange(e)}
                 // onChange={(e) => {
                 //   this.setState({
                 //     fileName: e.target.files[0].name,
@@ -875,28 +1042,28 @@ class Dashboard extends Component {
               />
             </div>
             <div>
-            <label for="fileInput2" class="btn">
-              Select Sarparast Photo
-            </label>
-            <input
-              className="submit"
-              type="file"
-              accept="image/png,image/jpeg,image/jpg"
-              name="secondfile"
-              // value={this.state.fileName2}
-              onChange= {(e)=>this.onChange(e)}
-              style={{ visibility: "hidden" }}
-              // onChange={(e) => {
-              //   console.log(e.target.files[0])
-              //   this.setState({
-              //     fileName2: e.target.files[0].name,
-              //     file2: e.target.files[0],
-              //   });
-              //   console.log(this.state.file2);
-              // }}
-              id="fileInput2"
-            />
-          </div>
+              <label for="fileInput2" class="btn">
+                Select Sarparast Photo
+              </label>
+              <input
+                className="submit"
+                type="file"
+                accept="image/png,image/jpeg,image/jpg"
+                name="secondfile"
+                // value={this.state.fileName2}
+                onChange={(e) => this.onChange(e)}
+                style={{ visibility: "hidden" }}
+                // onChange={(e) => {
+                //   console.log(e.target.files[0])
+                //   this.setState({
+                //     fileName2: e.target.files[0].name,
+                //     file2: e.target.files[0],
+                //   });
+                //   console.log(this.state.file2);
+                // }}
+                id="fileInput2"
+              />
+            </div>
           </DialogContent>
 
           <DialogActions>
@@ -933,11 +1100,19 @@ class Dashboard extends Component {
                 this.state.studentdistt2 == "" ||
                 this.state.studentstate2 == "" ||
                 this.state.studentaadharno2 == "" ||
-
-
-                this.state.studentaadharno === ""
-                ||this.state.fileName === ""
-                ||this.state.fileName2 === ""
+                this.state.studentaadharno === "" ||
+                this.state.shoba === "" ||
+                this.state.dateshamsi === "" ||
+                this.state.datekamari === "" ||
+                this.state.darjarequested === "" ||
+                this.state.darjagiven === "" ||
+                this.state.beforethis === "" ||
+                this.state.talibilmrishta === "" ||
+                this.state.sarparastmobileno === "" ||
+                this.state.sarparastwhatsappno === "" ||
+                
+                this.state.fileName === "" ||
+                this.state.fileName2 === ""
               }
               onClick={(e) => this.updateProduct()}
               color="primary"
@@ -1298,6 +1473,114 @@ class Dashboard extends Component {
             />
             <br />
             <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="shoba"
+              value={this.state.shoba}
+              onChange={this.onChange}
+              placeholder="جامعہ کے شعبہ "
+              required
+            />
+            <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="dateshamsi"
+              value={this.state.dateshamsi}
+              onChange={this.onChange}
+              placeholder="تاریخ شمسی "
+              required
+            />
+            <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="datekamari"
+              value={this.state.datekamari}
+              onChange={this.onChange}
+              placeholder="تا سرخ قمری"
+              required
+            />
+            <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="darjarequested"
+              value={this.state.darjarequested}
+              onChange={this.onChange}
+              placeholder="کس درجہ میں داخلہ مطلوب ہے"
+              required
+            />
+            <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="darjagiven"
+              value={this.state.darjagiven}
+              onChange={this.onChange}
+              placeholder="س طالب علم کو درجہ کس میں داخلہ دیا جائے۔"
+              required
+            />
+            <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="beforethis"
+              value={this.state.beforethis}
+              onChange={this.onChange}
+              placeholder="اس سے قبل کہاں تعلیم حاصل کی ہے"
+              required
+            />
+            <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="talibilmrishta"
+              value={this.state.talibilmrishta}
+              onChange={this.onChange}
+              placeholder="طالب علم سے رشتہ "
+              required
+            />
+            <br />            
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="sarparastmobileno"
+              value={this.state.sarparastmobileno}
+              onChange={this.onChange}
+              placeholder="موبائل نمبر  سرپرست"
+              required
+            />
+            <br />
+ <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="sarparastwhatsappno"
+              value={this.state.sarparastwhatsappno}
+              onChange={this.onChange}
+              placeholder="واٹسپ نمبر سرپرست"
+              required
+            />
+            <br />       
+            <br />
             <div>
               <label for="fileInput" class="btn">
                 Select Student Photo
@@ -1308,8 +1591,7 @@ class Dashboard extends Component {
                 accept="image/png,image/jpeg,image/jpg"
                 name="firstfile"
                 style={{ visibility: "hidden" }}
-                onChange= {(e)=>this.onChange(e)}
-
+                onChange={(e) => this.onChange(e)}
                 // onChange={(e) => {
                 //   this.setState({
                 //     fileName: e.target.files[0].name,
@@ -1321,27 +1603,27 @@ class Dashboard extends Component {
               />
             </div>
             <div>
-            <label for="fileInput2" class="btn">
-              Select Sarparast Photo
-            </label>
-            <input
-              className="submit"
-              type="file"
-              accept="image/png,image/jpeg,image/jpg"
-              name="secondfile"
-              onChange= {(e)=>this.onChange(e)}
-              style={{ visibility: "hidden" }}
-              // onChange={(e) => {
-              //   console.log(e.target.files[0])
-              //   this.setState({
-              //     fileName2: e.target.files[0].name,
-              //     file2: e.target.files[0],
-              //   });
-              //   console.log(this.state.file2);
-              // }}
-              id="fileInput2"
-            />
-          </div>
+              <label for="fileInput2" class="btn">
+                Select Sarparast Photo
+              </label>
+              <input
+                className="submit"
+                type="file"
+                accept="image/png,image/jpeg,image/jpg"
+                name="secondfile"
+                onChange={(e) => this.onChange(e)}
+                style={{ visibility: "hidden" }}
+                // onChange={(e) => {
+                //   console.log(e.target.files[0])
+                //   this.setState({
+                //     fileName2: e.target.files[0].name,
+                //     file2: e.target.files[0],
+                //   });
+                //   console.log(this.state.file2);
+                // }}
+                id="fileInput2"
+              />
+            </div>
           </DialogContent>
 
           <DialogActions>
@@ -1355,8 +1637,6 @@ class Dashboard extends Component {
                 this.state.sarparastvillage == "" ||
                 this.state.formDate === "" ||
                 this.state.formnumber === "" ||
-
-
                 this.state.sarparastpost == "" ||
                 this.state.sarparasttehseel == "" ||
                 this.state.sarparastdistt == "" ||
@@ -1380,6 +1660,16 @@ class Dashboard extends Component {
                 this.state.studentdistt2 == "" ||
                 this.state.studentstate2 == "" ||
                 this.state.studentaadharno2 == "" ||
+                this.state.studentaadharno == "" ||
+
+                this.state.dateshamsi === "" ||
+                this.state.datekamari === "" ||
+                this.state.darjarequested === "" ||
+                this.state.darjagiven === "" ||
+                this.state.beforethis === "" ||
+                this.state.talibilmrishta === "" ||
+                this.state.sarparastmobileno === "" ||
+                this.state.sarparastwhatsappno === "" ||
                 this.state.fileName === "" ||
                 this.state.fileName2 === ""
               }
@@ -1450,11 +1740,7 @@ class Dashboard extends Component {
                       color="primary"
                       size="small"
                     >
-                      <Link
-                        to={"/dakhlaform?id="+row._id}
-                      >
-                        View
-                      </Link>
+                      <Link to={"/dakhlaform?id=" + row._id}>View</Link>
                     </Button>
                     <Button
                       className="button_style no-printme"

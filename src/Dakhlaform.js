@@ -29,10 +29,11 @@ const Dakhlaform = () => {
     documentTitle:"Application Form",
     onAfterPrint:()=>alert("Data saved in PDF")
   })
+  console.log(product)
   useEffect(() => {
     //Runs only on the first render
     getProduct();
-    console.log(product);
+    
   }, []);
 
   return (
@@ -49,7 +50,7 @@ const Dakhlaform = () => {
     </div>
   </div>
       <div id="mainform" className="mainform" style={{padding:"5 5"}} ref={componentPDF}>
-        <h1 className="mainh1" style={{margin:0}}>داخلہ فارم</h1>
+        <h1 className="mainh1 mainhai" style={{margin:0}}>داخلہ فارم</h1>
         <div className="firstpt">
           <hr className="hr-first" />
           <hr className="star" />
@@ -85,7 +86,7 @@ const Dakhlaform = () => {
             <img src={logo} alt="logo" height={80} width={110} />
           </div>
           <div className="secondheaderchild">
-            <h2 style={{ color: "black", fontSize: "18px", marginBottom: 0 }}>
+            <h2 style={{ color: "black", fontSize: "18px", marginBottom: 0,fontFamily:"Arabic Font" }}>
               جامعہ اسلامیہ دارالعلوم محمدیه
             </h2>
             <h2
@@ -96,7 +97,7 @@ const Dakhlaform = () => {
                 fontWeight: 400,
               }}
             >
-              ممیل کھیڑ, پوسٹ لاڈمکا, تحصیل پہاڑی, ضلع (بھرت پور), راجستھان
+                ممیل کھیڑلا, پوسٹ لاڈمکا, تحصیل پہاڑی, ضلع  ڈ یگ  (بھرت پور), راجستھان
             </h2>
             <h3
               style={{
@@ -159,56 +160,56 @@ const Dakhlaform = () => {
             <tr>
               <td>Sarparast Name: {product?.sarparastname}</td>
               <td>Student Name : {product?.studentname}</td>
-              <td>{product?.studentname2} : نام طالب علم </td>
+              <td style={{textAlign:"right"}}> نام طالب علم  : {product?.studentname2}</td>
 
             </tr>
             <tr>
               <td>Father Name: {product?.sarparastfathername}</td>
               <td>Father Name : {product?.studentfathername}</td>
-              <td>{product?.studentfathername2} : والد کا نام </td>
+              <td style={{textAlign:"right"}}>  والد کا نام : {product?.studentfathername2}</td>
 
             </tr>
             <tr>
               <td>Village: {product?.sarparastvillage}</td>
               <td>Date Of Birth: {product?.studentdateofbirth}</td>
-              <td>{product?.studentdateofbirth2} : تاریخ پیدائش </td>
+              <td style={{textAlign:"right"}}> تاریخ پیدائش : {product?.studentdateofbirth2}</td>
 
             </tr>
             <tr>
               <td>Post: {product?.sarparastpost}</td>
               <td>Village : {product?.studentvillage}</td>
-              <td>{product?.studentvillage2} : سکونت </td>
+              <td style={{textAlign:"right"}}>  سکونت : {product?.studentvillage2}</td>
 
             </tr>
             <tr>
               <td>Tehseel: {product?.sarparasttehseel}</td>
               <td>Post : {product?.studentpost}</td>
-              <td>{product?.studentpost2} : پوسٹ</td>
+              <td style={{textAlign:"right"}}> پوسٹ : {product?.studentpost2}</td>
 
             </tr>
 
             <tr>
               <td>Distt: {product?.sarparastdistt}</td>
               <td>Tehseel : {product?.studenttehseel}</td>
-              <td>{product?.studenttehseel2} : تحصیل </td>
+              <td style={{textAlign:"right"}}>  تحصیل : {product?.studenttehseel2}</td>
 
             </tr>
             <tr>
               <td>State: {product?.sarparaststate}</td>
               <td>Distt : {product?.studentdistt}</td>
-              <td>{product?.studentdistt2} : ضلع </td>
+              <td style={{textAlign:"right"}}> ضلع : {product?.studentdistt2}</td>
 
             </tr>
             <tr>
               <td>Aadhar No.: {product?.sarparastaadharno}</td>
               <td>State : {product?.studentstate}</td>
-              <td>{product?.studentstate2} : صوبہ </td>
+              <td style={{textAlign:"right"}}> صوبہ :{product?.studentstate2}</td>
 
             </tr>
             <tr>
               <td></td>
               <td>Aadhar No : {product?.studentaadharno}</td>
-              <td>{product?.studentaadharno2} : آدھار کارڈ نمبر </td>
+              <td style={{textAlign:"right"}}> آدھار کارڈ نمبر : {product?.studentaadharno2}</td>
 
             </tr>
           </table>
@@ -216,52 +217,53 @@ const Dakhlaform = () => {
         <h3 style={{direction:"rtl"}}>
               
         (۱) ادارہ کے جملہ قوانین وضوابط کی پابندی اور ارباب جامعہ کی تمام وقتی تحریری و زبانی ہدایات کے مطابق عمل کرنا ضروری ہوگا (۲) اساتذہ، ذمہ داران جامعہ نیز علم و علماء کا ادب واحترام اور جامعہ کی جملہ املاک کی حفاظت آپ کے لئے
-
-ضروری ہوگی (۳) ارباب جامعہ ہر طالب علم کی حفاظت کی پوری کوشش کرتے ہیں 
+ 
+ ہوگی (۳) ارباب جامعہ ہر طالب علم کی حفاظت کی پوری کوشش کرتے         
 
 <span style={{color:"blue"}}>
-
+ہیں
  لیکن پھر بھی کسی انہونی حادثہ کا ذمہ دار جامعہ نہیں ہوگا، باہر اگر کوئی حادثہ ہوتا ہے تو جامعہ پر اس کی کوئی ذمہ داری نہیں ہوگی (۴) اگر کوئی طالب علم بغیر اطلاع کے مدرسہ سے چلا گیا تو اس کو تلاش کرنے یا کوئی قانونی کارروائی کرنے کی ذمہ داری جامعہ
 
 پر نہ ہوگی 
 
 </span>(۵)
  غیر اخلاقی و غیر شرعی حرکتوں پر جامعہ کو باز پرس کرنے کا پورا پورا حق ہوگا ، اس پر کسی کو قانونی چارہ جوئی کا حق نہ ہوگا۔
-        </h3>
+        </h3> 
         <h3>
-          جامعہ کے شعبہ ...................... داخلہ کا خواہش مند ہوں ، میں نے
-          جامعہ کے قواعد وضوابط کا بغور مطالعہ کیا ہے، میں اپنی رضا ، ہوش و
-          {product?.studentname} من {product?.studentfathername} میں
+          جامعہ کے شعبہ {product?.shoba} داخلہ کا خواہش مند ہوں ، میں نے
+              جامعہ کے قواعد وضوابط کا بغور مطالعہ کیا ہے، میں اپنی رضا ، ہوش و
+             حواس کے ساتھ 
+             {product?.studentname} بن  {product?.studentfathername} میں
         </h3>
         <h3 style={{ marginTop: -10, direction:"rtl" }}>
-          حواس کے ساتھ عہد کرتا ہوں کہ جامعہ کے قوانین کی پابندی کروں گا ، جامعہ
+           عہد کرتا ہوں کہ جامعہ کے قوانین کی پابندی کروں گا ، جامعہ
           کے اساتذہ و دیگر عملہ کوکسی قسم کی شکایت کا موقع نہ دونگا ، خلاف ورزی
           کی صورت میں ذمہ داران جامعہ جو بھی سزا میرے , , لئے تجویز کرینگے وہ
           مجھے منظور ہوگی
           <span style={{ color: "blue" }}>
         
             , اور مجھے اور نہ میرے سر پرست کو جامعہ کے خلاف کسی قسم کی قانونی
-            چارہ جوئی کا کوئی حق نہ ہوگا۔
+               چارہ جوئی کا کوئی حق نہ ہوگا۔
           </span>
-          , دستخط طالب علم :.................... 
-          تاریخ شمسی : ......................
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;, دستخط طالب علم :.................... 
+          تاریخ شمسی : {product?.dateshamsi}
        
 
-         <span style={{direction:"rtl"}}> تا سرخ قمری ____________</span>
+         <span style={{direction:"rtl"}}> تا سرخ قمری {product?.datekamari}</span>
          
           </h3>
               <table style={{width:"100%"}}> 
               <tr>
-              <td style={{textAlign:"right",fontSize:15}}>........................... اس سے قبل کہاں تعلیم حاصل کی ہے</td>
-              <td style={{textAlign:"right",fontSize:15}}>{"                       "} ...............................کس درجہ میں داخلہ مطلوب ہے:۔</td>
+              <td style={{textAlign:"right",fontSize:15}}>{product?.beforethis} اس سے قبل کہاں تعلیم حاصل کی ہے</td>
+              <td style={{textAlign:"right",fontSize:15}}>{"                       "} {product?.darjarequested}کس درجہ میں داخلہ مطلوب ہے:۔</td>
               </tr>
             </table>
             <table style={{width:"100%",border:"2px solid black",height:50}}> 
             <tr>
             <td style={{textAlign:"right",border:"none",fontSize:15}}>دستخط ناظم تعلیمات :۔</td>
             <td style={{textAlign:"right",border:"none",fontSize:15}}> 
-             ...........................اس طالب علم کو درجہ 
-             .............میں داخلہ دیا جائے۔
+             اس طالب علم کو درجہ 
+             {product?.darjagiven}میں داخلہ دیا جائے 
              
              </td>
            
@@ -294,12 +296,12 @@ const Dakhlaform = () => {
           </div>
           <div style={{fontSize:13}}>
   <h3 style={{ display: 'inline-block', direction: 'rtl', fontSize:11 }}>
-    <span>میں :{product?.sarparastname} ولد :{product?.sarparastfathername} سکونت  : {product?.sarparastvillage} طالب علم سے رشتہ :.................  
-    پوسٹ :{product?.sarparastpost} تحصیل :{product?.sarparasttehseel} ضلع :{product?.sarparastdistt} صوب :{product?.sarparaststate}  آدھار نمبر :{product?.sarparastaadharno+" "} 
+    <span>میں :{product?.sarparastname} ولد :{product?.sarparastfathername} سکونت  : {product?.sarparastvillage} طالب علم سے رشتہ :{product?.talibilmrishta}  
+    پوسٹ :{product?.sarparastpost} تحصیل :{product?.sarparasttehseel} ضلع :{product?.sarparastdistt} صوبہ :{product?.sarparaststate}  آدھار نمبر :{product?.sarparastaadharno+" "} 
     
     </span>
-    موبائل نمبر :...................... 
-    واٹسپ نمبر  :......................
+    موبائل نمبر :{product?.sarparastmobileno}
+    واٹسپ نمبر  :{product?.sarparastwhatsappno}
   </h3>
         
         
@@ -307,8 +309,8 @@ const Dakhlaform = () => {
   (1) بچے کی طرف سے ہونے والی شکایت پر براہ راست جامعہ کے ذمہ داروں سے رابطہ کروں گا ۔ اگر کسی سر پرست کو اہل جامعہ سے کوئی معقول شکایت ہو تو اسکو عوام میں پھیلانے کے بجائے خیر خواہانہ
   و مہذب انداز میں ذمہ دار جامعہ کے سامنے رکھنا لازم ہوگا۔ 
   <span style={{ color: "blue" }}>
-  (۲) دوران تعلیم بچے کے جامعہ سے غائب ہو جانے یا کسی حادثہ میں فوت ہو جانے پر یا خدا نخواستہ طالب علم کی موت واقع ہونے کی صورت میں
-    دوران تعلیم بچے کے جامعہ سے غائب ہو جانے یا کسی حادثہ میں فوت ہو جانے پر یا خدا نخواستہ طالب علم کی موت واقع ہونے کی صورت میں
+  (۲) دوران تعلیم بچے کے جامعہ سے غائب ہو جانے یا کسی حادثہ میں فوت ہو جانے پر یا خدا نخواستہ طالب علم کی موت واقع ہونے کی 
+    صورت میں
     ذمہ داران جامعہ کے خلاف کوئی قانونی کارروائی نہیں کروں گا۔
   </span>
   یہ ادارہ کے ساتھ میرا عہد و پیمان ہے اور میں نیچے دستخط کر کے اپنے آپ کو تمام مذکورہ شرائط و عہد نامہ کا پابند بناتا ہوں۔
