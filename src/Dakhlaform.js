@@ -159,56 +159,56 @@ const Dakhlaform = () => {
             <tr>
               <td>Sarparast Name: {product?.sarparastname}</td>
               <td>Student Name : {product?.studentname}</td>
-              <td>نام طالب علم : {product?.studentname2}</td>
+              <td>{product?.studentname2} : نام طالب علم </td>
 
             </tr>
             <tr>
               <td>Father Name: {product?.sarparastfathername}</td>
               <td>Father Name : {product?.studentfathername}</td>
-              <td>والد کا نام : {product?.studentfathername2}</td>
+              <td>{product?.studentfathername2} : والد کا نام </td>
 
             </tr>
             <tr>
               <td>Village: {product?.sarparastvillage}</td>
               <td>Date Of Birth: {product?.studentdateofbirth}</td>
-              <td>تاریخ پیدائش : {product?.studentdateofbirth2}</td>
+              <td>{product?.studentdateofbirth2} : تاریخ پیدائش </td>
 
             </tr>
             <tr>
               <td>Post: {product?.sarparastpost}</td>
               <td>Village : {product?.studentvillage}</td>
-              <td>سکونت : {product?.studentvillage2}</td>
+              <td>{product?.studentvillage2} : سکونت </td>
 
             </tr>
             <tr>
               <td>Tehseel: {product?.sarparasttehseel}</td>
               <td>Post : {product?.studentpost}</td>
-              <td>پوسٹ : {product?.studentpost2}</td>
+              <td>{product?.studentpost2} : پوسٹ</td>
 
             </tr>
 
             <tr>
               <td>Distt: {product?.sarparastdistt}</td>
               <td>Tehseel : {product?.studenttehseel}</td>
-              <td>تحصیل : {product?.studenttehseel2}</td>
+              <td>{product?.studenttehseel2} : تحصیل </td>
 
             </tr>
             <tr>
               <td>State: {product?.sarparaststate}</td>
               <td>Distt : {product?.studentdistt}</td>
-              <td>ضلع : {product?.studentdistt2}</td>
+              <td>{product?.studentdistt2} : ضلع </td>
 
             </tr>
             <tr>
               <td>Aadhar No.: {product?.sarparastaadharno}</td>
               <td>State : {product?.studentstate}</td>
-              <td>صوبہ : {product?.studentstate2}</td>
+              <td>{product?.studentstate2} : صوبہ </td>
 
             </tr>
             <tr>
               <td></td>
               <td>Aadhar No : {product?.studentaadharno}</td>
-              <td> آدھار کارڈ نمبر : {product?.studentaadharno2}</td>
+              <td>{product?.studentaadharno2} : آدھار کارڈ نمبر </td>
 
             </tr>
           </table>
