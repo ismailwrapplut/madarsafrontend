@@ -50,6 +50,15 @@ class Dashboard extends Component {
       studentdistt: "",
       studentstate: "",
       studentaadharno: "",
+      studentname2: "",
+      studentfathername2: "",
+      studentdateofbirth2: "",
+      studentvillage2: "",
+      studentpost2: "",
+      studenttehseel2: "",
+      studentdistt2: "",
+      studentstate2: "",
+      studentaadharno2: "",
       file: "",
       file2:"",
       fileName: "",
@@ -209,6 +218,15 @@ class Dashboard extends Component {
     file.append("studentdistt", this.state.studentdistt);
     file.append("studentstate", this.state.studentstate);
     file.append("studentaadharno", this.state.studentaadharno);
+    file.append("studentname2", this.state.studentname2);
+    file.append("studentfathername2", this.state.studentfathername2);
+    file.append("studentdateofbirth2", this.state.studentdateofbirth2);
+    file.append("studentvillage2", this.state.studentvillage2);
+    file.append("studentpost2", this.state.studentpost2);
+    file.append("studenttehseel2", this.state.studenttehseel2);
+    file.append("studentdistt2", this.state.studentdistt2);
+    file.append("studentstate2", this.state.studentstate2);
+    file.append("studentaadharno2", this.state.studentaadharno2);
     console.log(this.state.file2)
 
     axios
@@ -232,8 +250,6 @@ class Dashboard extends Component {
             sarparastfathername: "",
             formDate: "",
             formnumber: "",
-
-
             sarparastvillage: "",
             sarparastpost: "",
             sarparasttehseel: "",
@@ -249,6 +265,15 @@ class Dashboard extends Component {
             studentdistt: "",
             studentstate: "",
             studentaadharno: "",
+            studentname2: "",
+            studentfathername2: "",
+            studentdateofbirth2: "",
+            studentvillage2: "",
+            studentpost2: "",
+            studenttehseel2: "",
+            studentdistt2: "",
+            studentstate2: "",
+            studentaadharno2: "",
             file: null,
             file2: null,
 
@@ -297,6 +322,15 @@ class Dashboard extends Component {
     file.append("studentdistt", this.state.studentdistt);
     file.append("studentstate", this.state.studentstate);
     file.append("studentaadharno", this.state.studentaadharno);
+    file.append("studentname2", this.state.studentname2);
+    file.append("studentfathername2", this.state.studentfathername2);
+    file.append("studentdateofbirth2", this.state.studentdateofbirth2);
+    file.append("studentvillage2", this.state.studentvillage2);
+    file.append("studentpost2", this.state.studentpost2);
+    file.append("studenttehseel2", this.state.studenttehseel2);
+    file.append("studentdistt2", this.state.studentdistt2);
+    file.append("studentstate2", this.state.studentstate2);
+    file.append("studentaadharno2", this.state.studentaadharno2);
 
     axios
       .post("https://madarsabackend.onrender.com/update-product", file, {
@@ -319,8 +353,6 @@ class Dashboard extends Component {
             sarparastfathername: "",
             formDate: "",
             formnumber: "",
-
-
             sarparastvillage: "",
             sarparastpost: "",
             sarparasttehseel: "",
@@ -336,6 +368,15 @@ class Dashboard extends Component {
             studentdistt: "",
             studentstate: "",
             studentaadharno: "",
+            studentname2: "",
+            studentfathername2: "",
+            studentdateofbirth2: "",
+            studentvillage2: "",
+            studentpost2: "",
+            studenttehseel2: "",
+            studentdistt2: "",
+            studentstate2: "",
+            studentaadharno2: "",
             file: null,
             file2: null,
 
@@ -381,6 +422,15 @@ class Dashboard extends Component {
       studentdistt: "",
       studentstate: "",
       studentaadharno: "",
+      studentname2: "",
+      studentfathername2: "",
+      studentdateofbirth2: "",
+      studentvillage2: "",
+      studentpost2: "",
+      studenttehseel2: "",
+      studentdistt2: "",
+      studentstate2: "",
+      studentaadharno2: "",
       fileName: "",
       fileName2: "",
 
@@ -419,6 +469,16 @@ class Dashboard extends Component {
       studentdistt: data.studentdistt,
       studentstate: data.studentstate,
       studentaadharno: data.studentaadharno,
+      studentname2: data.studentname2,
+      studentfathername2: data.studentfathername2,
+      studentdateofbirth2: data.studentdateofbirth2,
+      studentvillage2: data.studentvillage2,
+      studentpost2: data.studentpost2,
+      studenttehseel2: data.studenttehseel2,
+      studentdistt2: data.studentdistt2,
+      studentstate2: data.studentstate2,
+      studentaadharno2: data.studentaadharno2,
+      
     });
   };
 
@@ -651,6 +711,103 @@ class Dashboard extends Component {
               id="standard-basic"
               type="text"
               autoComplete="off"
+              name="2"
+              value={this.state.studentname2}
+              onChange={this.onChange}
+              placeholder="Student Name"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studentfathername2"
+              value={this.state.studentfathername2}
+              onChange={this.onChange}
+              placeholder="Student's Father Name"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="date"
+              autoComplete="off"
+              name="studentdateofbirth2"
+              value={this.state.studentdateofbirth2}
+              label="Student Date of Birth"
+              onChange={this.onChange}
+              placeholder="Student's Date of Birth"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studentvillage2"
+              value={this.state.studentvillage2}
+              onChange={this.onChange}
+              placeholder="Student's Village"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studentpost2"
+              value={this.state.studentpost2}
+              onChange={this.onChange}
+              placeholder="Student's Post"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studenttehseel2"
+              value={this.state.studenttehseel2}
+              onChange={this.onChange}
+              placeholder="Student Tehseel"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studentdistt2"
+              value={this.state.studentdistt2}
+              onChange={this.onChange}
+              placeholder="Student Distt"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studentstate2"
+              value={this.state.studentstate2}
+              onChange={this.onChange}
+              placeholder="Student State"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
               name="formDate"
               value={this.state.formDate}
               onChange={this.onChange}
@@ -677,6 +834,18 @@ class Dashboard extends Component {
               autoComplete="off"
               name="studentaadharno"
               value={this.state.studentaadharno}
+              onChange={this.onChange}
+              placeholder="Student Aadhar No"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studentaadharno2"
+              value={this.state.studentaadharno2}
               onChange={this.onChange}
               placeholder="Student Aadhar No"
               required
@@ -755,6 +924,15 @@ class Dashboard extends Component {
                 this.state.studentstate === "" ||
                 this.state.formDate === "" ||
                 this.state.formnumber === "" ||
+                this.state.studentname2 == "" ||
+                this.state.studentfathername2 == "" ||
+                this.state.studentdateofbirth2 == "" ||
+                this.state.studentvillage2 == "" ||
+                this.state.studentpost2 == "" ||
+                this.state.studenttehseel2 == "" ||
+                this.state.studentdistt2 == "" ||
+                this.state.studentstate2 == "" ||
+                this.state.studentaadharno2 == "" ||
 
 
                 this.state.studentaadharno === ""
@@ -1011,6 +1189,115 @@ class Dashboard extends Component {
             />
             <br />
             <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studentname2"
+              value={this.state.studentname2}
+              onChange={this.onChange}
+              placeholder="نام طلب علم "
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studentfathername2"
+              value={this.state.studentfathername2}
+              onChange={this.onChange}
+              placeholder="والد کا نام "
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="date"
+              autoComplete="off"
+              name="studentdateofbirth2"
+              value={this.state.studentdateofbirth2}
+              label="Student Date of Birth"
+              onChange={this.onChange}
+              placeholder=" تاریخ   پیدایش"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studentvillage2"
+              value={this.state.studentvillage2}
+              onChange={this.onChange}
+              placeholder="سکونت"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studentpost2"
+              value={this.state.studentpost2}
+              onChange={this.onChange}
+              placeholder="پوسٹ"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studenttehseel2"
+              value={this.state.studenttehseel2}
+              onChange={this.onChange}
+              placeholder="تحصیل"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studentdistt2"
+              value={this.state.studentdistt2}
+              onChange={this.onChange}
+              placeholder="ضلع"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studentstate2"
+              value={this.state.studentstate2}
+              onChange={this.onChange}
+              placeholder="صوب"
+              required
+            />
+            <br />
+            <br />
+            <input
+              id="standard-basic"
+              type="text"
+              autoComplete="off"
+              name="studentaadharno2"
+              value={this.state.studentaadharno2}
+              onChange={this.onChange}
+              placeholder="آدھار  کارڈ  نمبر"
+              required
+            />
+            <br />
+            <br />
             <div>
               <label for="fileInput" class="btn">
                 Select Student Photo
@@ -1084,6 +1371,15 @@ class Dashboard extends Component {
                 this.state.studentdistt == "" ||
                 this.state.studentstate == "" ||
                 this.state.studentaadharno == "" ||
+                this.state.studentname2 == "" ||
+                this.state.studentfathername2 == "" ||
+                this.state.studentdateofbirth2 == "" ||
+                this.state.studentvillage2 == "" ||
+                this.state.studentpost2 == "" ||
+                this.state.studenttehseel2 == "" ||
+                this.state.studentdistt2 == "" ||
+                this.state.studentstate2 == "" ||
+                this.state.studentaadharno2 == "" ||
                 this.state.fileName === "" ||
                 this.state.fileName2 === ""
               }
