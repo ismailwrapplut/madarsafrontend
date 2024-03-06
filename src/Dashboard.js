@@ -598,452 +598,455 @@ class Dashboard extends Component {
         >
           <DialogTitle id="alert-dialog-title">Edit Product</DialogTitle>
           <DialogContent>
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="sarparastname"
-              value={this.state.sarparastname}
-              onChange={this.onChange}
-              placeholder="Sarparast Name"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="sarparastfathername"
-              value={this.state.sarparastfathername}
-              onChange={this.onChange}
-              placeholder="Sarparast Father Name"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="sarparastvillage"
-              value={this.state.sarparastvillage}
-              onChange={this.onChange}
-              placeholder="Sarparast Village"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="sarparastpost"
-              value={this.state.sarparastpost}
-              onChange={this.onChange}
-              placeholder="Sarparast Post"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="sarparasttehseel"
-              value={this.state.sarparasttehseel}
-              onChange={this.onChange}
-              placeholder="Sarparast Tehseel"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="sarparastdistt"
-              value={this.state.sarparastdistt}
-              onChange={this.onChange}
-              placeholder="Sarparast Distt"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="sarparaststate"
-              value={this.state.sarparaststate}
-              onChange={this.onChange}
-              placeholder="Sarparast State"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="sarparastaadharno"
-              value={this.state.sarparastaadharno}
-              onChange={this.onChange}
-              placeholder="Sarparast Aadhar No"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentname"
-              value={this.state.studentname}
-              onChange={this.onChange}
-              placeholder="Student Name"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentfathername"
-              value={this.state.studentfathername}
-              onChange={this.onChange}
-              placeholder="Student's Father Name"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="date"
-              autoComplete="off"
-              name="studentdateofbirth"
-              value={this.state.studentdateofbirth}
-              label="Student Date of Birth"
-              onChange={this.onChange}
-              placeholder="Student's Date of Birth"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentvillage"
-              value={this.state.studentvillage}
-              onChange={this.onChange}
-              placeholder="Student's Village"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentpost"
-              value={this.state.studentpost}
-              onChange={this.onChange}
-              placeholder="Student's Post"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studenttehseel"
-              value={this.state.studenttehseel}
-              onChange={this.onChange}
-              placeholder="Student Tehseel"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentdistt"
-              value={this.state.studentdistt}
-              onChange={this.onChange}
-              placeholder="Student Distt"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentstate"
-              value={this.state.studentstate}
-              onChange={this.onChange}
-              placeholder="Student State"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentname2"
-              value={this.state.studentname2}
-              onChange={this.onChange}
-              placeholder="Student Name"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentfathername2"
-              value={this.state.studentfathername2}
-              onChange={this.onChange}
-              placeholder="Student's Father Name"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="date"
-              autoComplete="off"
-              name="studentdateofbirth2"
-              value={this.state.studentdateofbirth2}
-              label="Student Date of Birth"
-              onChange={this.onChange}
-              placeholder="Student's Date of Birth"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentvillage2"
-              value={this.state.studentvillage2}
-              onChange={this.onChange}
-              placeholder="Student's Village"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentpost2"
-              value={this.state.studentpost2}
-              onChange={this.onChange}
-              placeholder="Student's Post"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studenttehseel2"
-              value={this.state.studenttehseel2}
-              onChange={this.onChange}
-              placeholder="Student Tehseel"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentdistt2"
-              value={this.state.studentdistt2}
-              onChange={this.onChange}
-              placeholder="Student Distt"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentstate2"
-              value={this.state.studentstate2}
-              onChange={this.onChange}
-              placeholder="Student State"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="formDate"
-              value={this.state.formDate}
-              onChange={this.onChange}
-              placeholder="Form Date"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="formnumber"
-              value={this.state.formnumber}
-              onChange={this.onChange}
-              placeholder="Form Number"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentaadharno"
-              value={this.state.studentaadharno}
-              onChange={this.onChange}
-              placeholder="Student Aadhar No"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentaadharno2"
-              value={this.state.studentaadharno2}
-              onChange={this.onChange}
-              placeholder="Student Aadhar No"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="shoba"
-              value={this.state.shoba}
-              onChange={this.onChange}
-              placeholder="جامعہ کے شعبہ "
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="dateshamsi"
-              value={this.state.dateshamsi}
-              onChange={this.onChange}
-              placeholder="تاریخ شمسی "
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="datekamari"
-              value={this.state.datekamari}
-              onChange={this.onChange}
-              placeholder="تا سرخ قمری"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="darjarequested"
-              value={this.state.darjarequested}
-              onChange={this.onChange}
-              placeholder="کس درجہ میں داخلہ مطلوب ہے"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="darjagiven"
-              value={this.state.darjagiven}
-              onChange={this.onChange}
-              placeholder="س طالب علم کو درجہ کس میں داخلہ دیا جائے۔"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="beforethis"
-              value={this.state.beforethis}
-              onChange={this.onChange}
-              placeholder="اس سے قبل کہاں تعلیم حاصل کی ہے"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="talibilmrishta"
-              value={this.state.talibilmrishta}
-              onChange={this.onChange}
-              placeholder="طالب علم سے رشتہ "
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="sarparastmobileno"
-              value={this.state.sarparastmobileno}
-              onChange={this.onChange}
-              placeholder="موبائل نمبر  سرپرست"
-              required
-            />
-            <br />
-            <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="sarparastwhatsappno"
-              value={this.state.sarparastwhatsappno}
-              onChange={this.onChange}
-              placeholder="واٹسپ نمبر سرپرست"
-              required
-            />
-            <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="sarparastname"
+            value={this.state.sarparastname}
+            onChange={this.onChange}
+            placeholder="Sarparast Name "
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="sarparastfathername"
+            value={this.state.sarparastfathername}
+            onChange={this.onChange}
+            placeholder="Sarparast Father Name"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="formDate"
+            value={this.state.formDate}
+            onChange={this.onChange}
+            placeholder="Form Date"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="formnumber"
+            value={this.state.formnumber}
+            onChange={this.onChange}
+            placeholder="Form Number"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="sarparastvillage"
+            value={this.state.sarparastvillage}
+            onChange={this.onChange}
+            placeholder="Sarparast Village"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="sarparastpost"
+            value={this.state.sarparastpost}
+            onChange={this.onChange}
+            placeholder="Sarparast Post"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="sarparasttehseel"
+            value={this.state.sarparasttehseel}
+            onChange={this.onChange}
+            placeholder="Sarparast Tehseel"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="sarparastdistt"
+            value={this.state.sarparastdistt}
+            onChange={this.onChange}
+            placeholder="Sarparast Distt"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="sarparaststate"
+            value={this.state.sarparaststate}
+            onChange={this.onChange}
+            placeholder="Sarparast State"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="sarparastaadharno"
+            value={this.state.sarparastaadharno}
+            onChange={this.onChange}
+            placeholder="Sarparast Aadhar No"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studentname"
+            value={this.state.studentname}
+            onChange={this.onChange}
+            placeholder="Student Name"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studentfathername"
+            value={this.state.studentfathername}
+            onChange={this.onChange}
+            placeholder="Student's Father Name"
+            required
+          />
+          <br />
+          <br />
+          <label for="studentdateofbirth">Student Date of Birth</label>
+
+          <input
+            id="standard-basic"
+            type="date"
+            autoComplete="off"
+            name="studentdateofbirth"
+            value={this.state.studentdateofbirth}
+            label="Student Date of Birth"
+            onChange={this.onChange}
+            placeholder="Student's Date of Birth"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studentvillage"
+            value={this.state.studentvillage}
+            onChange={this.onChange}
+            placeholder="Student's Village"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studentpost"
+            value={this.state.studentpost}
+            onChange={this.onChange}
+            placeholder="Student's Post"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studenttehseel"
+            value={this.state.studenttehseel}
+            onChange={this.onChange}
+            placeholder="Student Tehseel"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studentdistt"
+            value={this.state.studentdistt}
+            onChange={this.onChange}
+            placeholder="Student Distt"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studentstate"
+            value={this.state.studentstate}
+            onChange={this.onChange}
+            placeholder="Student State"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studentaadharno"
+            value={this.state.studentaadharno}
+            onChange={this.onChange}
+            placeholder="Student Aadhar No"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studentname2"
+            value={this.state.studentname2}
+            onChange={this.onChange}
+            placeholder="نام طلب علم "
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studentfathername2"
+            value={this.state.studentfathername2}
+            onChange={this.onChange}
+            placeholder="والد کا نام "
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="date"
+            autoComplete="off"
+            name="studentdateofbirth2"
+            value={this.state.studentdateofbirth2}
+            label="Student Date of Birth"
+            onChange={this.onChange}
+            placeholder=" تاریخ   پیدایش"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studentvillage2"
+            value={this.state.studentvillage2}
+            onChange={this.onChange}
+            placeholder="سکونت"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studentpost2"
+            value={this.state.studentpost2}
+            onChange={this.onChange}
+            placeholder="پوسٹ"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studenttehseel2"
+            value={this.state.studenttehseel2}
+            onChange={this.onChange}
+            placeholder="تحصیل"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studentdistt2"
+            value={this.state.studentdistt2}
+            onChange={this.onChange}
+            placeholder="ضلع"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studentstate2"
+            value={this.state.studentstate2}
+            onChange={this.onChange}
+            placeholder="صوب"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="studentaadharno2"
+            value={this.state.studentaadharno2}
+            onChange={this.onChange}
+            placeholder="آدھار  کارڈ  نمبر"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="shoba"
+            value={this.state.shoba}
+            onChange={this.onChange}
+            placeholder="جامعہ کے شعبہ "
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="dateshamsi"
+            value={this.state.dateshamsi}
+            onChange={this.onChange}
+            placeholder="تاریخ شمسی "
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="datekamari"
+            value={this.state.datekamari}
+            onChange={this.onChange}
+            placeholder="تا سرخ قمری"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="darjarequested"
+            value={this.state.darjarequested}
+            onChange={this.onChange}
+            placeholder="کس درجہ میں داخلہ مطلوب ہے"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="darjagiven"
+            value={this.state.darjagiven}
+            onChange={this.onChange}
+            placeholder="س طالب علم کو درجہ کس میں داخلہ دیا جائے۔"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="beforethis"
+            value={this.state.beforethis}
+            onChange={this.onChange}
+            placeholder="اس سے قبل کہاں تعلیم حاصل کی ہے"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="talibilmrishta"
+            value={this.state.talibilmrishta}
+            onChange={this.onChange}
+            placeholder="طالب علم سے رشتہ "
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="sarparastmobileno"
+            value={this.state.sarparastmobileno}
+            onChange={this.onChange}
+            placeholder="موبائل نمبر  سرپرست"
+            required
+          />
+          <br />
+          <br />
+          <input
+            id="standard-basic"
+            type="text"
+            autoComplete="off"
+            name="sarparastwhatsappno"
+            value={this.state.sarparastwhatsappno}
+            onChange={this.onChange}
+            placeholder="واٹسپ نمبر سرپرست"
+            required
+          />
+          <br />
+          <br />
             <div>
               <label for="fileInput" class="btn">
                 Select Student Photo
