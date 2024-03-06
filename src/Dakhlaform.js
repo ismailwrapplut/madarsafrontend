@@ -49,7 +49,7 @@ const Dakhlaform = () => {
       </button> 
     </div>
   </div>
-      <div id="mainform" className="mainform" style={{padding:"5 5"}} ref={componentPDF}>
+      <div id="mainform" className="mainform" style={{padding:"5 10"}} ref={componentPDF}>
         <h1 className="mainh1 mainhai" style={{margin:0}}>داخلہ فارم</h1>
         <div className="firstpt">
           <hr className="hr-first" />
@@ -97,7 +97,7 @@ const Dakhlaform = () => {
                 fontWeight: 400,
               }}
             >
-                ممیل کھیڑلا, پوسٹ لاڈمکا, تحصیل پہاڑی, ضلع  ڈ یگ  (بھرت پور), راجستھان
+            میل کھیڑلا, پوسٹ لاڈمکا, تحصیل پہاڑی, ضلع  ڈ یگ  (بھرت پور), راجستھان
             </h2>
             <h3
               style={{
@@ -239,7 +239,7 @@ const Dakhlaform = () => {
         <h3 style={{ marginTop: -10, direction:"rtl" }}>
            عہد کرتا ہوں کہ جامعہ کے قوانین کی پابندی کروں گا ، جامعہ
           کے اساتذہ و دیگر عملہ کوکسی قسم کی شکایت کا موقع نہ دونگا ، خلاف ورزی
-          کی صورت میں ذمہ داران جامعہ جو بھی سزا میرے , , لئے تجویز کرینگے وہ
+          کی صورت میں ذمہ داران جامعہ جو بھی سزا میرے لئے تجویز کرینگے وہ
           مجھے منظور ہوگی
           <span style={{ color: "blue" }}>
         
