@@ -153,7 +153,7 @@ const Dakhlaform = () => {
           <table style={{ width: "100%", marginTop: 8 }}>
             <tr>
               <th>مکمل پتہ سرپرست انگریزی/ہندی میں </th>
-              <th>مکمل پتہ طالب علم</th>
+              <th style={{textAlign:"right",marginRight:-10}}>مکمل پتہ طالب علم</th>
               <th style={{borderLeft:"none",borderBottom:"none",borderRight:"1px solid black"}}></th>
 
             </tr>
@@ -318,7 +318,7 @@ const Dakhlaform = () => {
   </span>
   یہ ادارہ کے ساتھ میرا عہد و پیمان ہے اور میں نیچے دستخط کر کے اپنے آپ کو تمام مذکورہ شرائط و عہد نامہ کا پابند بناتا ہوں۔
 </h4>
-<table style={{width:"100%",marginTop:"-5"}}>
+<table style={{width:"100%",marginTop:"20"}}>
 <tr>
 <td style={{textAlign:"right",border:"none",direction:"rtl" ,fontSize:20}}>  نشان انگوٹھا والد / سرپرست </td>
 <td style={{textAlign:"right",border:"none",direction:"ltr",fontSize:20}}> :دستخط والد / سرپرست </td>
