@@ -606,7 +606,7 @@ class Dashboard extends Component {
               name="sarparastname"
               value={this.state.sarparastname}
               onChange={this.onChange}
-              placeholder="Sarparast Name / سرپرست کا نام"
+              placeholder="Sarparast Name"
               required
             />
             <br />
@@ -1169,7 +1169,7 @@ class Dashboard extends Component {
               name="sarparastname"
               value={this.state.sarparastname}
               onChange={this.onChange}
-              placeholder="Sarparast Name / سرپرست کا نام"
+              placeholder="Sarparast Name "
               required
             />
             <br />
