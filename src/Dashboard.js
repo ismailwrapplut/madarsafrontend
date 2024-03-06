@@ -108,7 +108,7 @@ class Dashboard extends Component {
       data = `${data}&search=${this.state.search}`;
     }
     axios
-      .get(`https://madarsabackend.onrender.com/get-product${data}`, {
+      .get(`http://madarsabackend.onrender.com/get-product${data}`, {
         headers: {
           token: this.state.token,
         },
@@ -140,7 +140,7 @@ class Dashboard extends Component {
   deleteProduct = (id) => {
     axios
       .post(
-        "https://madarsabackend.onrender.com/delete-product",
+        "http://madarsabackend.onrender.com/delete-product",
         {
           id: id,
         },
@@ -266,7 +266,7 @@ class Dashboard extends Component {
     console.log(this.state.file2);
 
     axios
-      .post("https://madarsabackend.onrender.com/add-product", file, {
+      .post("http://madarsabackend.onrender.com/add-product", file, {
         headers: {
           "content-type": "multipart/form-data",
           token: this.state.token,
@@ -392,7 +392,7 @@ class Dashboard extends Component {
     file.append("sarparastwhatsappno", this.state.sarparastwhatsappno);
 
     axios
-      .post("https://madarsabackend.onrender.com/update-product", file, {
+      .post("http://madarsabackend.onrender.com/update-product", file, {
         headers: {
           "content-type": "multipart/form-data",
           token: this.state.token,
@@ -1764,7 +1764,7 @@ class Dashboard extends Component {
                   </TableCell>
                   <TableCell align="center">
                     <img
-                      src={`https://madarsabackend.onrender.com/${row.studentprofilepic}`}
+                      src={`http://madarsabackend.onrender.com/${row.studentprofilepic}`}
                       width="70"
                       height="70"
                     />
