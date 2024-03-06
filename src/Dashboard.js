@@ -1804,6 +1804,8 @@ class Dashboard extends Component {
   
           <Pagination count={this.state.pages} page={this.state.page} onChange={this.pageChange} variant="outlined" color="primary"/>
         </TableContainer>
+      <div style={{position:"absolute",bottom:0,left:0,width:"100%",height:25,fontSize:14}}>Created By SmileWeb(+91 9868277865)</div>
+
       </div>
     );
   }
