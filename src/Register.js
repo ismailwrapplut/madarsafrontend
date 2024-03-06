@@ -19,7 +19,7 @@ class Register extends React.Component {
 
   register = () => {
 
-    axios.post('http://madarsabackend.onrender.com/register', {
+    axios.post('https://madarsabackend.onrender.com/register', {
       username: this.state.username,
       password: this.state.password,
     }).then((res) => {

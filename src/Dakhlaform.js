@@ -16,7 +16,7 @@ const Dakhlaform = () => {
 
   const id = searchParams.get("id").toString();
   const getProduct = async () => {
-    const { data } = await axios.get("http://madarsabackend.onrender.com/product/" + id, {
+    const { data } = await axios.get("https://madarsabackend.onrender.com/product/" + id, {
       headers: {
         token: localStorage.getItem("token"),
       },
@@ -115,7 +115,7 @@ const Dakhlaform = () => {
         <div className="secondheader">
           <div>
             <img
-              src={`http://madarsabackend.onrender.com/${product?.studentprofilepic}`}
+              src={`https://madarsabackend.onrender.com/${product?.studentprofilepic}`}
               width="100"
               height="120"
               alt="talib ilm"
@@ -288,7 +288,7 @@ const Dakhlaform = () => {
           </div>
           <div style={{display:"inline-block" ,width:"15%"}}>
           <img
-          src={`http://madarsabackend.onrender.com/${product?.sarparastprofilepic}`}
+          src={`https://madarsabackend.onrender.com/${product?.sarparastprofilepic}`}
           width="80"
           height="120"
           alt="talib ilm"

@@ -39,7 +39,7 @@ const navigate=useNavigate()
     const pwd = bcrypt.hashSync(password, salt);
 
     axios
-      .post("http://madarsabackend.onrender.com/login", {
+      .post("https://madarsabackend.onrender.com/login", {
         username: username,
         password: pwd,
       })
