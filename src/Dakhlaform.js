@@ -252,7 +252,7 @@ const Dakhlaform = () => {
           تاریخ شمسی : {product?.dateshamsi}
        
 
-         <span style={{direction:"rtl"}}> تا سرخ قمری :{product?.datekamari}</span>
+         <span style={{direction:"rtl"}}> تاریخ قمری :{product?.datekamari}</span>
          
           </h3>
               <table style={{width:"100%"}}> 
