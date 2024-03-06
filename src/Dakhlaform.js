@@ -330,7 +330,7 @@ const Dakhlaform = () => {
           </div>
          
       </div>
-      
+      <div style={{position:"absolute",bottom:0,left:0,width:"100%",height:25,fontSize:14}}>Created By SmileWeb(+91 9868277865)</div>
     </div>
   );
 };
