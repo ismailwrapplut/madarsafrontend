@@ -796,7 +796,7 @@ class Dashboard extends Component {
               id="standard-basic"
               type="text"
               autoComplete="off"
-              name="2"
+              name="studentname2"
               value={this.state.studentname2}
               onChange={this.onChange}
               placeholder="Student Name"
