@@ -153,7 +153,7 @@ const Dakhlaform = () => {
           <table style={{ width: "100%", marginTop: 8 }}>
             <tr>
               <th>مکمل پتہ سرپرست انگریزی/ہندی میں </th>
-              <th style={{textAlign:"right",marginRight:-10,fontWeight:900,fontSize:17}}>مکمل پتہ طالب علم</th>
+              <th style={{textAlign:"right",marginRight:-10,}}>مکمل پتہ طالب علم</th>
               <th style={{borderLeft:"none",borderBottom:"none",borderRight:"1px solid black"}}></th>
 
             </tr>
