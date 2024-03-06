@@ -1420,6 +1420,8 @@ class Dashboard extends Component {
             />
             <br />
             <br />
+            <label for="studentdateofbirth">تاریخ  پیدائش </label>
+
             <input
               id="standard-basic"
               type="date"
