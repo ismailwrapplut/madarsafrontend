@@ -3,14 +3,19 @@ import swal from "sweetalert";
 import { Button, TextField, Link } from "@material-ui/core";
 import { withRouter } from "./utils";
 import axios from "axios";
+import { Audio } from 'react-loader-spinner'
 import { redirect, useNavigate } from "react-router-dom";
+import Loader from "react-js-loader";
+
 const bcrypt = require("bcryptjs");
 var salt = bcrypt.genSaltSync(10);
+
 
 const Login = (props) => {
   const [state, setState] = useState({
     username: "",
     password: "",
+    loading:false
   });
 const navigate=useNavigate()
   const { username, password } = state;
@@ -28,6 +33,9 @@ const navigate=useNavigate()
   }, []);
 
   const login = () => {
+    setState({
+      loading:true
+    })
     const pwd = bcrypt.hashSync(password, salt);
 
     axios
@@ -36,11 +44,17 @@ const navigate=useNavigate()
         password: pwd,
       })
       .then((res) => {
+        setState({
+          loading:false
+        })
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user_id", res.data.id);
         props.navigate("/dashboard");
       })
       .catch((err) => {
+        setState({
+          loading:false
+        })
         if (
           err.response &&
           err.response.data &&
@@ -86,7 +100,8 @@ const navigate=useNavigate()
         />
         <br />
         <br />
-        <Button
+        {state.loading===false?
+          <Button
           className="button_style"
           variant="contained"
           color="primary"
@@ -95,7 +110,14 @@ const navigate=useNavigate()
           onClick={login}
         >
           Login
-        </Button>{" "}
+        </Button>
+          
+          
+          
+          :<div className={"item"}>
+          <Loader type="spinner-cub" bgColor={"white"} color={"blue"} title={"loading"} size={50} />
+      </div>}
+       
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        
       </div>

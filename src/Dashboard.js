@@ -15,6 +15,9 @@ import {
   TableCell,
 } from "@material-ui/core";
 import { Pagination } from "@material-ui/lab";
+import { Audio } from "react-loader-spinner";
+import Loader from "react-js-loader";
+
 import swal from "sweetalert";
 import { withRouter } from "./utils";
 import axios from "axios";
@@ -78,6 +81,7 @@ class Dashboard extends Component {
       products: [],
       pages: 0,
       loading: false,
+      loading2: false,
     };
   }
 
@@ -120,6 +124,12 @@ class Dashboard extends Component {
           icon: "error",
           type: "error",
         });
+        if(err.response.data.errorMessage==="User unauthorized!"){
+          localStorage.removeItem("token");
+          localStorage.removeItem("user_id");
+          this.props.navigate("/login")
+
+        }
         this.setState({ loading: false, products: [], pages: 0 }, () => {});
       });
   };
@@ -204,6 +214,7 @@ class Dashboard extends Component {
   };
 
   addProduct = () => {
+    this.setState({ loading2: true });
     //  console.log(fileInput)
     const file = new FormData();
     const fileArray = [this.state.file, this.state.file2];
@@ -259,6 +270,7 @@ class Dashboard extends Component {
         },
       })
       .then((res) => {
+        this.setState({ loading2: false });
         swal({
           text: res.data.title,
           icon: "success",
@@ -316,6 +328,8 @@ class Dashboard extends Component {
         );
       })
       .catch((err) => {
+        this.setState({ loading2: false });
+
         swal({
           text: err.response.data.errorMessage,
           icon: "error",
@@ -326,6 +340,8 @@ class Dashboard extends Component {
   };
 
   updateProduct = () => {
+    this.setState({ loading2: true });
+
     const fileInput = document.querySelector("#fileInput");
     const file = new FormData();
     console.log(fileInput.files[0]);
@@ -379,6 +395,8 @@ class Dashboard extends Component {
         },
       })
       .then((res) => {
+        this.setState({ loading2: false });
+
         swal({
           text: res.data.title,
           icon: "success",
@@ -434,6 +452,8 @@ class Dashboard extends Component {
         );
       })
       .catch((err) => {
+        this.setState({ loading2: false });
+
         swal({
           text: err.response.data.errorMessage,
           icon: "error",
@@ -911,7 +931,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -923,7 +943,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -935,7 +955,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -947,7 +967,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -959,7 +979,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -971,7 +991,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -983,7 +1003,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -994,8 +1014,8 @@ class Dashboard extends Component {
               placeholder="طالب علم سے رشتہ "
               required
             />
-            <br />            
- <br />
+            <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -1007,7 +1027,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -1018,7 +1038,7 @@ class Dashboard extends Component {
               placeholder="واٹسپ نمبر سرپرست"
               required
             />
-            <br />            
+            <br />
             <div>
               <label for="fileInput" class="btn">
                 Select Student Photo
@@ -1070,56 +1090,60 @@ class Dashboard extends Component {
             <Button onClick={this.handleProductEditClose} color="primary">
               Cancel
             </Button>
-
-            <Button
-              disabled={
-                this.state.sarparastname === "" ||
-                this.state.sarparastfathername === "" ||
-                this.state.sarparastvillage === "" ||
-                this.state.sarparastpost === "" ||
-                this.state.sarparasttehseel === "" ||
-                this.state.sarparastdistt === "" ||
-                this.state.sarparaststate === "" ||
-                this.state.sarparastaadharno === "" ||
-                this.state.studentname === "" ||
-                this.state.studentfathername === "" ||
-                this.state.studentdateofbirth === "" ||
-                this.state.studentvillage === "" ||
-                this.state.studentpost === "" ||
-                this.state.studenttehseel === "" ||
-                this.state.studentdistt === "" ||
-                this.state.studentstate === "" ||
-                this.state.formDate === "" ||
-                this.state.formnumber === "" ||
-                this.state.studentname2 == "" ||
-                this.state.studentfathername2 == "" ||
-                this.state.studentdateofbirth2 == "" ||
-                this.state.studentvillage2 == "" ||
-                this.state.studentpost2 == "" ||
-                this.state.studenttehseel2 == "" ||
-                this.state.studentdistt2 == "" ||
-                this.state.studentstate2 == "" ||
-                this.state.studentaadharno2 == "" ||
-                this.state.studentaadharno === "" ||
-                this.state.shoba === "" ||
-                this.state.dateshamsi === "" ||
-                this.state.datekamari === "" ||
-                this.state.darjarequested === "" ||
-                this.state.darjagiven === "" ||
-                this.state.beforethis === "" ||
-                this.state.talibilmrishta === "" ||
-                this.state.sarparastmobileno === "" ||
-                this.state.sarparastwhatsappno === "" ||
-                
-                this.state.fileName === "" ||
-                this.state.fileName2 === ""
-              }
-              onClick={(e) => this.updateProduct()}
-              color="primary"
-              autoFocus
-            >
-              Edit Student
-            </Button>
+            {this.state.loading2 === false ? (
+              <Button
+                disabled={
+                  this.state.sarparastname === "" ||
+                  this.state.sarparastfathername === "" ||
+                  this.state.sarparastvillage === "" ||
+                  this.state.sarparastpost === "" ||
+                  this.state.sarparasttehseel === "" ||
+                  this.state.sarparastdistt === "" ||
+                  this.state.sarparaststate === "" ||
+                  this.state.sarparastaadharno === "" ||
+                  this.state.studentname === "" ||
+                  this.state.studentfathername === "" ||
+                  this.state.studentdateofbirth === "" ||
+                  this.state.studentvillage === "" ||
+                  this.state.studentpost === "" ||
+                  this.state.studenttehseel === "" ||
+                  this.state.studentdistt === "" ||
+                  this.state.studentstate === "" ||
+                  this.state.formDate === "" ||
+                  this.state.formnumber === "" ||
+                  this.state.studentname2 == "" ||
+                  this.state.studentfathername2 == "" ||
+                  this.state.studentdateofbirth2 == "" ||
+                  this.state.studentvillage2 == "" ||
+                  this.state.studentpost2 == "" ||
+                  this.state.studenttehseel2 == "" ||
+                  this.state.studentdistt2 == "" ||
+                  this.state.studentstate2 == "" ||
+                  this.state.studentaadharno2 == "" ||
+                  this.state.studentaadharno === "" ||
+                  this.state.shoba === "" ||
+                  this.state.dateshamsi === "" ||
+                  this.state.datekamari === "" ||
+                  this.state.darjarequested === "" ||
+                  this.state.darjagiven === "" ||
+                  this.state.beforethis === "" ||
+                  this.state.talibilmrishta === "" ||
+                  this.state.sarparastmobileno === "" ||
+                  this.state.sarparastwhatsappno === "" ||
+                  this.state.fileName === "" ||
+                  this.state.fileName2 === ""
+                }
+                onClick={(e) => this.updateProduct()}
+                color="primary"
+                autoFocus
+              >
+                Edit Student
+              </Button>
+            ) : (
+              <div className={"item"}>
+              <Loader type="spinner-cub" bgColor={"white"} color={"blue"} title={"loading"} size={50} />
+          </div>
+            )}
           </DialogActions>
         </Dialog>
 
@@ -1484,7 +1508,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -1496,7 +1520,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -1508,7 +1532,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -1520,7 +1544,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -1532,7 +1556,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -1544,7 +1568,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -1555,8 +1579,8 @@ class Dashboard extends Component {
               placeholder="طالب علم سے رشتہ "
               required
             />
-            <br />            
- <br />
+            <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -1568,7 +1592,7 @@ class Dashboard extends Component {
               required
             />
             <br />
- <br />
+            <br />
             <input
               id="standard-basic"
               type="text"
@@ -1579,7 +1603,7 @@ class Dashboard extends Component {
               placeholder="واٹسپ نمبر سرپرست"
               required
             />
-            <br />       
+            <br />
             <br />
             <div>
               <label for="fileInput" class="btn">
@@ -1630,55 +1654,60 @@ class Dashboard extends Component {
             <Button onClick={this.handleProductClose} color="primary">
               Cancel
             </Button>
-            <Button
-              disabled={
-                this.state.sarparastname == "" ||
-                this.state.sarparastfathername == "" ||
-                this.state.sarparastvillage == "" ||
-                this.state.formDate === "" ||
-                this.state.formnumber === "" ||
-                this.state.sarparastpost == "" ||
-                this.state.sarparasttehseel == "" ||
-                this.state.sarparastdistt == "" ||
-                this.state.sarparaststate == "" ||
-                this.state.sarparastaadharno == "" ||
-                this.state.studentname == "" ||
-                this.state.studentfathername == "" ||
-                this.state.studentdateofbirth == "" ||
-                this.state.studentvillage == "" ||
-                this.state.studentpost == "" ||
-                this.state.studenttehseel == "" ||
-                this.state.studentdistt == "" ||
-                this.state.studentstate == "" ||
-                this.state.studentaadharno == "" ||
-                this.state.studentname2 == "" ||
-                this.state.studentfathername2 == "" ||
-                this.state.studentdateofbirth2 == "" ||
-                this.state.studentvillage2 == "" ||
-                this.state.studentpost2 == "" ||
-                this.state.studenttehseel2 == "" ||
-                this.state.studentdistt2 == "" ||
-                this.state.studentstate2 == "" ||
-                this.state.studentaadharno2 == "" ||
-                this.state.studentaadharno == "" ||
-
-                this.state.dateshamsi === "" ||
-                this.state.datekamari === "" ||
-                this.state.darjarequested === "" ||
-                this.state.darjagiven === "" ||
-                this.state.beforethis === "" ||
-                this.state.talibilmrishta === "" ||
-                this.state.sarparastmobileno === "" ||
-                this.state.sarparastwhatsappno === "" ||
-                this.state.fileName === "" ||
-                this.state.fileName2 === ""
-              }
-              onClick={(e) => this.addProduct()}
-              color="primary"
-              autoFocus
-            >
-              Add Student
-            </Button>
+            {this.state.loading2 === false ? (
+              <Button
+                disabled={
+                  this.state.sarparastname == "" ||
+                  this.state.sarparastfathername == "" ||
+                  this.state.sarparastvillage == "" ||
+                  this.state.formDate === "" ||
+                  this.state.formnumber === "" ||
+                  this.state.sarparastpost == "" ||
+                  this.state.sarparasttehseel == "" ||
+                  this.state.sarparastdistt == "" ||
+                  this.state.sarparaststate == "" ||
+                  this.state.sarparastaadharno == "" ||
+                  this.state.studentname == "" ||
+                  this.state.studentfathername == "" ||
+                  this.state.studentdateofbirth == "" ||
+                  this.state.studentvillage == "" ||
+                  this.state.studentpost == "" ||
+                  this.state.studenttehseel == "" ||
+                  this.state.studentdistt == "" ||
+                  this.state.studentstate == "" ||
+                  this.state.studentaadharno == "" ||
+                  this.state.studentname2 == "" ||
+                  this.state.studentfathername2 == "" ||
+                  this.state.studentdateofbirth2 == "" ||
+                  this.state.studentvillage2 == "" ||
+                  this.state.studentpost2 == "" ||
+                  this.state.studenttehseel2 == "" ||
+                  this.state.studentdistt2 == "" ||
+                  this.state.studentstate2 == "" ||
+                  this.state.studentaadharno2 == "" ||
+                  this.state.studentaadharno == "" ||
+                  this.state.dateshamsi === "" ||
+                  this.state.datekamari === "" ||
+                  this.state.darjarequested === "" ||
+                  this.state.darjagiven === "" ||
+                  this.state.beforethis === "" ||
+                  this.state.talibilmrishta === "" ||
+                  this.state.sarparastmobileno === "" ||
+                  this.state.sarparastwhatsappno === "" ||
+                  this.state.fileName === "" ||
+                  this.state.fileName2 === ""
+                }
+                onClick={(e) => this.addProduct()}
+                color="primary"
+                autoFocus
+              >
+                Add Student
+              </Button>
+            ) : (
+              <div className={"item"}>
+              <Loader type="spinner-cub" bgColor={"white"} color={"blue"} title={"loading"} size={50} />
+          </div>
+            )}
           </DialogActions>
         </Dialog>
 
@@ -1693,7 +1722,7 @@ class Dashboard extends Component {
             name="search"
             value={this.state.search}
             onChange={this.onChange}
-            placeholder="Search by product name"
+            placeholder="Search by Student name"
             style={{ width: "190px" }}
             required
           />
