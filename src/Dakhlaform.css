@@ -122,3 +122,7 @@ h3{
        visibility: hidden;
     }
  }
+
+ #mainform{
+    padding: 0 10px;
+ }
