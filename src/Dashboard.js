@@ -13,7 +13,9 @@ import {
   TableHead,
   TableRow,
   TableCell,
+  TablePagination,
 } from "@material-ui/core";
+
 import { Pagination } from "@material-ui/lab";
 import { Audio } from "react-loader-spinner";
 import Loader from "react-js-loader";
@@ -91,7 +93,7 @@ class Dashboard extends Component {
       // this.props.history.push('/login');
       this.props.navigate("/login");
     } else {
-      this.setState({ token: token }, () => {
+      this.setState({ token: token ,products:[]}, () => {
         this.getProduct();
       });
     }
@@ -112,6 +114,7 @@ class Dashboard extends Component {
         },
       })
       .then((res) => {
+        console.log(res.data.products)
         this.setState({
           loading: false,
           products: res.data.products,
@@ -168,10 +171,10 @@ class Dashboard extends Component {
       });
   };
 
-  pageChange = (e, page) => {
-    this.setState({ page: page }, () => {
-      this.getProduct();
-    });
+  pageChange = async (event, page) => {
+    console.log(page)
+    await this.setState({ page: page,products:[] });
+    this.getProduct();
   };
 
   // logOut = () => {
@@ -207,7 +210,7 @@ class Dashboard extends Component {
     this.setState({ [e.target.name]: e.target.value }, () => {});
 
     if (e.target.name === "search") {
-      this.setState({ page: 1 }, () => {
+      this.setState({ page: 1 ,products:[]}, () => {
         this.getProduct();
       });
     }
@@ -322,9 +325,10 @@ class Dashboard extends Component {
 
             page: 1,
           },
-          () => {
+          this.setState({products: []}, () => {
             this.getProduct();
-          }
+          })
+         
         );
       })
       .catch((err) => {
@@ -446,9 +450,10 @@ class Dashboard extends Component {
             file: null,
             file2: null,
           },
-          () => {
+          this.setState({products: []},() => {
             this.getProduct();
-          }
+          })
+          
         );
       })
       .catch((err) => {
@@ -1793,15 +1798,11 @@ class Dashboard extends Component {
                 </TableRow>
               ))}
             </TableBody>
+        
           </Table>
           <br />
-          <Pagination
-            className="no-printme"
-            count={this.state.pages}
-            page={this.state.page}
-            onChange={this.pageChange}
-            color="primary"
-          />
+  
+          <Pagination count={this.state.pages} page={this.state.page} onChange={this.pageChange} variant="outlined" color="primary"/>
         </TableContainer>
       </div>
     );
