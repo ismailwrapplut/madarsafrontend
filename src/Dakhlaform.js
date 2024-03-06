@@ -318,7 +318,7 @@ const Dakhlaform = () => {
   </span>
   یہ ادارہ کے ساتھ میرا عہد و پیمان ہے اور میں نیچے دستخط کر کے اپنے آپ کو تمام مذکورہ شرائط و عہد نامہ کا پابند بناتا ہوں۔
 </h4>
-<table style={{width:"100%",marginTop:"35"}}>
+<table style={{width:"100%",marginTop:"60"}}>
 <tr>
 <td style={{textAlign:"right",border:"none",direction:"rtl" ,fontSize:20}}>  نشان انگوٹھا والد / سرپرست </td>
 <td style={{textAlign:"right",border:"none",direction:"ltr",fontSize:20}}> :دستخط والد / سرپرست </td>
