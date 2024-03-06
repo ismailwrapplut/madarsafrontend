@@ -115,7 +115,7 @@ const Dakhlaform = () => {
         <div className="secondheader">
           <div>
             <img
-              src={`https://madarsabackend.onrender.com/${product?.studentprofilepic}`}
+              src={`https://madarsabackend.onrender.com/uploads/${product?.studentprofilepic}`}
               width="100"
               height="120"
               alt="talib ilm"
@@ -288,7 +288,7 @@ const Dakhlaform = () => {
           </div>
           <div style={{display:"inline-block" ,width:"15%"}}>
           <img
-          src={`https://madarsabackend.onrender.com/${product?.sarparastprofilepic}`}
+          src={`https://madarsabackend.onrender.com/uploads/${product?.sarparastprofilepic}`}
           width="80"
           height="120"
           alt="talib ilm"
