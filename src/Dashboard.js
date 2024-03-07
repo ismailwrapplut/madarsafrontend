@@ -1766,7 +1766,7 @@ class Dashboard extends Component {
                   </TableCell>
                   <TableCell align="center">
                     <img
-                      src={`https://madarsabackend.onrender.com/uploads/${row.studentprofilepic}`}
+                      src={row.studentprofilepic}
                       width="70"
                       height="70"
                     />
