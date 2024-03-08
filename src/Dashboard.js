@@ -91,7 +91,7 @@ class Dashboard extends Component {
     let token = localStorage.getItem("token");
     if (!token) {
       // this.props.history.push('/login');
-      this.props.navigate("/login");
+      this.props.navigate("/");
     } else {
       this.setState({ token: token ,products:[]}, () => {
         this.getProduct();
@@ -127,10 +127,10 @@ class Dashboard extends Component {
           icon: "error",
           type: "error",
         });
-        if(err.response.data.errorMessage==="User unauthorized!"){
+        if(err.response.data.errorMessage==="Login Expired! Please click OK to Login Again"){
           localStorage.removeItem("token");
           localStorage.removeItem("user_id");
-          this.props.navigate("/login")
+          this.props.navigate("/")
 
         }
         this.setState({ loading: false, products: [], pages: 0 }, () => {});
