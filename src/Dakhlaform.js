@@ -266,7 +266,7 @@ const Dakhlaform = () => {
               , اور مجھے اور نہ میرے سر پرست کو جامعہ کے خلاف کسی قسم کی قانونی
                  چارہ جوئی کا کوئی حق نہ ہوگا۔
             </span>
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;,<br></br> دستخط طالب علم :.................... 
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;,<br></br> دستخط طالب علم :........................................ 
             تاریخ شمسی : {product?.dateshamsi}
          
   
