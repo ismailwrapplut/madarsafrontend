@@ -422,7 +422,7 @@ const Dakhlaform = () => {
      
       </div>
       <div className="fotter" style={{marginTop:5,padding:0}}>
-      <img src={fotter} style={{margin:0,padding:0}}/>
+      <img src={fotter} width={"100%"} height={45} style={{margin:0,padding:0}}/>
       </div>
       </div>
     </div>
