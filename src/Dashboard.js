@@ -84,7 +84,7 @@ function Dashboard(props) {
   });
 
   useEffect(() => {
-    let token = localStorage.getItem("token");
+    let token = localStorage.getItem("token") ===!null;
     if (!token) {
       navigate("/");
     } else {
