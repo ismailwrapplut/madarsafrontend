@@ -91,7 +91,7 @@ class Dashboard extends Component {
     let token = localStorage.getItem("token");
     if (!token) {
       // this.props.history.push('/login');
-      this.props.navigate("/");
+      this.props.history.push("/");
     } else {
       this.setState({ token: token ,products:[]}, () => {
         this.getProduct();

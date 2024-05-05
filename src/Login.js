@@ -23,7 +23,7 @@ const navigate=useNavigate()
   const onChange = (e) => setState({ ...state, [e.target.name]: e.target.value });
 
   useEffect(() => {
-    const isAuthenticated = localStorage.getItem("token") !== null;
+    const isAuthenticated = localStorage.getItem("token");
 
     if (isAuthenticated) {
       navigate("/dashboard")
@@ -49,7 +49,7 @@ const navigate=useNavigate()
         })
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user_id", res.data.id);
-        props.navigate("/dashboard");
+        navigate("/dashboard");
       })
       .catch((err) => {
         setState({
