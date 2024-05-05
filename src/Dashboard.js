@@ -84,14 +84,12 @@ function Dashboard(props) {
   });
 
   useEffect(() => {
-    const token = window.localStorage.getItem("token");
+    const token =  window.localStorage.getItem("token");
     
-    setState((prevState) => ({ ...prevState, token: JSON.parse(token), products: [] }));
-    console.log("Updated state with token:", token);
+    setState((prevState) => ({ ...prevState, token:localStorage.getItem("token"), products: [] }));
     console.log(state)
-    console.log("Fetching products...");
     getProduct();
-  }, []);
+  }, [state.token]);
   
 
   const getProduct = () => {
