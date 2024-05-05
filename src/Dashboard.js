@@ -90,7 +90,7 @@ function Dashboard(props) {
     if (token) {
       setState((prevState) => ({ ...prevState, token: token, products: [] }));
       console.log("Updated state with token:", token);
-      
+      console.log(state)
       console.log("Fetching products...");
       getProduct();
     } else {
