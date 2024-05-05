@@ -89,9 +89,10 @@ function Dashboard(props) {
     
     if (token) {
       setState((prevState) => ({ ...prevState, token: localStorage.getItem("token"), products: [] }));
-      console.log("Updated state with token:", token);
+      console.log("Updated state with token:", state.token);
       
       console.log("Fetching products...");
+      console.log(state)
       getProduct();
     } else {
       console.log("Token not found, redirecting...");
