@@ -84,64 +84,14 @@ function Dashboard(props) {
   });
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = window.localStorage.getItem("token");
     console.log("Retrieved token from local storage:", token);
     
     if (token) {
-      setState({  
-      openProductModal: state.openProductModal,
-      openProductEditModal: state.openProductEditModal,
-      id: state.id,
-      sarparastname: state.sarparastname,
-      sarparastfathername: state.sarparastfathername,
-      formDate: state.formDate,
-      formnumber: state.formnumber,
-      sarparastvillage: state.sarparastvillage,
-      sarparastpost: state.sarparastpost,
-      sarparasttehseel: state.sarparasttehseel,
-      sarparastdistt: state.sarparastdistt,
-      sarparaststate: state.sarparaststate,
-      sarparastaadharno: state.sarparastaadharno,
-      studentname: state.studentname,
-      studentfathername:state.studentfathername ,
-      studentdateofbirth:state.studentdateofbirth ,
-      studentvillage:state.studentvillage ,
-      studentpost:state.studentpost ,
-      studenttehseel:state.studenttehseel ,
-      studentdistt:state.studentdistt ,
-      studentstate:state.studentstate ,
-      studentaadharno:state.studentaadharno ,
-      studentname2:state.studentname2 ,
-      studentfathername2:state.studentfathername2 ,
-      studentdateofbirth2:state.studentdateofbirth2 ,
-      studentvillage2:state.studentvillage2 ,
-      studentpost2:state.studentpost2 ,
-      studenttehseel2:state.studenttehseel2 ,
-      studentdistt2:state.studentdistt2 ,
-      studentstate2:state.studentstate2 ,
-      studentaadharno2:state.studentaadharno2 ,
-      shoba:state.shoba ,
-      dateshamsi:state.dateshamsi ,
-      datekamari:state.datekamari ,
-      darjarequested:state.darjarequested ,
-      darjagiven:state.darjagiven ,
-      beforethis:state.beforethis ,
-      talibilmrishta:state.talibilmrishta ,
-      sarparastmobileno:state.sarparastmobileno ,
-      sarparastwhatsappno:state.sarparastwhatsappno ,
-      file,
-      file2,
-      fileName,
-      fileName2,
-      page,
-      search,
-      pages,
-      loading,
-      loading2, token: localStorage.getItem("token"), products: [] });
-      console.log("Updated state with token:", state.token);
+      setState((prevState) => ({ ...prevState, token: token, products: [] }));
+      console.log("Updated state with token:", token);
       
       console.log("Fetching products...");
-      console.log(state)
       getProduct();
     } else {
       console.log("Token not found, redirecting...");
