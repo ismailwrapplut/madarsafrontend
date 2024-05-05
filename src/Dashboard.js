@@ -129,14 +129,7 @@ function Dashboard(props) {
           localStorage.removeItem("token");
           localStorage.removeItem("user_id");
           navigate("/");
-        } else  if (
-          err.response.data.errorMessage ===
-          "User unauthorized!"
-        ) {
-          localStorage.removeItem("token");
-          localStorage.removeItem("user_id");
-          navigate("/");
-        }
+        } 
         setState((prevState) => ({
           ...prevState,
           loading: false,
