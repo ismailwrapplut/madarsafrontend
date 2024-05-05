@@ -389,6 +389,7 @@ function Dashboard(props) {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">Edit Product</DialogTitle>
+        {console.log(state)}
         <DialogContent>
           <br />
           <input
