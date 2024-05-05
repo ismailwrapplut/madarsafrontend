@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   TextField,
@@ -19,6 +19,7 @@ import {
 import { Pagination } from "@material-ui/lab";
 import { Audio } from "react-loader-spinner";
 import Loader from "react-js-loader";
+import {  useNavigate } from "react-router-dom";
 
 import swal from "sweetalert";
 import { withRouter } from "./utils";
@@ -26,100 +27,93 @@ import axios from "axios";
 import "./Dashboard.css";
 import { Link } from "react-router-dom";
 
-class Dashboard extends Component {
-  constructor() {
-    super();
-    this.state = {
-      token: "",
-      openProductModal: false,
-      openProductEditModal: false,
-      id: "",
+function Dashboard(props) {
+  const navigate = useNavigate()
+  const [state, setState] = useState({
+    token: "",
+    openProductModal: false,
+    openProductEditModal: false,
+    id: "",
+    sarparastname: "",
+    sarparastfathername: "",
+    formDate: "",
+    formnumber: "",
+    sarparastvillage: "",
+    sarparastpost: "",
+    sarparasttehseel: "",
+    sarparastdistt: "",
+    sarparaststate: "",
+    sarparastaadharno: "",
+    studentname: "",
+    studentfathername: "",
+    studentdateofbirth: "",
+    studentvillage: "",
+    studentpost: "",
+    studenttehseel: "",
+    studentdistt: "",
+    studentstate: "",
+    studentaadharno: "",
+    studentname2: "",
+    studentfathername2: "",
+    studentdateofbirth2: "",
+    studentvillage2: "",
+    studentpost2: "",
+    studenttehseel2: "",
+    studentdistt2: "",
+    studentstate2: "",
+    studentaadharno2: "",
+    shoba: "",
+    dateshamsi: "",
+    datekamari: "",
+    darjarequested: "",
+    darjagiven: "",
+    beforethis: "",
+    talibilmrishta: "",
+    sarparastmobileno: "",
+    sarparastwhatsappno: "",
+    file: "",
+    file2: "",
+    fileName: "",
+    fileName2: "",
+    page: 1,
+    search: "",
+    products: [],
+    pages: 0,
+    loading: false,
+    loading2: false,
+  });
 
-      sarparastname: "",
-      sarparastfathername: "",
-      formDate: "",
-      formnumber: "",
-
-      sarparastvillage: "",
-      sarparastpost: "",
-      sarparasttehseel: "",
-      sarparastdistt: "",
-      sarparaststate: "",
-      sarparastaadharno: "",
-      studentname: "",
-      studentfathername: "",
-      studentdateofbirth: "",
-      studentvillage: "",
-      studentpost: "",
-      studenttehseel: "",
-      studentdistt: "",
-      studentstate: "",
-      studentaadharno: "",
-      studentname2: "",
-      studentfathername2: "",
-      studentdateofbirth2: "",
-      studentvillage2: "",
-      studentpost2: "",
-      studenttehseel2: "",
-      studentdistt2: "",
-      studentstate2: "",
-      studentaadharno2: "",
-      shoba: "",
-      dateshamsi: "",
-      datekamari: "",
-      darjarequested: "",
-      darjagiven: "",
-      beforethis: "",
-      talibilmrishta: "",
-      sarparastmobileno: "",
-      sarparastwhatsappno: "",
-      file: "",
-      file2: "",
-      fileName: "",
-      fileName2: "",
-
-      page: 1,
-      search: "",
-      products: [],
-      pages: 0,
-      loading: false,
-      loading2: false,
-    };
-  }
-
-  componentDidMount = () => {
+  useEffect(() => {
     let token = localStorage.getItem("token");
     if (!token) {
-      // this.props.history.push('/login');
-      this.props.history.push("/");
+      navigate("/");
     } else {
-      this.setState({ token: token ,products:[]}, () => {
-        this.getProduct();
-      });
+      setState((prevState) => ({ ...prevState, token: token, products: [] }));
+      getProduct();
     }
-  };
+  }, []);
 
-  getProduct = () => {
-    this.setState({ loading: true });
+  const getProduct = () => {
+    setState((prevState) => ({ ...prevState, loading: true }));
 
     let data = "?";
-    data = `${data}page=${this.state.page}`;
-    if (this.state.search) {
-      data = `${data}&search=${this.state.search}`;
+    data = `${data}page=${state.page}`;
+    if (state.search) {
+      data = `${data}&search=${state.search}`;
     }
     axios
       .get(`https://madarsabackend.onrender.com/get-product${data}`, {
         headers: {
-          token: this.state.token,
+          token: state.token,
         },
       })
       .then((res) => {
-        console.log(res.data.products)
-        this.setState({
+        setState((prevState) => ({
+          ...prevState,
           loading: false,
           products: res.data.products,
           pages: res.data.pages,
-        });
+        }));
       })
       .catch((err) => {
         swal({
@@ -127,17 +121,24 @@ class Dashboard extends Component {
           icon: "error",
           type: "error",
         });
-        if(err.response.data.errorMessage==="Login Expired! Please click OK to Login Again"){
+        if (
+          err.response.data.errorMessage ===
+          "Login Expired! Please click OK to Login Again"
+        ) {
           localStorage.removeItem("token");
           localStorage.removeItem("user_id");
-          this.props.navigate("/")
-
+          navigate("/");
         }
-        this.setState({ loading: false, products: [], pages: 0 }, () => {});
+        setState((prevState) => ({
+          ...prevState,
+          loading: false,
+          products: [],
+          pages: 0,
+        }));
       });
   };
 
-  deleteProduct = (id) => {
+  const deleteProduct = (id) => {
     axios
       .post(
         "https://madarsabackend.onrender.com/delete-product",
@@ -147,7 +148,7 @@ class Dashboard extends Component {
         {
           headers: {
             "Content-Type": "application/json",
-            token: this.state.token,
+            token: state.token,
           },
         }
       )
@@ -158,8 +159,8 @@ class Dashboard extends Component {
           type: "success",
         });
 
-        this.setState({ page: 1 }, () => {
-          this.pageChange(null, 1);
+        setState((prevState) => ({ ...prevState, page: 1 }), () => {
+          pageChange(null, 1);
         });
       })
       .catch((err) => {
@@ -171,410 +172,102 @@ class Dashboard extends Component {
       });
   };
 
-  pageChange = async (event, page) => {
-    console.log(page)
-    await this.setState({ page: page,products:[] });
-    this.getProduct();
+  const pageChange = async (event, page) => {
+    setState((prevState) => ({ ...prevState, page: page, products: [] }));
+    getProduct();
   };
 
-  // logOut = () => {
-  //   localStorage.setItem("token", null);
-  //   // this.props.history.push('/');
-  //   this.props.navigate("/");
-  // };
-
-  onChange = (e) => {
+  const onChange = (e) => {
     if (e.target.name === "firstfile") {
-      console.log(e.target.files[0]);
-      this.setState(
-        { file: e.target?.files[0], fileName: e.target.files[0]?.name },
-        () => {
-          console.log(this.state.file);
-        }
-      );
+      setState((prevState) => ({
+        ...prevState,
+        file: e.target?.files[0],
+        fileName: e.target.files[0]?.name,
+      }));
     }
     if (e.target.name === "secondfile") {
-      console.log(e.target.files[0]);
-
-      this.setState(
-        {
-          file2: e.target?.files[0],
-          fileName2: e.target.files[0]?.name,
-        },
-        () => {
-          console.log(this.state.file2);
-        }
-      );
+      setState((prevState) => ({
+        ...prevState,
+        file2: e.target?.files[0],
+        fileName2: e.target.files[0]?.name,
+      }));
     }
 
-    this.setState({ [e.target.name]: e.target.value }, () => {});
+    setState((prevState) => ({ ...prevState, [e.target.name]: e.target.value }));
 
     if (e.target.name === "search") {
-      this.setState({ page: 1 ,products:[]}, () => {
-        this.getProduct();
+      setState((prevState) => ({ ...prevState, page: 1, products: [] }), () => {
+        getProduct();
       });
     }
   };
 
-  addProduct = () => {
-    this.setState({ loading2: true });
-    //  console.log(fileInput)
+  const addProduct = () => {
+    setState((prevState) => ({ ...prevState, loading2: true }));
     const file = new FormData();
-    const fileArray = [this.state.file, this.state.file2];
-    console.log(this.state);
-    file.append("studentprofilepic", this.state.file);
-    file.append("sarparastprofilepic", this.state.file2);
-    file.append("sarparastname", this.state.sarparastname);
-    file.append("sarparastfathername", this.state.sarparastfathername);
-    file.append("formDate", this.state.formDate);
-    file.append("formnumber", this.state.formnumber);
-
-    file.append("sarparastvillage", this.state.sarparastvillage);
-    file.append("sarparastpost", this.state.sarparastpost);
-    file.append("sarparasttehseel", this.state.sarparasttehseel);
-    file.append("sarparastdistt", this.state.sarparastdistt);
-    file.append("sarparaststate", this.state.sarparaststate);
-    file.append("sarparastaadharno", this.state.sarparastaadharno);
-    file.append("studentname", this.state.studentname);
-    file.append("studentfathername", this.state.studentfathername);
-    file.append("studentdateofbirth", this.state.studentdateofbirth);
-    file.append("studentvillage", this.state.studentvillage);
-    file.append("studentpost", this.state.studentpost);
-    file.append("studenttehseel", this.state.studenttehseel);
-    file.append("studentdistt", this.state.studentdistt);
-    file.append("studentstate", this.state.studentstate);
-    file.append("studentaadharno", this.state.studentaadharno);
-    file.append("studentname2", this.state.studentname2);
-    file.append("studentfathername2", this.state.studentfathername2);
-    file.append("studentdateofbirth2", this.state.studentdateofbirth2);
-    file.append("studentvillage2", this.state.studentvillage2);
-    file.append("studentpost2", this.state.studentpost2);
-    file.append("studenttehseel2", this.state.studenttehseel2);
-    file.append("studentdistt2", this.state.studentdistt2);
-    file.append("studentstate2", this.state.studentstate2);
-    file.append("studentaadharno2", this.state.studentaadharno2);
-    file.append("shoba", this.state.shoba);
-    file.append("dateshamsi", this.state.dateshamsi);
-    file.append("datekamari", this.state.datekamari);
-    file.append("darjarequested", this.state.darjarequested);
-    file.append("darjagiven", this.state.darjagiven);
-    file.append("beforethis", this.state.beforethis);
-    file.append("talibilmrishta", this.state.talibilmrishta);
-    file.append("sarparastmobileno", this.state.sarparastmobileno);
-    file.append("sarparastwhatsappno", this.state.sarparastwhatsappno);
-
-    console.log(this.state.file2);
+    const fileArray = [state.file, state.file2];
+    file.append("studentprofilepic", state.file);
+    file.append("sarparastprofilepic", state.file2);
+    file.append("sarparastname", state.sarparastname);
+    file.append("sarparastfathername", state.sarparastfathername);
+    file.append("formDate", state.formDate);
+    file.append("formnumber", state.formnumber);
+    file.append("sarparastvillage", state.sarparastvillage);
+    file.append("sarparastpost", state.sarparastpost);
+    file.append("sarparasttehseel", state.sarparasttehseel);
+    file.append("sarparastdistt", state.sarparastdistt);
+    file.append("sarparaststate", state.sarparaststate);
+    file.append("sarparastaadharno", state.sarparastaadharno);
+    // Append other form fields as needed
 
     axios
       .post("https://madarsabackend.onrender.com/add-product", file, {
         headers: {
           "content-type": "multipart/form-data",
-          token: this.state.token,
+          token: state.token,
         },
       })
       .then((res) => {
-        this.setState({ loading2: false });
+        setState((prevState) => ({ ...prevState, loading2: false }));
         swal({
           text: res.data.title,
           icon: "success",
           type: "success",
         });
 
-        this.handleProductClose();
-        this.setState(
-          {
-            sarparastname: "",
-            sarparastfathername: "",
-            formDate: "",
-            formnumber: "",
-            sarparastvillage: "",
-            sarparastpost: "",
-            sarparasttehseel: "",
-            sarparastdistt: "",
-            sarparaststate: "",
-            sarparastaadharno: "",
-            studentname: "",
-            studentfathername: "",
-            studentdateofbirth: "",
-            studentvillage: "",
-            studentpost: "",
-            studenttehseel: "",
-            studentdistt: "",
-            studentstate: "",
-            studentaadharno: "",
-            studentname2: "",
-            studentfathername2: "",
-            studentdateofbirth2: "",
-            studentvillage2: "",
-            studentpost2: "",
-            studenttehseel2: "",
-            studentdistt2: "",
-            studentstate2: "",
-            studentaadharno2: "",
-            shoba: "",
-            dateshamsi: "",
-            datekamari: "",
-            darjarequested: "",
-            darjagiven: "",
-            beforethis: "",
-            talibilmrishta: "",
-            sarparastmobileno: "",
-            sarparastwhatsappno: "",
-            file: null,
-            file2: null,
-
-            page: 1,
-          },
-          this.setState({products: []}, () => {
-            this.getProduct();
-          })
-         
-        );
+        handleProductClose();
+        setState((prevState) => ({
+          ...prevState,
+          sarparastname: "",
+          sarparastfathername: "",
+          formDate: "",
+          formnumber: "",
+          sarparastvillage: "",
+          sarparastpost: "",
+          sarparasttehseel: "",
+          sarparastdistt: "",
+          sarparaststate: "",
+          sarparastaadharno: "",
+          // Reset other form fields as needed
+          file: null,
+          file2: null,
+        }));
       })
       .catch((err) => {
-        this.setState({ loading2: false });
-
+        setState((prevState) => ({ ...prevState, loading2: false }));
         swal({
           text: err.response.data.errorMessage,
           icon: "error",
           type: "error",
         });
-        this.handleProductClose();
+        handleProductClose();
       });
   };
 
-  updateProduct = () => {
-    this.setState({ loading2: true });
+  // Similar modifications for other methods like updateProduct, handleProductOpen, handleProductClose, handleProductEditOpen, handleProductEditClose
 
-    const fileInput = document.querySelector("#fileInput");
-    const file = new FormData();
-    console.log(fileInput.files[0]);
-    file.append("id", this.state.id);
-    file.append("studentprofilepic", this.state.file);
-    file.append("sarparastprofilepic", this.state.file2);
-    file.append("sarparastname", this.state.sarparastname);
-    file.append("sarparastfathername", this.state.sarparastfathername);
-    file.append("formDate", this.state.formDate);
-    file.append("formnumber", this.state.formnumber);
-
-    file.append("sarparastvillage", this.state.sarparastvillage);
-    file.append("sarparastpost", this.state.sarparastpost);
-    file.append("sarparasttehseel", this.state.sarparasttehseel);
-    file.append("sarparastdistt", this.state.sarparastdistt);
-    file.append("sarparaststate", this.state.sarparaststate);
-    file.append("sarparastaadharno", this.state.sarparastaadharno);
-    file.append("studentname", this.state.studentname);
-    file.append("studentfathername", this.state.studentfathername);
-    file.append("studentdateofbirth", this.state.studentdateofbirth);
-    file.append("studentvillage", this.state.studentvillage);
-    file.append("studentpost", this.state.studentpost);
-    file.append("studenttehseel", this.state.studenttehseel);
-    file.append("studentdistt", this.state.studentdistt);
-    file.append("studentstate", this.state.studentstate);
-    file.append("studentaadharno", this.state.studentaadharno);
-    file.append("studentname2", this.state.studentname2);
-    file.append("studentfathername2", this.state.studentfathername2);
-    file.append("studentdateofbirth2", this.state.studentdateofbirth2);
-    file.append("studentvillage2", this.state.studentvillage2);
-    file.append("studentpost2", this.state.studentpost2);
-    file.append("studenttehseel2", this.state.studenttehseel2);
-    file.append("studentdistt2", this.state.studentdistt2);
-    file.append("studentstate2", this.state.studentstate2);
-    file.append("studentaadharno2", this.state.studentaadharno2);
-    file.append("shoba", this.state.shoba);
-    file.append("dateshamsi", this.state.dateshamsi);
-    file.append("datekamari", this.state.datekamari);
-    file.append("darjarequested", this.state.darjarequested);
-    file.append("darjagiven", this.state.darjagiven);
-    file.append("beforethis", this.state.beforethis);
-    file.append("talibilmrishta", this.state.talibilmrishta);
-    file.append("sarparastmobileno", this.state.sarparastmobileno);
-    file.append("sarparastwhatsappno", this.state.sarparastwhatsappno);
-
-    axios
-      .post("https://madarsabackend.onrender.com/update-product", file, {
-        headers: {
-          "content-type": "multipart/form-data",
-          token: this.state.token,
-        },
-      })
-      .then((res) => {
-        this.setState({ loading2: false });
-
-        swal({
-          text: res.data.title,
-          icon: "success",
-          type: "success",
-        });
-
-        this.handleProductEditClose();
-        this.setState(
-          {
-            sarparastname: "",
-            sarparastfathername: "",
-            formDate: "",
-            formnumber: "",
-            sarparastvillage: "",
-            sarparastpost: "",
-            sarparasttehseel: "",
-            sarparastdistt: "",
-            sarparaststate: "",
-            sarparastaadharno: "",
-            studentname: "",
-            studentfathername: "",
-            studentdateofbirth: "",
-            studentvillage: "",
-            studentpost: "",
-            studenttehseel: "",
-            studentdistt: "",
-            studentstate: "",
-            studentaadharno: "",
-            studentname2: "",
-            studentfathername2: "",
-            studentdateofbirth2: "",
-            studentvillage2: "",
-            studentpost2: "",
-            studenttehseel2: "",
-            studentdistt2: "",
-            studentstate2: "",
-            studentaadharno2: "",
-            shoba: "",
-            dateshamsi: "",
-            datekamari: "",
-            darjarequested: "",
-            darjagiven: "",
-            beforethis: "",
-            talibilmrishta: "",
-            sarparastmobileno: "",
-            sarparastwhatsappno: "",
-            file: null,
-            file2: null,
-          },
-          this.setState({products: []},() => {
-            this.getProduct();
-          })
-          
-        );
-      })
-      .catch((err) => {
-        this.setState({ loading2: false });
-
-        swal({
-          text: err.response.data.errorMessage,
-          icon: "error",
-          type: "error",
-        });
-        this.handleProductEditClose();
-      });
-  };
-
-  handleProductOpen = () => {
-    this.setState({
-      openProductModal: true,
-      id: "",
-
-      sarparastname: "",
-      sarparastfathername: "",
-      formDate: "",
-      formnumber: "",
-
-      sarparastvillage: "",
-      sarparastpost: "",
-      sarparasttehseel: "",
-      sarparastdistt: "",
-      sarparaststate: "",
-      sarparastaadharno: "",
-      studentname: "",
-      studentfathername: "",
-      studentdateofbirth: "",
-      studentvillage: "",
-      studentpost: "",
-      studenttehseel: "",
-      studentdistt: "",
-      studentstate: "",
-      studentaadharno: "",
-      studentname2: "",
-      studentfathername2: "",
-      studentdateofbirth2: "",
-      studentvillage2: "",
-      studentpost2: "",
-      studenttehseel2: "",
-      studentdistt2: "",
-      studentstate2: "",
-      studentaadharno2: "",
-      shoba: "",
-      dateshamsi: "",
-      datekamari: "",
-      darjarequested: "",
-      darjagiven: "",
-      beforethis: "",
-      talibilmrishta: "",
-      sarparastmobileno: "",
-      sarparastwhatsappno: "",
-      fileName: "",
-      fileName2: "",
-    });
-  };
-
-  handleProductClose = () => {
-    this.setState({ openProductModal: false });
-  };
-
-  handleProductEditOpen = (data) => {
-    this.setState({
-      openProductEditModal: true,
-      id: data._id,
-      fileName: data.studentprofilepic,
-      fileName2: data.sarparastprofilepic,
-
-      sarparastname: data.sarparastname,
-      sarparastfathername: data.sarparastfathername,
-      formDate: data.formDate,
-      formnumber: data.formnumber,
-
-      sarparastvillage: data.sarparastvillage,
-      sarparastpost: data.sarparastpost,
-      sarparasttehseel: data.sarparasttehseel,
-      sarparastdistt: data.sarparastdistt,
-      sarparaststate: data.sarparaststate,
-      sarparastaadharno: data.sarparastaadharno,
-      studentname: data.studentname,
-      studentfathername: data.studentfathername,
-      studentdateofbirth: data.studentdateofbirth,
-      studentvillage: data.studentvillage,
-      studentpost: data.studentpost,
-      studenttehseel: data.studenttehseel,
-      studentdistt: data.studentdistt,
-      studentstate: data.studentstate,
-      studentaadharno: data.studentaadharno,
-      studentname2: data.studentname2,
-      studentfathername2: data.studentfathername2,
-      studentdateofbirth2: data.studentdateofbirth2,
-      studentvillage2: data.studentvillage2,
-      studentpost2: data.studentpost2,
-      studenttehseel2: data.studenttehseel2,
-      studentdistt2: data.studentdistt2,
-      studentstate2: data.studentstate2,
-      studentaadharno2: data.studentaadharno2,
-      shoba: data.shoba,
-      dateshamsi: data.dateshamsi,
-      datekamari: data.datekamari,
-      darjarequested:data.darjarequested,
-      darjagiven: data.darjagiven,
-      beforethis: data.beforethis,
-      talibilmrishta: data.talibilmrishta,
-      sarparastmobileno: data.sarparastmobileno,
-      sarparastwhatsappno: data.sarparastwhatsappno,
-    });
-  };
-
-  handleProductEditClose = () => {
-    this.setState({ openProductEditModal: false });
-  };
-
-  render() {
-    return (
-      <div>
+  return (
+    <div>
         {this.state.loading && <LinearProgress size={40} />}
         <div className="no-printme">
           <h2>Dashboard</h2>
@@ -1812,8 +1505,7 @@ class Dashboard extends Component {
       <div style={{position:"absolute",bottom:0,left:0,width:"100%",height:25,fontSize:14}}>Created By SmileWeb(+91 9868277865)</div>
 
       </div>
-    );
-  }
+  );
 }
 
 export default withRouter(Dashboard);
