@@ -214,18 +214,29 @@ function Dashboard(props) {
     setState((prevState) => ({ ...prevState, loading2: true }));
     const file = new FormData();
     const fileArray = [state.file, state.file2];
-    file.append("studentprofilepic", state.file);
-    file.append("sarparastprofilepic", state.file2);
-    file.append("sarparastname", state.sarparastname);
-    file.append("sarparastfathername", state.sarparastfathername);
-    file.append("formDate", state.formDate);
-    file.append("formnumber", state.formnumber);
-    file.append("sarparastvillage", state.sarparastvillage);
-    file.append("sarparastpost", state.sarparastpost);
-    file.append("sarparasttehseel", state.sarparasttehseel);
-    file.append("sarparastdistt", state.sarparastdistt);
-    file.append("sarparaststate", state.sarparaststate);
-    file.append("sarparastaadharno", state.sarparastaadharno);
+    file.append("studentprofilepic", this.state.file);
+    file.append("sarparastprofilepic", this.state.file2);
+    file.append("sarparastname", this.state.sarparastname);
+    file.append("sarparastfathername", this.state.sarparastfathername);
+    file.append("formDate", this.state.formDate);
+    file.append("formnumber", this.state.formnumber);
+
+
+    file.append("sarparastvillage", this.state.sarparastvillage);
+    file.append("sarparastpost", this.state.sarparastpost);
+    file.append("sarparasttehseel", this.state.sarparasttehseel);
+    file.append("sarparastdistt", this.state.sarparastdistt);
+    file.append("sarparaststate", this.state.sarparaststate);
+    file.append("sarparastaadharno", this.state.sarparastaadharno);
+    file.append("studentname", this.state.studentname);
+    file.append("studentfathername", this.state.studentfathername);
+    file.append("studentdateofbirth", this.state.studentdateofbirth);
+    file.append("studentvillage", this.state.studentvillage);
+    file.append("studentpost", this.state.studentpost);
+    file.append("studenttehseel", this.state.studenttehseel);
+    file.append("studentdistt", this.state.studentdistt);
+    file.append("studentstate", this.state.studentstate);
+    file.append("studentaadharno", this.state.studentaadharno);
     // Append other form fields as needed
 
     axios
@@ -250,15 +261,27 @@ function Dashboard(props) {
           sarparastfathername: "",
           formDate: "",
           formnumber: "",
+
+
           sarparastvillage: "",
           sarparastpost: "",
           sarparasttehseel: "",
           sarparastdistt: "",
           sarparaststate: "",
           sarparastaadharno: "",
-          // Reset other form fields as needed
+          studentname: "",
+          studentfathername: "",
+          studentdateofbirth: "",
+          studentvillage: "",
+          studentpost: "",
+          studenttehseel: "",
+          studentdistt: "",
+          studentstate: "",
+          studentaadharno: "",
           file: null,
           file2: null,
+
+          page: 1,
         }));
       })
       .catch((err) => {
@@ -276,13 +299,30 @@ function Dashboard(props) {
 
     const file = new FormData();
     console.log(state.file);
-    file.append("id", state.id);
-    file.append("studentprofilepic", state.file);
-    file.append("sarparastprofilepic", state.file2);
-    file.append("sarparastname", state.sarparastname);
-    file.append("sarparastfathername", state.sarparastfathername);
-    file.append("formDate", state.formDate);
-    file.append("formnumber", state.formnumber);
+    file.append("id", this.state.id);
+    file.append("studentprofilepic", this.state.file);
+    file.append("sarparastprofilepic", this.state.file2);
+    file.append("sarparastname", this.state.sarparastname);
+    file.append("sarparastfathername", this.state.sarparastfathername);
+    file.append("formDate", this.state.formDate);
+    file.append("formnumber", this.state.formnumber);
+
+
+    file.append("sarparastvillage", this.state.sarparastvillage);
+    file.append("sarparastpost", this.state.sarparastpost);
+    file.append("sarparasttehseel", this.state.sarparasttehseel);
+    file.append("sarparastdistt", this.state.sarparastdistt);
+    file.append("sarparaststate", this.state.sarparaststate);
+    file.append("sarparastaadharno", this.state.sarparastaadharno);
+    file.append("studentname", this.state.studentname);
+    file.append("studentfathername", this.state.studentfathername);
+    file.append("studentdateofbirth", this.state.studentdateofbirth);
+    file.append("studentvillage", this.state.studentvillage);
+    file.append("studentpost", this.state.studentpost);
+    file.append("studenttehseel", this.state.studenttehseel);
+    file.append("studentdistt", this.state.studentdistt);
+    file.append("studentstate", this.state.studentstate);
+    file.append("studentaadharno", this.state.studentaadharno);
     // Append other form fields as needed
 
     axios
@@ -304,17 +344,44 @@ function Dashboard(props) {
         handleProductEditClose();
         setState((prevState) => ({
           ...prevState,
-          sarparastname: "",
-          sarparastfathername: "",
-          formDate: "",
-          formnumber: "",
-          sarparastvillage: "",
-          sarparastpost: "",
-          sarparasttehseel: "",
-          sarparastdistt: "",
-          sarparaststate: "",
-          sarparastaadharno: "",
-          // Reset other form fields as needed
+          id:"",
+          sarparastname:"",
+      sarparastfathername:"",
+      formDate:"",
+      formnumber:"",
+      sarparastvillage:"",
+      sarparastpost:"",
+      sarparasttehseel:"",
+      sarparastdistt:"",
+      sarparaststate:"",
+      sarparastaadharno:"",
+      studentname:"",
+      studentfathername:"",
+      studentdateofbirth:"",
+      studentvillage:"",
+      studentpost:"",
+      studenttehseel:"",
+      studentdistt:"",
+      studentstate:"",
+      studentaadharno:"",
+      studentname2:"",
+      studentfathername2:"",
+      studentdateofbirth2:"",
+      studentvillage2:"",
+      studentpost2:"",
+      studenttehseel2:"",
+      studentdistt2:"",
+      studentstate2:"",
+      studentaadharno2:"",
+      shoba:"",
+      dateshamsi:"",
+      datekamari:"",
+      darjarequested:"",
+      darjagiven:"",
+      beforethis:"",
+      talibilmrishta:"",
+      sarparastmobileno:"",
+      sarparastwhatsappno:"",
           file: null,
           file2: null,
         }));
@@ -337,7 +404,43 @@ function Dashboard(props) {
       ...prevState,
       openProductModal: true,
       id: "",
-      // Reset other form fields as needed
+      sarparastname:"",
+      sarparastfathername:"",
+      formDate:"",
+      formnumber:"",
+      sarparastvillage:"",
+      sarparastpost:"",
+      sarparasttehseel:"",
+      sarparastdistt:"",
+      sarparaststate:"",
+      sarparastaadharno:"",
+      studentname:"",
+      studentfathername:"",
+      studentdateofbirth:"",
+      studentvillage:"",
+      studentpost:"",
+      studenttehseel:"",
+      studentdistt:"",
+      studentstate:"",
+      studentaadharno:"",
+      studentname2:"",
+      studentfathername2:"",
+      studentdateofbirth2:"",
+      studentvillage2:"",
+      studentpost2:"",
+      studenttehseel2:"",
+      studentdistt2:"",
+      studentstate2:"",
+      studentaadharno2:"",
+      shoba:"",
+      dateshamsi:"",
+      datekamari:"",
+      darjarequested:"",
+      darjagiven:"",
+      beforethis:"",
+      talibilmrishta:"",
+      sarparastmobileno:"",
+      sarparastwhatsappno:"",
       file: null,
       file2: null,
     }));
@@ -355,6 +458,43 @@ function Dashboard(props) {
       fileName: data.studentprofilepic,
       fileName2: data.sarparastprofilepic,
       sarparastname: data.sarparastname,
+      sarparastfathername: data.sarparastfathername,
+      formDate:data.formDate,
+      formnumber:data.formnumber,
+      sarparastvillage:data.sarparastvillage,
+      sarparastpost:data.sarparastpost,
+      sarparasttehseel:data.sarparasttehseel,
+      sarparastdistt:data.sarparastdistt,
+      sarparaststate:data.sarparaststate,
+      sarparastaadharno:data.sarparastaadharno,
+      studentname:data.studentname,
+      studentfathername:data.studentfathername,
+      studentdateofbirth:data.studentdateofbirth,
+      studentvillage:data.studentvillage,
+      studentpost:data.studentpost,
+      studenttehseel:data.studenttehseel,
+      studentdistt:data.studentdistt,
+      studentstate:data.studentstate,
+      studentaadharno:data.studentaadharno,
+      studentname2:data.studentname2,
+      studentfathername2:data.studentfathername2,
+      studentdateofbirth2:data.studentdateofbirth2,
+      studentvillage2:data.studentvillage2,
+      studentpost2:data.studentpost2,
+      studenttehseel2:data.studenttehseel2,
+      studentdistt2:data.studentdistt2,
+      studentstate2:data.studentstate2,
+      studentaadharno2:data.studentaadharno2,
+      shoba:data.shoba,
+      dateshamsi:data.dateshamsi,
+      datekamari:data.datekamari,
+      darjarequested:data.darjarequested,
+      darjagiven:data.darjagiven,
+      beforethis:data.beforethis,
+      talibilmrishta:data.talibilmrishta,
+      sarparastmobileno:data.sarparastmobileno,
+      sarparastwhatsappno:data.sarparastwhatsappno,
+
       // Set other form fields based on data
     }));
   };
