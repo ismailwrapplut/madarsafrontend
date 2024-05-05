@@ -97,7 +97,7 @@ function Dashboard(props) {
       console.log("Token not found, redirecting...");
       navigate("/");
     }
-  }, [state.token]);
+  }, [state]);
   
 
   const getProduct = () => {
