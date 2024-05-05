@@ -84,18 +84,17 @@ function Dashboard(props) {
   });
 
   useEffect(() => {
-    console.log("exectued")
     let token = localStorage.getItem("token") ===!null;
-    if (!token) {
+    if (token) {
+      navigate("/");
     } else {
       setState((prevState) => ({ ...prevState, token: token, products: [] }));
       console.log(state)
       getProduct();
     }
   }, []);
-console.log(state)
+
   const getProduct = () => {
-    console.log(state)
     setState((prevState) => ({ ...prevState, loading: true }));
 
     let data = "?";
@@ -130,7 +129,14 @@ console.log(state)
           localStorage.removeItem("token");
           localStorage.removeItem("user_id");
           navigate("/");
-        } 
+        } else  if (
+          err.response.data.errorMessage ===
+          "User unauthorized!"
+        ) {
+          localStorage.removeItem("token");
+          localStorage.removeItem("user_id");
+          navigate("/");
+        }
         setState((prevState) => ({
           ...prevState,
           loading: false,
