@@ -89,6 +89,7 @@ function Dashboard(props) {
       navigate("/");
     } else {
       setState((prevState) => ({ ...prevState, token: token, products: [] }));
+      console.log(state)
       getProduct();
     }
   }, []);
