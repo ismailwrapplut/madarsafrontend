@@ -85,7 +85,9 @@ function Dashboard(props) {
 
   useEffect(() => {
     const token =  window.localStorage.getItem("token");
-    
+    if (!token){
+      navigate("/")
+    }
     setState((prevState) => ({ ...prevState, token:localStorage.getItem("token"), products: [] }));
     console.log(state)
     getProduct();
@@ -127,7 +129,14 @@ function Dashboard(props) {
           localStorage.removeItem("token");
           localStorage.removeItem("user_id");
           navigate("/");
-        } 
+        } else  if (
+          err.response.data.errorMessage ===
+          "User unauthorized!"
+        ) {
+          localStorage.removeItem("token");
+          localStorage.removeItem("user_id");
+          navigate("/");
+        }
         setState((prevState) => ({
           ...prevState,
           loading: false,
