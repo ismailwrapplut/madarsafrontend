@@ -85,12 +85,17 @@ function Dashboard(props) {
 
   useEffect(() => {
     let token = localStorage.getItem("token");
-    console.log(token)
+    console.log("Retrieved token from local storage:", token);
+    
     if (!token) {
+      console.log("Token not found in local storage, redirecting...");
       navigate("/");
     } else {
-      setState((prevState) => ({ ...prevState, token: token.toString(), products: [] }));
-      console.log(state)
+      console.log("Setting token in state:", token);
+      setState((prevState) => ({ ...prevState, token: token, products: [] }));
+      console.log("Updated state:", state);
+      
+      console.log("Fetching products...");
       getProduct();
     }
   }, []);
