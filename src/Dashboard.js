@@ -103,7 +103,7 @@ function Dashboard(props) {
     axios
       .get(`https://madarsabackend.onrender.com/get-product${data}`, {
         headers: {
-          token: state.token,
+          token: localStorage.getItem("token"),
         },
       })
       .then((res) => {
@@ -147,7 +147,7 @@ function Dashboard(props) {
         {
           headers: {
             "Content-Type": "application/json",
-            token: state.token,
+            token: localStorage.getItem("token"),
           },
         }
       )
@@ -223,7 +223,7 @@ function Dashboard(props) {
       .post("https://madarsabackend.onrender.com/add-product", file, {
         headers: {
           "content-type": "multipart/form-data",
-          token: state.token,
+          token: localStorage.getItem("token"),
         },
       })
       .then((res) => {
@@ -280,7 +280,7 @@ function Dashboard(props) {
       .post("https://madarsabackend.onrender.com/update-product", file, {
         headers: {
           "content-type": "multipart/form-data",
-          token: state.token,
+          token: localStorage.getItem("token"),
         },
       })
       .then((res) => {
