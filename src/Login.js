@@ -47,8 +47,9 @@ const navigate=useNavigate()
         setState({
           loading:false
         })
+
         localStorage.setItem("token", res.data.token);
-        localStorage.setItem("user_id", res.data.id);
+        localStorage.setItem("user_id", res.data._id);
         navigate("/dashboard");
       })
       .catch((err) => {
