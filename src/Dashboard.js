@@ -84,7 +84,7 @@ function Dashboard(props) {
   });
 
   useEffect(() => {
-    let token = localStorage.getItem("token");
+    let token = localStorage.getItem("token");  
     if (!token) {
       navigate("/");
     } else {
@@ -262,6 +262,97 @@ function Dashboard(props) {
         });
         handleProductClose();
       });
+  };
+  const updateProduct = () => {
+    setState((prevState) => ({ ...prevState, loading2: true }));
+
+    const file = new FormData();
+    console.log(state.file);
+    file.append("id", state.id);
+    file.append("studentprofilepic", state.file);
+    file.append("sarparastprofilepic", state.file2);
+    file.append("sarparastname", state.sarparastname);
+    file.append("sarparastfathername", state.sarparastfathername);
+    file.append("formDate", state.formDate);
+    file.append("formnumber", state.formnumber);
+    // Append other form fields as needed
+
+    axios
+      .post("https://madarsabackend.onrender.com/update-product", file, {
+        headers: {
+          "content-type": "multipart/form-data",
+          token: state.token,
+        },
+      })
+      .then((res) => {
+        setState((prevState) => ({ ...prevState, loading2: false }));
+
+        swal({
+          text: res.data.title,
+          icon: "success",
+          type: "success",
+        });
+
+        handleProductEditClose();
+        setState((prevState) => ({
+          ...prevState,
+          sarparastname: "",
+          sarparastfathername: "",
+          formDate: "",
+          formnumber: "",
+          sarparastvillage: "",
+          sarparastpost: "",
+          sarparasttehseel: "",
+          sarparastdistt: "",
+          sarparaststate: "",
+          sarparastaadharno: "",
+          // Reset other form fields as needed
+          file: null,
+          file2: null,
+        }));
+        getProduct();
+      })
+      .catch((err) => {
+        setState((prevState) => ({ ...prevState, loading2: false }));
+
+        swal({
+          text: err.response.data.errorMessage,
+          icon: "error",
+          type: "error",
+        });
+        handleProductEditClose();
+      });
+  };
+
+  const handleProductOpen = () => {
+    setState((prevState) => ({
+      ...prevState,
+      openProductModal: true,
+      id: "",
+      // Reset other form fields as needed
+      file: null,
+      file2: null,
+    }));
+  };
+
+  const handleProductClose = () => {
+    setState((prevState) => ({ ...prevState, openProductModal: false }));
+  };
+
+  const handleProductEditOpen = (data) => {
+    setState((prevState) => ({
+      ...prevState,
+      openProductEditModal: true,
+      id: data._id,
+      fileName: data.studentprofilepic,
+      fileName2: data.sarparastprofilepic,
+      sarparastname: data.sarparastname,
+      // Set other form fields based on data
+    }));
+  };
+
+  const handleProductEditClose = () => {
+    setState((prevState) => ({ ...prevState, openProductEditModal: false }));
   };
 
   // Similar modifications for other methods like updateProduct, handleProductOpen, handleProductClose, handleProductEditOpen, handleProductEditClose
