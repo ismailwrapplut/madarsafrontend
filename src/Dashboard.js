@@ -88,7 +88,7 @@ function Dashboard(props) {
     console.log("Retrieved token from local storage:", token);
     
     if (token) {
-      setState((prevState) => ({ ...prevState, token: token, products: [] }));
+      setState((prevState) => ({ ...prevState, token: JSON.parse(token), products: [] }));
       console.log("Updated state with token:", token);
       console.log(state)
       console.log("Fetching products...");
