@@ -48,8 +48,8 @@ const navigate=useNavigate()
           loading:false
         })
         console.log(res.data)
-        localStorage.setItem("token", JSON.stringify(res.data.token));
-        localStorage.setItem("user_id", JSON.stringify(res.data._id));
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("user_id", res.data._id);
         navigate("/dashboard");
       })
       .catch((err) => {
