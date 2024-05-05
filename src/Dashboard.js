@@ -86,7 +86,6 @@ function Dashboard(props) {
   useEffect(() => {
     let token = localStorage.getItem("token") ===!null;
     if (!token) {
-      navigate("/");
     } else {
       setState((prevState) => ({ ...prevState, token: token, products: [] }));
       console.log(state)
