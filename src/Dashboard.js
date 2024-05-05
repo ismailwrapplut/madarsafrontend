@@ -84,6 +84,7 @@ function Dashboard(props) {
   });
 
   useEffect(() => {
+    console.log("exectued")
     let token = localStorage.getItem("token") ===!null;
     if (!token) {
     } else {
@@ -92,8 +93,9 @@ function Dashboard(props) {
       getProduct();
     }
   }, []);
-
+console.log(state)
   const getProduct = () => {
+    console.log(state)
     setState((prevState) => ({ ...prevState, loading: true }));
 
     let data = "?";
