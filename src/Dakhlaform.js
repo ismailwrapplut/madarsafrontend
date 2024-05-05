@@ -303,7 +303,7 @@ const Dakhlaform = () => {
                 fontSize: "18px",
               }}
             >
-            حلف نامہ سرپرست
+             हलफ नामा सरपरस्त
                 </h2>
           </div>
           <div style={{display:"inline-block" ,width:"15%"}}>
