@@ -267,7 +267,7 @@ function Dashboard(props) {
         },
       }).then((res) => {
         setState((prevState)=>{setState({...prevState,loading2:false},()=>{
-          console.log("the state is updated successfully"+state.loading2)
+          console.log("the state is updated successfully"+state?.loading2)
         })})
         console.log(state?.loading2)
         swal({
@@ -449,7 +449,7 @@ function Dashboard(props) {
           file2: null,
         },()=>{
           setState((prevState)=>{setState({...prevState,loading2:false},()=>{
-            console.log("the state is updated successfully"+state.loading2)
+            console.log("the state is updated successfully"+state?.loading2)
           })})
           getProduct()
         }));
@@ -679,7 +679,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparasttehseel"
-            value={state.sarparasttehseel}
+            value={state?.sarparasttehseel}
             onChange={onChange}
             placeholder="Sarparast Tehseel"
             required
@@ -691,7 +691,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastdistt"
-            value={state.sarparastdistt}
+            value={state?.sarparastdistt}
             onChange={onChange}
             placeholder="Sarparast Distt"
             required
@@ -703,7 +703,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparaststate"
-            value={state.sarparaststate}
+            value={state?.sarparaststate}
             onChange={onChange}
             placeholder="Sarparast State"
             required
@@ -715,7 +715,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastaadharno"
-            value={state.sarparastaadharno}
+            value={state?.sarparastaadharno}
             onChange={onChange}
             placeholder="Sarparast Aadhar No"
             required
@@ -727,7 +727,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentname"
-            value={state.studentname}
+            value={state?.studentname}
             onChange={onChange}
             placeholder="Student Name"
             required
@@ -739,7 +739,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentfathername"
-            value={state.studentfathername}
+            value={state?.studentfathername}
             onChange={onChange}
             placeholder="Student's Father Name"
             required
@@ -753,7 +753,7 @@ function Dashboard(props) {
             type="date"
             autoComplete="off"
             name="studentdateofbirth"
-            value={state.studentdateofbirth}
+            value={state?.studentdateofbirth}
             label="Student Date of Birth"
             onChange={onChange}
             placeholder="Student's Date of Birth"
@@ -766,7 +766,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentvillage"
-            value={state.studentvillage}
+            value={state?.studentvillage}
             onChange={onChange}
             placeholder="Student's Village"
             required
@@ -778,7 +778,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentpost"
-            value={state.studentpost}
+            value={state?.studentpost}
             onChange={onChange}
             placeholder="Student's Post"
             required
@@ -790,7 +790,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studenttehseel"
-            value={state.studenttehseel}
+            value={state?.studenttehseel}
             onChange={onChange}
             placeholder="Student Tehseel"
             required
@@ -802,7 +802,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentdistt"
-            value={state.studentdistt}
+            value={state?.studentdistt}
             onChange={onChange}
             placeholder="Student Distt"
             required
@@ -814,7 +814,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentstate"
-            value={state.studentstate}
+            value={state?.studentstate}
             onChange={onChange}
             placeholder="Student State"
             required
@@ -826,7 +826,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentaadharno"
-            value={state.studentaadharno}
+            value={state?.studentaadharno}
             onChange={onChange}
             placeholder="Student Aadhar No"
             required
@@ -838,7 +838,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentname2"
-            value={state.studentname2}
+            value={state?.studentname2}
             onChange={onChange}
             placeholder="نام طلب علم "
             required
@@ -850,7 +850,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentfathername2"
-            value={state.studentfathername2}
+            value={state?.studentfathername2}
             onChange={onChange}
             placeholder="والد کا نام "
             required
@@ -862,7 +862,7 @@ function Dashboard(props) {
             type="date"
             autoComplete="off"
             name="studentdateofbirth2"
-            value={state.studentdateofbirth2}
+            value={state?.studentdateofbirth2}
             label="Student Date of Birth"
             onChange={onChange}
             placeholder=" تاریخ   پیدایش"
@@ -875,7 +875,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentvillage2"
-            value={state.studentvillage2}
+            value={state?.studentvillage2}
             onChange={onChange}
             placeholder="سکونت"
             required
@@ -887,7 +887,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentpost2"
-            value={state.studentpost2}
+            value={state?.studentpost2}
             onChange={onChange}
             placeholder="پوسٹ"
             required
@@ -899,7 +899,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studenttehseel2"
-            value={state.studenttehseel2}
+            value={state?.studenttehseel2}
             onChange={onChange}
             placeholder="تحصیل"
             required
@@ -911,7 +911,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentdistt2"
-            value={state.studentdistt2}
+            value={state?.studentdistt2}
             onChange={onChange}
             placeholder="ضلع"
             required
@@ -923,7 +923,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentstate2"
-            value={state.studentstate2}
+            value={state?.studentstate2}
             onChange={onChange}
             placeholder="صوب"
             required
@@ -935,7 +935,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentaadharno2"
-            value={state.studentaadharno2}
+            value={state?.studentaadharno2}
             onChange={onChange}
             placeholder="آدھار  کارڈ  نمبر"
             required
@@ -947,7 +947,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="shoba"
-            value={state.shoba}
+            value={state?.shoba}
             onChange={onChange}
             placeholder="جامعہ کے شعبہ "
             required
@@ -959,7 +959,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="dateshamsi"
-            value={state.dateshamsi}
+            value={state?.dateshamsi}
             onChange={onChange}
             placeholder="تاریخ شمسی "
             required
@@ -971,7 +971,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="datekamari"
-            value={state.datekamari}
+            value={state?.datekamari}
             onChange={onChange}
             placeholder="تا سرخ قمری"
             required
@@ -983,7 +983,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="darjarequested"
-            value={state.darjarequested}
+            value={state?.darjarequested}
             onChange={onChange}
             placeholder="کس درجہ میں داخلہ مطلوب ہے"
             required
@@ -995,7 +995,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="darjagiven"
-            value={state.darjagiven}
+            value={state?.darjagiven}
             onChange={onChange}
             placeholder="س طالب علم کو درجہ کس میں داخلہ دیا جائے۔"
             required
@@ -1007,7 +1007,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="beforethis"
-            value={state.beforethis}
+            value={state?.beforethis}
             onChange={onChange}
             placeholder="اس سے قبل کہاں تعلیم حاصل کی ہے"
             required
@@ -1019,7 +1019,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="talibilmrishta"
-            value={state.talibilmrishta}
+            value={state?.talibilmrishta}
             onChange={onChange}
             placeholder="طالب علم سے رشتہ "
             required
@@ -1031,7 +1031,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastmobileno"
-            value={state.sarparastmobileno}
+            value={state?.sarparastmobileno}
             onChange={onChange}
             placeholder="موبائل نمبر  سرپرست"
             required
@@ -1043,7 +1043,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastwhatsappno"
-            value={state.sarparastwhatsappno}
+            value={state?.sarparastwhatsappno}
             onChange={onChange}
             placeholder="واٹسپ نمبر سرپرست"
             required
@@ -1060,14 +1060,14 @@ function Dashboard(props) {
               accept="image/png,image/jpeg,image/jpg"
               name="firstfile"
               style={{ visibility: "hidden" }}
-              // value={state.fileName}
+              // value={state?.fileName}
               onChange={(e) => onChange(e)}
               // onChange={(e) => {
               //   setState({
               //     fileName: e.target.files[0].name,
               //     file: e.target.files[0],
               //   });
-              //   console.log(state.file);
+              //   console.log(state?.file);
               // }}
               id="fileInput"
             />
@@ -1081,7 +1081,7 @@ function Dashboard(props) {
               type="file"
               accept="image/png,image/jpeg,image/jpg"
               name="secondfile"
-              // value={state.fileName2}
+              // value={state?.fileName2}
               onChange={(e) => onChange(e)}
               style={{ visibility: "hidden" }}
               // onChange={(e) => {
@@ -1090,7 +1090,7 @@ function Dashboard(props) {
               //     fileName2: e.target.files[0].name,
               //     file2: e.target.files[0],
               //   });
-              //   console.log(state.file2);
+              //   console.log(state?.file2);
               // }}
               id="fileInput2"
             />
@@ -1101,48 +1101,48 @@ function Dashboard(props) {
           <Button onClick={handleProductEditClose} color="primary">
             Cancel
           </Button>
-          {state.loading2 === false ? (
+          {state?.loading2 === false ? (
             <Button
               disabled={
-                state.sarparastname === "" ||
-                state.sarparastfathername === "" ||
-                state.sarparastvillage === "" ||
-                state.sarparastpost === "" ||
-                state.sarparasttehseel === "" ||
-                state.sarparastdistt === "" ||
-                state.sarparaststate === "" ||
-                state.sarparastaadharno === "" ||
-                state.studentname === "" ||
-                state.studentfathername === "" ||
-                state.studentdateofbirth === "" ||
-                state.studentvillage === "" ||
-                state.studentpost === "" ||
-                state.studenttehseel === "" ||
-                state.studentdistt === "" ||
-                state.studentstate === "" ||
-                state.formDate === "" ||
-                state.formnumber === "" ||
-                state.studentname2 == "" ||
-                state.studentfathername2 == "" ||
-                state.studentdateofbirth2 == "" ||
-                state.studentvillage2 == "" ||
-                state.studentpost2 == "" ||
-                state.studenttehseel2 == "" ||
-                state.studentdistt2 == "" ||
-                state.studentstate2 == "" ||
-                state.studentaadharno2 == "" ||
-                state.studentaadharno === "" ||
-                state.shoba === "" ||
-                state.dateshamsi === "" ||
-                state.datekamari === "" ||
-                state.darjarequested === "" ||
-                state.darjagiven === "" ||
-                state.beforethis === "" ||
-                state.talibilmrishta === "" ||
-                state.sarparastmobileno === "" ||
-                state.sarparastwhatsappno === "" ||
-                state.fileName === "" ||
-                state.fileName2 === ""
+                state?.sarparastname === "" ||
+                state?.sarparastfathername === "" ||
+                state?.sarparastvillage === "" ||
+                state?.sarparastpost === "" ||
+                state?.sarparasttehseel === "" ||
+                state?.sarparastdistt === "" ||
+                state?.sarparaststate === "" ||
+                state?.sarparastaadharno === "" ||
+                state?.studentname === "" ||
+                state?.studentfathername === "" ||
+                state?.studentdateofbirth === "" ||
+                state?.studentvillage === "" ||
+                state?.studentpost === "" ||
+                state?.studenttehseel === "" ||
+                state?.studentdistt === "" ||
+                state?.studentstate === "" ||
+                state?.formDate === "" ||
+                state?.formnumber === "" ||
+                state?.studentname2 == "" ||
+                state?.studentfathername2 == "" ||
+                state?.studentdateofbirth2 == "" ||
+                state?.studentvillage2 == "" ||
+                state?.studentpost2 == "" ||
+                state?.studenttehseel2 == "" ||
+                state?.studentdistt2 == "" ||
+                state?.studentstate2 == "" ||
+                state?.studentaadharno2 == "" ||
+                state?.studentaadharno === "" ||
+                state?.shoba === "" ||
+                state?.dateshamsi === "" ||
+                state?.datekamari === "" ||
+                state?.darjarequested === "" ||
+                state?.darjagiven === "" ||
+                state?.beforethis === "" ||
+                state?.talibilmrishta === "" ||
+                state?.sarparastmobileno === "" ||
+                state?.sarparastwhatsappno === "" ||
+                state?.fileName === "" ||
+                state?.fileName2 === ""
               }
               onClick={(e) => updateProduct()}
               color="primary"
@@ -1160,7 +1160,7 @@ function Dashboard(props) {
 
       {/* Add Product */}
       <Dialog
-        open={state.openProductModal}
+        open={state?.openProductModal}
         onClose={handleProductClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
@@ -1173,7 +1173,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastname"
-            value={state.sarparastname}
+            value={state?.sarparastname}
             onChange={onChange}
             placeholder="Sarparast Name "
             required
@@ -1185,7 +1185,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastfathername"
-            value={state.sarparastfathername}
+            value={state?.sarparastfathername}
             onChange={onChange}
             placeholder="Sarparast Father Name"
             required
@@ -1197,7 +1197,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="formDate"
-            value={state.formDate}
+            value={state?.formDate}
             onChange={onChange}
             placeholder="Form Date"
             required
@@ -1209,7 +1209,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="formnumber"
-            value={state.formnumber}
+            value={state?.formnumber}
             onChange={onChange}
             placeholder="Form Number"
             required
@@ -1221,7 +1221,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastvillage"
-            value={state.sarparastvillage}
+            value={state?.sarparastvillage}
             onChange={onChange}
             placeholder="Sarparast Village"
             required
@@ -1233,7 +1233,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastpost"
-            value={state.sarparastpost}
+            value={state?.sarparastpost}
             onChange={onChange}
             placeholder="Sarparast Post"
             required
@@ -1245,7 +1245,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparasttehseel"
-            value={state.sarparasttehseel}
+            value={state?.sarparasttehseel}
             onChange={onChange}
             placeholder="Sarparast Tehseel"
             required
@@ -1257,7 +1257,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastdistt"
-            value={state.sarparastdistt}
+            value={state?.sarparastdistt}
             onChange={onChange}
             placeholder="Sarparast Distt"
             required
@@ -1269,7 +1269,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparaststate"
-            value={state.sarparaststate}
+            value={state?.sarparaststate}
             onChange={onChange}
             placeholder="Sarparast State"
             required
@@ -1281,7 +1281,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastaadharno"
-            value={state.sarparastaadharno}
+            value={state?.sarparastaadharno}
             onChange={onChange}
             placeholder="Sarparast Aadhar No"
             required
@@ -1293,7 +1293,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentname"
-            value={state.studentname}
+            value={state?.studentname}
             onChange={onChange}
             placeholder="Student Name"
             required
@@ -1305,7 +1305,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentfathername"
-            value={state.studentfathername}
+            value={state?.studentfathername}
             onChange={onChange}
             placeholder="Student's Father Name"
             required
@@ -1319,7 +1319,7 @@ function Dashboard(props) {
             type="date"
             autoComplete="off"
             name="studentdateofbirth"
-            value={state.studentdateofbirth}
+            value={state?.studentdateofbirth}
             label="Student Date of Birth"
             onChange={onChange}
             placeholder="Student's Date of Birth"
@@ -1332,7 +1332,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentvillage"
-            value={state.studentvillage}
+            value={state?.studentvillage}
             onChange={onChange}
             placeholder="Student's Village"
             required
@@ -1344,7 +1344,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentpost"
-            value={state.studentpost}
+            value={state?.studentpost}
             onChange={onChange}
             placeholder="Student's Post"
             required
@@ -1356,7 +1356,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studenttehseel"
-            value={state.studenttehseel}
+            value={state?.studenttehseel}
             onChange={onChange}
             placeholder="Student Tehseel"
             required
@@ -1368,7 +1368,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentdistt"
-            value={state.studentdistt}
+            value={state?.studentdistt}
             onChange={onChange}
             placeholder="Student Distt"
             required
@@ -1380,7 +1380,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentstate"
-            value={state.studentstate}
+            value={state?.studentstate}
             onChange={onChange}
             placeholder="Student State"
             required
@@ -1392,7 +1392,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentaadharno"
-            value={state.studentaadharno}
+            value={state?.studentaadharno}
             onChange={onChange}
             placeholder="Student Aadhar No"
             required
@@ -1404,7 +1404,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentname2"
-            value={state.studentname2}
+            value={state?.studentname2}
             onChange={onChange}
             placeholder="نام طلب علم "
             required
@@ -1416,7 +1416,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentfathername2"
-            value={state.studentfathername2}
+            value={state?.studentfathername2}
             onChange={onChange}
             placeholder="والد کا نام "
             required
@@ -1430,7 +1430,7 @@ function Dashboard(props) {
             type="date"
             autoComplete="off"
             name="studentdateofbirth2"
-            value={state.studentdateofbirth2}
+            value={state?.studentdateofbirth2}
             label="Student Date of Birth"
             onChange={onChange}
             placeholder=" تاریخ   پیدایش"
@@ -1443,7 +1443,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentvillage2"
-            value={state.studentvillage2}
+            value={state?.studentvillage2}
             onChange={onChange}
             placeholder="سکونت"
             required
@@ -1455,7 +1455,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentpost2"
-            value={state.studentpost2}
+            value={state?.studentpost2}
             onChange={onChange}
             placeholder="پوسٹ"
             required
@@ -1467,7 +1467,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studenttehseel2"
-            value={state.studenttehseel2}
+            value={state?.studenttehseel2}
             onChange={onChange}
             placeholder="تحصیل"
             required
@@ -1479,7 +1479,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentdistt2"
-            value={state.studentdistt2}
+            value={state?.studentdistt2}
             onChange={onChange}
             placeholder="ضلع"
             required
@@ -1491,7 +1491,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentstate2"
-            value={state.studentstate2}
+            value={state?.studentstate2}
             onChange={onChange}
             placeholder="صوب"
             required
@@ -1503,7 +1503,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="studentaadharno2"
-            value={state.studentaadharno2}
+            value={state?.studentaadharno2}
             onChange={onChange}
             placeholder="آدھار  کارڈ  نمبر"
             required
@@ -1515,7 +1515,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="shoba"
-            value={state.shoba}
+            value={state?.shoba}
             onChange={onChange}
             placeholder="جامعہ کے شعبہ "
             required
@@ -1527,7 +1527,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="dateshamsi"
-            value={state.dateshamsi}
+            value={state?.dateshamsi}
             onChange={onChange}
             placeholder="تاریخ شمسی "
             required
@@ -1539,7 +1539,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="datekamari"
-            value={state.datekamari}
+            value={state?.datekamari}
             onChange={onChange}
             placeholder="تا سرخ قمری"
             required
@@ -1551,7 +1551,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="darjarequested"
-            value={state.darjarequested}
+            value={state?.darjarequested}
             onChange={onChange}
             placeholder="کس درجہ میں داخلہ مطلوب ہے"
             required
@@ -1563,7 +1563,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="darjagiven"
-            value={state.darjagiven}
+            value={state?.darjagiven}
             onChange={onChange}
             placeholder="س طالب علم کو درجہ کس میں داخلہ دیا جائے۔"
             required
@@ -1575,7 +1575,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="beforethis"
-            value={state.beforethis}
+            value={state?.beforethis}
             onChange={onChange}
             placeholder="اس سے قبل کہاں تعلیم حاصل کی ہے"
             required
@@ -1587,7 +1587,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="talibilmrishta"
-            value={state.talibilmrishta}
+            value={state?.talibilmrishta}
             onChange={onChange}
             placeholder="طالب علم سے رشتہ "
             required
@@ -1599,7 +1599,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastmobileno"
-            value={state.sarparastmobileno}
+            value={state?.sarparastmobileno}
             onChange={onChange}
             placeholder="موبائل نمبر  سرپرست"
             required
@@ -1611,7 +1611,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastwhatsappno"
-            value={state.sarparastwhatsappno}
+            value={state?.sarparastwhatsappno}
             onChange={onChange}
             placeholder="واٹسپ نمبر سرپرست"
             required
@@ -1634,7 +1634,7 @@ function Dashboard(props) {
               //     fileName: e.target.files[0].name,
               //     file: e.target.files[0],
               //   });
-              //   console.log(state.file);
+              //   console.log(state?.file);
               // }}
               id="fileInput"
             />
@@ -1656,7 +1656,7 @@ function Dashboard(props) {
               //     fileName2: e.target.files[0].name,
               //     file2: e.target.files[0],
               //   });
-              //   console.log(state.file2);
+              //   console.log(state?.file2);
               // }}
               id="fileInput2"
             />
@@ -1667,48 +1667,48 @@ function Dashboard(props) {
           <Button onClick={handleProductClose} color="primary">
             Cancel
           </Button>
-          {state.loading2 === false ? (
+          {state?.loading2 === false ? (
             <Button
               disabled={
-                state.sarparastname == "" ||
-                state.sarparastfathername == "" ||
-                state.sarparastvillage == "" ||
-                state.formDate === "" ||
-                state.formnumber === "" ||
-                state.sarparastpost == "" ||
-                state.sarparasttehseel == "" ||
-                state.sarparastdistt == "" ||
-                state.sarparaststate == "" ||
-                state.sarparastaadharno == "" ||
-                state.studentname == "" ||
-                state.studentfathername == "" ||
-                state.studentdateofbirth == "" ||
-                state.studentvillage == "" ||
-                state.studentpost == "" ||
-                state.studenttehseel == "" ||
-                state.studentdistt == "" ||
-                state.studentstate == "" ||
-                state.studentaadharno == "" ||
-                state.studentname2 == "" ||
-                state.studentfathername2 == "" ||
-                state.studentdateofbirth2 == "" ||
-                state.studentvillage2 == "" ||
-                state.studentpost2 == "" ||
-                state.studenttehseel2 == "" ||
-                state.studentdistt2 == "" ||
-                state.studentstate2 == "" ||
-                state.studentaadharno2 == "" ||
-                state.studentaadharno == "" ||
-                state.dateshamsi === "" ||
-                state.datekamari === "" ||
-                state.darjarequested === "" ||
-                state.darjagiven === "" ||
-                state.beforethis === "" ||
-                state.talibilmrishta === "" ||
-                state.sarparastmobileno === "" ||
-                state.sarparastwhatsappno === "" ||
-                state.fileName === "" ||
-                state.fileName2 === ""
+                state?.sarparastname == "" ||
+                state?.sarparastfathername == "" ||
+                state?.sarparastvillage == "" ||
+                state?.formDate === "" ||
+                state?.formnumber === "" ||
+                state?.sarparastpost == "" ||
+                state?.sarparasttehseel == "" ||
+                state?.sarparastdistt == "" ||
+                state?.sarparaststate == "" ||
+                state?.sarparastaadharno == "" ||
+                state?.studentname == "" ||
+                state?.studentfathername == "" ||
+                state?.studentdateofbirth == "" ||
+                state?.studentvillage == "" ||
+                state?.studentpost == "" ||
+                state?.studenttehseel == "" ||
+                state?.studentdistt == "" ||
+                state?.studentstate == "" ||
+                state?.studentaadharno == "" ||
+                state?.studentname2 == "" ||
+                state?.studentfathername2 == "" ||
+                state?.studentdateofbirth2 == "" ||
+                state?.studentvillage2 == "" ||
+                state?.studentpost2 == "" ||
+                state?.studenttehseel2 == "" ||
+                state?.studentdistt2 == "" ||
+                state?.studentstate2 == "" ||
+                state?.studentaadharno2 == "" ||
+                state?.studentaadharno == "" ||
+                state?.dateshamsi === "" ||
+                state?.datekamari === "" ||
+                state?.darjarequested === "" ||
+                state?.darjagiven === "" ||
+                state?.beforethis === "" ||
+                state?.talibilmrishta === "" ||
+                state?.sarparastmobileno === "" ||
+                state?.sarparastwhatsappno === "" ||
+                state?.fileName === "" ||
+                state?.fileName2 === ""
               }
               onClick={(e) => addProduct()}
               color="primary"
@@ -1733,7 +1733,7 @@ function Dashboard(props) {
           type="search"
           autoComplete="off"
           name="search"
-          value={state.search}
+          value={state?.search}
           onChange={onChange}
           placeholder="Search by Student name"
           style={{ width: "190px" }}
@@ -1762,7 +1762,7 @@ function Dashboard(props) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {state.products.map((row) => (
+            {state?.products.map((row) => (
               <TableRow key={row.studentname}>
                 <TableCell align="center" component="th" scope="row">
                   {row.studentname}
@@ -1810,7 +1810,7 @@ function Dashboard(props) {
         </Table>
         <br />
 
-        <Pagination count={state.pages} page={state.page} onChange={pageChange} variant="outlined" color="primary" />
+        <Pagination count={state?.pages} page={state?.page} onChange={pageChange} variant="outlined" color="primary" />
       </TableContainer>
       <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: 25, fontSize: 14 }}>Created By SmileWeb(+91 9868277865)</div>
 
