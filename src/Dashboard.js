@@ -263,9 +263,9 @@ function Dashboard(props) {
           "content-type": "multipart/form-data",
           token: localStorage.getItem("token"),
         },
-      })
-      .then((res) => {
+      }).then((res) => {
         setState((prevState) => ({ ...prevState, loading2: false }));
+        console.log(state.loading2)
         swal({
           text: res.data.title,
           icon: "success",
@@ -385,10 +385,9 @@ function Dashboard(props) {
           "content-type": "multipart/form-data",
           token: localStorage.getItem("token"),
         },
-      })
-      .then((res) => {
+      }).then((res) => {
         setState((prevState) => ({ ...prevState, loading2: false }));
-
+        console.log(state.loading2)
         swal({
           text: res.data.title,
           icon: "success",
