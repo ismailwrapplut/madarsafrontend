@@ -213,71 +213,71 @@ function Dashboard(props) {
   };
 
   const addProduct = () => {
+    // Set loading state to true
     setState((prevState) => ({ ...prevState, loading2: true }));
-    const file = new FormData();
-    const fileArray = [state?.file, state?.file2];
-    file.append("studentprofilepic", state?.file);
-    file.append("sarparastprofilepic", state?.file2);
-    file.append("sarparastname", state?.sarparastname);
-    file.append("sarparastfathername", state?.sarparastfathername);
-    file.append("formDate", state?.formDate);
-    file.append("formnumber", state?.formnumber);
-
-
-    file.append("sarparastvillage", state?.sarparastvillage);
-    file.append("sarparastpost", state?.sarparastpost);
-    file.append("sarparasttehseel", state?.sarparasttehseel);
-    file.append("sarparastdistt", state?.sarparastdistt);
-    file.append("sarparaststate", state?.sarparaststate);
-    file.append("sarparastaadharno", state?.sarparastaadharno);
-    file.append("studentname", state?.studentname);
-    file.append("studentfathername", state?.studentfathername);
-    file.append("studentdateofbirth", state?.studentdateofbirth);
-    file.append("studentvillage", state?.studentvillage);
-    file.append("studentpost", state?.studentpost);
-    file.append("studenttehseel", state?.studenttehseel);
-    file.append("studentdistt", state?.studentdistt);
-    file.append("studentstate", state?.studentstate);
-    file.append("studentaadharno", state?.studentaadharno);
-    file.append("studentname2", state?.studentname2);
-    file.append("studentfathername2", state?.studentfathername2);
-    file.append("studentdateofbirth2", state?.studentdateofbirth2);
-    file.append("studentvillage2", state?.studentvillage2);
-    file.append("studentpost2", state?.studentpost2);
-    file.append("studenttehseel2", state?.studenttehseel2);
-    file.append("studentdistt2", state?.studentdistt2);
-    file.append("studentstate2", state?.studentstate2);
-    file.append("studentaadharno2", state?.studentaadharno2);
-    file.append("shoba", state?.shoba);
-    file.append("dateshamsi", state?.dateshamsi);
-    file.append("datekamari", state?.datekamari);
-    file.append("darjarequested", state?.darjarequested);
-    file.append("darjagiven", state?.darjagiven);
-    file.append("beforethis", state?.beforethis);
-    file.append("talibilmrishta", state?.talibilmrishta);
-    file.append("sarparastmobileno", state?.sarparastmobileno);
-    file.append("sarparastwhatsappno", state?.sarparastwhatsappno);
-    // Append other form fields as needed
-
+  
+    // Prepare form data
+    const formData = new FormData();
+    formData.append("studentprofilepic", state?.file);
+    formData.append("sarparastprofilepic", state?.file2);
+    formData.append("sarparastname", state?.sarparastname);
+    formData.append("sarparastfathername", state?.sarparastfathername);
+    formData.append("formDate", state?.formDate);
+    formData.append("formnumber", state?.formnumber);
+    formData.append("sarparastvillage", state?.sarparastvillage);
+    formData.append("sarparastpost", state?.sarparastpost);
+    formData.append("sarparasttehseel", state?.sarparasttehseel);
+    formData.append("sarparastdistt", state?.sarparastdistt);
+    formData.append("sarparaststate", state?.sarparaststate);
+    formData.append("sarparastaadharno", state?.sarparastaadharno);
+    formData.append("studentname", state?.studentname);
+    formData.append("studentfathername", state?.studentfathername);
+    formData.append("studentdateofbirth", state?.studentdateofbirth);
+    formData.append("studentvillage", state?.studentvillage);
+    formData.append("studentpost", state?.studentpost);
+    formData.append("studenttehseel", state?.studenttehseel);
+    formData.append("studentdistt", state?.studentdistt);
+    formData.append("studentstate", state?.studentstate);
+    formData.append("studentaadharno", state?.studentaadharno);
+    formData.append("studentname2", state?.studentname2);
+    formData.append("studentfathername2", state?.studentfathername2);
+    formData.append("studentdateofbirth2", state?.studentdateofbirth2);
+    formData.append("studentvillage2", state?.studentvillage2);
+    formData.append("studentpost2", state?.studentpost2);
+    formData.append("studenttehseel2", state?.studenttehseel2);
+    formData.append("studentdistt2", state?.studentdistt2);
+    formData.append("studentstate2", state?.studentstate2);
+    formData.append("studentaadharno2", state?.studentaadharno2);
+    formData.append("shoba", state?.shoba);
+    formData.append("dateshamsi", state?.dateshamsi);
+    formData.append("datekamari", state?.datekamari);
+    formData.append("darjarequested", state?.darjarequested);
+    formData.append("darjagiven", state?.darjagiven);
+    formData.append("beforethis", state?.beforethis);
+    formData.append("talibilmrishta", state?.talibilmrishta);
+    formData.append("sarparastmobileno", state?.sarparastmobileno);
+    formData.append("sarparastwhatsappno", state?.sarparastwhatsappno);
+  
+    // Make API request
     axios
-      .post("https://madarsabackend.onrender.com/add-product", file, {
+      .post("https://madarsabackend.onrender.com/add-product", formData, {
         headers: {
           "content-type": "multipart/form-data",
           token: localStorage?.getItem("token"),
         },
-      }).then((res) => {
-        setState((prevState)=>{setState({...prevState,loading2:false},()=>{
-          console.log("the state is updated successfully"+state?.loading2)
-        })})
-        console.log(state?.loading2)
+      })
+      .then((res) => {
+        // Set loading state to false on successful response
+        setState((prevState) => ({ ...prevState, loading2: false }));
+        // Show success message
         swal({
           text: res.data?.title,
           icon: "success",
           type: "success",
-        })
-
-
+        });
+        // Close product modal
         handleProductClose();
+        // Reset form fields and state
         setState({
           sarparastname: "",
           sarparastfathername: "",
@@ -318,156 +318,155 @@ function Dashboard(props) {
           sarparastwhatsappno: "",
           file: null,
           file2: null,
-
           page: 1,
-        },setState({products: []}, () => {
-          getProduct();
-          
-        }));
-        
+        }, () => {
+          // Clear products array and fetch updated product data
+          setState({ products: [] }, () => {
+            getProduct();
+          });
+        });
       })
       .catch((err) => {
-        setState((prevState)=>{setState({...prevState,loading2:false},()=>{
-          console.log("the state is updated successfully"+state?.loading2)
-        })})
+        // Set loading state to false on error
+        setState((prevState) => ({ ...prevState, loading2: false }));
+        // Show error message
         swal({
-          text: err.response?.data?.errorMessage,
+          text: err.response?.data?.errorMessage || "An error occurred.",
           icon: "error",
           type: "error",
-        }).then();;
+        }).then();
+        // Close product modal
         handleProductClose();
       });
   };
+  
   const updateProduct = () => {
-    setState((prevState) => ({ ...prevState, loading2: true }));
-
-    const file = new FormData();
-    console.log(state?.file);
-    file.append("id", state?.id);
-    file.append("studentprofilepic", state?.file);
-    file.append("sarparastprofilepic", state?.file2);
-    file.append("sarparastname", state?.sarparastname);
-    file.append("sarparastfathername", state?.sarparastfathername);
-    file.append("formDate", state?.formDate);
-    file.append("formnumber", state?.formnumber);
-
-
-    file.append("sarparastvillage", state?.sarparastvillage);
-    file.append("sarparastpost", state?.sarparastpost);
-    file.append("sarparasttehseel", state?.sarparasttehseel);
-    file.append("sarparastdistt", state?.sarparastdistt);
-    file.append("sarparaststate", state?.sarparast);
-    file.append("sarparastaadharno", state?.sarparastaadharno);
-    file.append("studentname", state?.studentname);
-    file.append("studentfathername", state?.studentfathername);
-    file.append("studentdateofbirth", state?.studentdateofbirth);
-    file.append("studentvillage", state?.studentvillage);
-    file.append("studentpost", state?.studentpost);
-    file.append("studenttehseel", state?.studenttehseel);
-    file.append("studentdistt", state?.studentdistt);
-    file.append("studentstate", state?.studentstate);
-    file.append("studentaadharno", state?.studentaadharno);
-    file.append("studentname2", state?.studentname2);
-    file.append("studentfathername2", state?.studentfathername2);
-    file.append("studentdateofbirth2", state?.studentdateofbirth2);
-    file.append("studentvillage2", state?.studentvillage2);
-    file.append("studentpost2", state?.studentpost2);
-    file.append("studenttehseel2", state?.studenttehseel2);
-    file.append("studentdistt2", state?.studentdistt2);
-    file.append("studentstate2", state?.studentstate2);
-    file.append("studentaadharno2", state?.studentaadharno2);
-    file.append("shoba", state?.shoba);
-    file.append("dateshamsi", state?.dateshamsi);
-    file.append("datekamari", state?.datekamari);
-    file.append("darjarequested", state?.darjarequested);
-    file.append("darjagiven", state?.darjagiven);
-    file.append("beforethis", state?.beforethis);
-    file.append("talibilmrishta", state?.talibilmrishta);
-    file.append("sarparastmobileno", state?.sarparastmobileno);
-    file.append("sarparastwhatsappno", state?.sarparastwhatsappno);
-    // Append other form fields as needed
-
+    // Set loading state to true
+    setState(prevState => ({ ...prevState, loading2: true }));
+  
+    // Prepare form data
+    const formData = new FormData();
+    formData.append("id", state?.id);
+    formData.append("studentprofilepic", state?.file);
+    formData.append("sarparastprofilepic", state?.file2);
+    formData.append("sarparastname", state?.sarparastname);
+    formData.append("sarparastfathername", state?.sarparastfathername);
+    formData.append("formDate", state?.formDate);
+    formData.append("formnumber", state?.formnumber);
+    formData.append("sarparastvillage", state?.sarparastvillage);
+    formData.append("sarparastpost", state?.sarparastpost);
+    formData.append("sarparasttehseel", state?.sarparasttehseel);
+    formData.append("sarparastdistt", state?.sarparastdistt);
+    formData.append("sarparaststate", state?.sarparaststate);
+    formData.append("sarparastaadharno", state?.sarparastaadharno);
+    formData.append("studentname", state?.studentname);
+    formData.append("studentfathername", state?.studentfathername);
+    formData.append("studentdateofbirth", state?.studentdateofbirth);
+    formData.append("studentvillage", state?.studentvillage);
+    formData.append("studentpost", state?.studentpost);
+    formData.append("studenttehseel", state?.studenttehseel);
+    formData.append("studentdistt", state?.studentdistt);
+    formData.append("studentstate", state?.studentstate);
+    formData.append("studentaadharno", state?.studentaadharno);
+    formData.append("studentname2", state?.studentname2);
+    formData.append("studentfathername2", state?.studentfathername2);
+    formData.append("studentdateofbirth2", state?.studentdateofbirth2);
+    formData.append("studentvillage2", state?.studentvillage2);
+    formData.append("studentpost2", state?.studentpost2);
+    formData.append("studenttehseel2", state?.studenttehseel2);
+    formData.append("studentdistt2", state?.studentdistt2);
+    formData.append("studentstate2", state?.studentstate2);
+    formData.append("studentaadharno2", state?.studentaadharno2);
+    formData.append("shoba", state?.shoba);
+    formData.append("dateshamsi", state?.dateshamsi);
+    formData.append("datekamari", state?.datekamari);
+    formData.append("darjarequested", state?.darjarequested);
+    formData.append("darjagiven", state?.darjagiven);
+    formData.append("beforethis", state?.beforethis);
+    formData.append("talibilmrishta", state?.talibilmrishta);
+    formData.append("sarparastmobileno", state?.sarparastmobileno);
+    formData.append("sarparastwhatsappno", state?.sarparastwhatsappno);
+  
+    // Make API request
     axios
-      .post("https://madarsabackend.onrender.com/update-product", file, {
+      .post("https://madarsabackend.onrender.com/update-product", formData, {
         headers: {
           "content-type": "multipart/form-data",
-          token: localStorage?.getItem("token"),
+          token: localStorage.getItem("token"),
         },
-      }).then((res) => {
-        setState((prevState)=>{setState({...prevState,loading2:false},()=>{
-          console.log("the state is updated successfully"+state?.loading2)
-        })})
-        console.log(state?.loading2)
+      })
+      .then((res) => {
+        // Set loading state to false on successful response
+        setState(prevState => ({ ...prevState, loading2: false }));
+        // Show success message
         swal({
           text: res.data.title,
           icon: "success",
           type: "success",
-        })
-
+        });
+        // Close product edit modal
         handleProductEditClose();
-        setState((prevState) => ({
+        // Clear form fields and reset state
+        setState(prevState => ({
           ...prevState,
-          id:"",
-          sarparastname:"",
-      sarparastfathername:"",
-      formDate:"",
-      formnumber:"",
-      sarparastvillage:"",
-      sarparastpost:"",
-      sarparasttehseel:"",
-      sarparastdistt:"",
-      sarparaststate:"",
-      sarparastaadharno:"",
-      studentname:"",
-      studentfathername:"",
-      studentdateofbirth:"",
-      studentvillage:"",
-      studentpost:"",
-      studenttehseel:"",
-      studentdistt:"",
-      studentstate:"",
-      studentaadharno:"",
-      studentname2:"",
-      studentfathername2:"",
-      studentdateofbirth2:"",
-      studentvillage2:"",
-      studentpost2:"",
-      studenttehseel2:"",
-      studentdistt2:"",
-      studentstate2:"",
-      studentaadharno2:"",
-      shoba:"",
-      dateshamsi:"",
-      datekamari:"",
-      darjarequested:"",
-      darjagiven:"",
-      beforethis:"",
-      talibilmrishta:"",
-      sarparastmobileno:"",
-      sarparastwhatsappno:"",
+          id: "",
+          sarparastname: "",
+          sarparastfathername: "",
+          formDate: "",
+          formnumber: "",
+          sarparastvillage: "",
+          sarparastpost: "",
+          sarparasttehseel: "",
+          sarparastdistt: "",
+          sarparaststate: "",
+          sarparastaadharno: "",
+          studentname: "",
+          studentfathername: "",
+          studentdateofbirth: "",
+          studentvillage: "",
+          studentpost: "",
+          studenttehseel: "",
+          studentdistt: "",
+          studentstate: "",
+          studentaadharno: "",
+          studentname2: "",
+          studentfathername2: "",
+          studentdateofbirth2: "",
+          studentvillage2: "",
+          studentpost2: "",
+          studenttehseel2: "",
+          studentdistt2: "",
+          studentstate2: "",
+          studentaadharno2: "",
+          shoba: "",
+          dateshamsi: "",
+          datekamari: "",
+          darjarequested: "",
+          darjagiven: "",
+          beforethis: "",
+          talibilmrishta: "",
+          sarparastmobileno: "",
+          sarparastwhatsappno: "",
           file: null,
           file2: null,
-        },()=>{
-          setState((prevState)=>{setState({...prevState,loading2:false},()=>{
-            console.log("the state is updated successfully"+state?.loading2)
-          })})
-          getProduct()
         }));
-        
+        // Fetch updated product data
+        getProduct();
       })
       .catch((err) => {
-        setState((prevState)=>{setState({...prevState,loading2:false},()=>{
-          console.log("the state is updated successfully"+state?.loading2)
-        })})
-
+        // Set loading state to false on error
+        setState(prevState => ({ ...prevState, loading2: false }));
+        // Show error message
         swal({
-          text: err.response?.data?.errorMessage,
+          text: err.response?.data?.errorMessage || "An error occurred.",
           icon: "error",
           type: "error",
-        }).then();;
+        }).then();
+        // Close product edit modal
         handleProductEditClose();
       });
   };
+  
 
   const handleProductOpen = () => {
     setState((prevState) => ({
