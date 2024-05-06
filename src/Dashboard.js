@@ -264,7 +264,7 @@ function Dashboard(props) {
           token: localStorage.getItem("token"),
         },
       }).then((res) => {
-        setState((prevState) => ({ ...prevState, loading2: false }));
+        setState({loading2:false})
         console.log(state.loading2)
         swal({
           text: res.data.title,
@@ -386,7 +386,7 @@ function Dashboard(props) {
           token: localStorage.getItem("token"),
         },
       }).then((res) => {
-        setState((prevState) => ({ ...prevState, loading2: false }));
+        setState({ ...prevState, loading2: false });
         console.log(state.loading2)
         swal({
           text: res.data.title,
