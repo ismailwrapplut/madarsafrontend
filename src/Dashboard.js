@@ -214,29 +214,29 @@ function Dashboard(props) {
     setState((prevState) => ({ ...prevState, loading2: true }));
     const file = new FormData();
     const fileArray = [state.file, state.file2];
-    file.append("studentprofilepic", this.state.file);
-    file.append("sarparastprofilepic", this.state.file2);
-    file.append("sarparastname", this.state.sarparastname);
-    file.append("sarparastfathername", this.state.sarparastfathername);
-    file.append("formDate", this.state.formDate);
-    file.append("formnumber", this.state.formnumber);
+    file.append("studentprofilepic", state.file);
+    file.append("sarparastprofilepic", state.file2);
+    file.append("sarparastname", state.sarparastname);
+    file.append("sarparastfathername", state.sarparastfathername);
+    file.append("formDate", state.formDate);
+    file.append("formnumber", state.formnumber);
 
 
-    file.append("sarparastvillage", this.state.sarparastvillage);
-    file.append("sarparastpost", this.state.sarparastpost);
-    file.append("sarparasttehseel", this.state.sarparasttehseel);
-    file.append("sarparastdistt", this.state.sarparastdistt);
-    file.append("sarparaststate", this.state.sarparaststate);
-    file.append("sarparastaadharno", this.state.sarparastaadharno);
-    file.append("studentname", this.state.studentname);
-    file.append("studentfathername", this.state.studentfathername);
-    file.append("studentdateofbirth", this.state.studentdateofbirth);
-    file.append("studentvillage", this.state.studentvillage);
-    file.append("studentpost", this.state.studentpost);
-    file.append("studenttehseel", this.state.studenttehseel);
-    file.append("studentdistt", this.state.studentdistt);
-    file.append("studentstate", this.state.studentstate);
-    file.append("studentaadharno", this.state.studentaadharno);
+    file.append("sarparastvillage", state.sarparastvillage);
+    file.append("sarparastpost", state.sarparastpost);
+    file.append("sarparasttehseel", state.sarparasttehseel);
+    file.append("sarparastdistt", state.sarparastdistt);
+    file.append("sarparaststate", state.sarparaststate);
+    file.append("sarparastaadharno", state.sarparastaadharno);
+    file.append("studentname", state.studentname);
+    file.append("studentfathername", state.studentfathername);
+    file.append("studentdateofbirth", state.studentdateofbirth);
+    file.append("studentvillage", state.studentvillage);
+    file.append("studentpost", state.studentpost);
+    file.append("studenttehseel", state.studenttehseel);
+    file.append("studentdistt", state.studentdistt);
+    file.append("studentstate", state.studentstate);
+    file.append("studentaadharno", state.studentaadharno);
     // Append other form fields as needed
 
     axios
@@ -299,30 +299,30 @@ function Dashboard(props) {
 
     const file = new FormData();
     console.log(state.file);
-    file.append("id", this.state.id);
-    file.append("studentprofilepic", this.state.file);
-    file.append("sarparastprofilepic", this.state.file2);
-    file.append("sarparastname", this.state.sarparastname);
-    file.append("sarparastfathername", this.state.sarparastfathername);
-    file.append("formDate", this.state.formDate);
-    file.append("formnumber", this.state.formnumber);
+    file.append("id", state.id);
+    file.append("studentprofilepic", state.file);
+    file.append("sarparastprofilepic", state.file2);
+    file.append("sarparastname", state.sarparastname);
+    file.append("sarparastfathername", state.sarparastfathername);
+    file.append("formDate", state.formDate);
+    file.append("formnumber", state.formnumber);
 
 
-    file.append("sarparastvillage", this.state.sarparastvillage);
-    file.append("sarparastpost", this.state.sarparastpost);
-    file.append("sarparasttehseel", this.state.sarparasttehseel);
-    file.append("sarparastdistt", this.state.sarparastdistt);
-    file.append("sarparaststate", this.state.sarparaststate);
-    file.append("sarparastaadharno", this.state.sarparastaadharno);
-    file.append("studentname", this.state.studentname);
-    file.append("studentfathername", this.state.studentfathername);
-    file.append("studentdateofbirth", this.state.studentdateofbirth);
-    file.append("studentvillage", this.state.studentvillage);
-    file.append("studentpost", this.state.studentpost);
-    file.append("studenttehseel", this.state.studenttehseel);
-    file.append("studentdistt", this.state.studentdistt);
-    file.append("studentstate", this.state.studentstate);
-    file.append("studentaadharno", this.state.studentaadharno);
+    file.append("sarparastvillage", state.sarparastvillage);
+    file.append("sarparastpost", state.sarparastpost);
+    file.append("sarparasttehseel", state.sarparasttehseel);
+    file.append("sarparastdistt", state.sarparastdistt);
+    file.append("sarparaststate", state.sarparaststate);
+    file.append("sarparastaadharno", state.sarparastaadharno);
+    file.append("studentname", state.studentname);
+    file.append("studentfathername", state.studentfathername);
+    file.append("studentdateofbirth", state.studentdateofbirth);
+    file.append("studentvillage", state.studentvillage);
+    file.append("studentpost", state.studentpost);
+    file.append("studenttehseel", state.studenttehseel);
+    file.append("studentdistt", state.studentdistt);
+    file.append("studentstate", state.studentstate);
+    file.append("studentaadharno", state.studentaadharno);
     // Append other form fields as needed
 
     axios
