@@ -237,6 +237,24 @@ function Dashboard(props) {
     file.append("studentdistt", state.studentdistt);
     file.append("studentstate", state.studentstate);
     file.append("studentaadharno", state.studentaadharno);
+    file.append("studentname2", state.studentname2);
+    file.append("studentfathername2", state.studentfathername2);
+    file.append("studentdateofbirth2", state.studentdateofbirth2);
+    file.append("studentvillage2", state.studentvillage2);
+    file.append("studentpost2", state.studentpost2);
+    file.append("studenttehseel2", state.studenttehseel2);
+    file.append("studentdistt2", state.studentdistt2);
+    file.append("studentstate2", state.studentstate2);
+    file.append("studentaadharno2", state.studentaadharno2);
+    file.append("shoba", state.shoba);
+    file.append("dateshamsi", state.dateshamsi);
+    file.append("datekamari", state.datekamari);
+    file.append("darjarequested", state.darjarequested);
+    file.append("darjagiven", state.darjagiven);
+    file.append("beforethis", state.beforethis);
+    file.append("talibilmrishta", state.talibilmrishta);
+    file.append("sarparastmobileno", state.sarparastmobileno);
+    file.append("sarparastwhatsappno", state.sarparastwhatsappno);
     // Append other form fields as needed
 
     axios
@@ -255,14 +273,11 @@ function Dashboard(props) {
         });
 
         handleProductClose();
-        setState((prevState) => ({
-          ...prevState,
+        setState({
           sarparastname: "",
           sarparastfathername: "",
           formDate: "",
           formnumber: "",
-
-
           sarparastvillage: "",
           sarparastpost: "",
           sarparasttehseel: "",
@@ -278,11 +293,32 @@ function Dashboard(props) {
           studentdistt: "",
           studentstate: "",
           studentaadharno: "",
+          studentname2: "",
+          studentfathername2: "",
+          studentdateofbirth2: "",
+          studentvillage2: "",
+          studentpost2: "",
+          studenttehseel2: "",
+          studentdistt2: "",
+          studentstate2: "",
+          studentaadharno2: "",
+          shoba: "",
+          dateshamsi: "",
+          datekamari: "",
+          darjarequested: "",
+          darjagiven: "",
+          beforethis: "",
+          talibilmrishta: "",
+          sarparastmobileno: "",
+          sarparastwhatsappno: "",
           file: null,
           file2: null,
 
           page: 1,
+        },setState({products: []}, () => {
+          getProduct();
         }));
+        
       })
       .catch((err) => {
         setState((prevState) => ({ ...prevState, loading2: false }));
@@ -323,6 +359,24 @@ function Dashboard(props) {
     file.append("studentdistt", state.studentdistt);
     file.append("studentstate", state.studentstate);
     file.append("studentaadharno", state.studentaadharno);
+    file.append("studentname2", state.studentname2);
+    file.append("studentfathername2", state.studentfathername2);
+    file.append("studentdateofbirth2", state.studentdateofbirth2);
+    file.append("studentvillage2", state.studentvillage2);
+    file.append("studentpost2", state.studentpost2);
+    file.append("studenttehseel2", state.studenttehseel2);
+    file.append("studentdistt2", state.studentdistt2);
+    file.append("studentstate2", state.studentstate2);
+    file.append("studentaadharno2", state.studentaadharno2);
+    file.append("shoba", state.shoba);
+    file.append("dateshamsi", state.dateshamsi);
+    file.append("datekamari", state.datekamari);
+    file.append("darjarequested", state.darjarequested);
+    file.append("darjagiven", state.darjagiven);
+    file.append("beforethis", state.beforethis);
+    file.append("talibilmrishta", state.talibilmrishta);
+    file.append("sarparastmobileno", state.sarparastmobileno);
+    file.append("sarparastwhatsappno", state.sarparastwhatsappno);
     // Append other form fields as needed
 
     axios
@@ -384,8 +438,10 @@ function Dashboard(props) {
       sarparastwhatsappno:"",
           file: null,
           file2: null,
-        }));
-        getProduct();
+        },setState({products: []},() => {
+          getProduct();
+        })));
+        
       })
       .catch((err) => {
         setState((prevState) => ({ ...prevState, loading2: false }));
