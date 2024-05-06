@@ -169,7 +169,7 @@ function Dashboard(props) {
 
         setState((prevState) => ({ ...prevState, page: 1 }), () => {
           pageChange(null, 1);
-          window.location.reload()
+          getProduct();
         });
       })
       .catch((err) => {
@@ -178,7 +178,7 @@ function Dashboard(props) {
           icon: "error",
           type: "error",
         });
-        window.location.reload()
+        
       });
   };
 
@@ -266,13 +266,16 @@ function Dashboard(props) {
           token: localStorage.getItem("token"),
         },
       }).then((res) => {
-        setState({loading2:false})
+        setState((prevState)=>{setState({...prevState,loading2:false},()=>{
+          console.log("the state is updated successfully"+state.loading2)
+        })})
         console.log(state.loading2)
         swal({
           text: res.data.title,
           icon: "success",
           type: "success",
-        }).then(setState({loading2:false}));
+        })
+
 
         handleProductClose();
         setState({
@@ -319,17 +322,19 @@ function Dashboard(props) {
           page: 1,
         },setState({products: []}, () => {
           getProduct();
-          window.location.reload()
+          
         }));
         
       })
       .catch((err) => {
-        setState((prevState) => ({ ...prevState, loading2: false }));
+        setState((prevState)=>{setState({...prevState,loading2:false},()=>{
+          console.log("the state is updated successfully"+state.loading2)
+        })})
         swal({
           text: err.response.data.errorMessage,
           icon: "error",
           type: "error",
-        }).then(window.location.reload());;
+        }).then();;
         handleProductClose();
       });
   };
@@ -389,13 +394,15 @@ function Dashboard(props) {
           token: localStorage.getItem("token"),
         },
       }).then((res) => {
-        setState({ ...prevState, loading2: false });
+        setState((prevState)=>{setState({...prevState,loading2:false},()=>{
+          console.log("the state is updated successfully"+state.loading2)
+        })})
         console.log(state.loading2)
         swal({
           text: res.data.title,
           icon: "success",
           type: "success",
-        }).then(setState({loading2:false}));;
+        })
 
         handleProductEditClose();
         setState((prevState) => ({
@@ -440,17 +447,24 @@ function Dashboard(props) {
       sarparastwhatsappno:"",
           file: null,
           file2: null,
-        },window.location.reload()));
+        },()=>{
+          setState((prevState)=>{setState({...prevState,loading2:false},()=>{
+            console.log("the state is updated successfully"+state.loading2)
+          })})
+          getProduct()
+        }));
         
       })
       .catch((err) => {
-        setState((prevState) => ({ ...prevState, loading2: false }));
+        setState((prevState)=>{setState({...prevState,loading2:false},()=>{
+          console.log("the state is updated successfully"+state.loading2)
+        })})
 
         swal({
           text: err.response.data.errorMessage,
           icon: "error",
           type: "error",
-        }).then(window.location.reload());;
+        }).then();;
         handleProductEditClose();
       });
   };
