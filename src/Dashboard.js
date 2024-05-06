@@ -91,7 +91,7 @@ function Dashboard(props) {
     setState((prevState) => ({ ...prevState, token:localStorage.getItem("token"), products: [] }));
     console.log(state)
     getProduct();
-  }, [state.token]);
+  }, [state?.token]);
   
 
   const getProduct = () => {
@@ -461,7 +461,7 @@ function Dashboard(props) {
         })})
 
         swal({
-          text: err.response.data.errorMessage,
+          text: err.response?.data?.errorMessage,
           icon: "error",
           type: "error",
         }).then();;
