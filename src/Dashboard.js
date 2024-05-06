@@ -270,7 +270,7 @@ function Dashboard(props) {
           text: res.data.title,
           icon: "success",
           type: "success",
-        });
+        }).then(setState({loading2:false}));
 
         handleProductClose();
         setState({
@@ -326,7 +326,7 @@ function Dashboard(props) {
           text: err.response.data.errorMessage,
           icon: "error",
           type: "error",
-        });
+        }).then(setState({loading2:false}));;
         handleProductClose();
       });
   };
@@ -392,7 +392,7 @@ function Dashboard(props) {
           text: res.data.title,
           icon: "success",
           type: "success",
-        });
+        }).then(setState({loading2:false}));;
 
         handleProductEditClose();
         setState((prevState) => ({
@@ -449,7 +449,7 @@ function Dashboard(props) {
           text: err.response.data.errorMessage,
           icon: "error",
           type: "error",
-        });
+        }).then(setState({loading2:false}));;
         handleProductEditClose();
       });
   };
