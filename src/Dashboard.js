@@ -1761,7 +1761,7 @@ function Dashboard(props) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {state?.products.map((row) => (
+            {state?.products?.map((row) => (
               <TableRow key={row.studentname}>
                 <TableCell align="center" component="th" scope="row">
                   {row.studentname}
