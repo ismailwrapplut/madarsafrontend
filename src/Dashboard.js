@@ -169,6 +169,7 @@ function Dashboard(props) {
 
         setState((prevState) => ({ ...prevState, page: 1 }), () => {
           pageChange(null, 1);
+          location.reload()
         });
       })
       .catch((err) => {
@@ -177,6 +178,7 @@ function Dashboard(props) {
           icon: "error",
           type: "error",
         });
+        location.reload()
       });
   };
 
@@ -317,6 +319,7 @@ function Dashboard(props) {
           page: 1,
         },setState({products: []}, () => {
           getProduct();
+          location.reload()
         }));
         
       })
@@ -326,7 +329,7 @@ function Dashboard(props) {
           text: err.response.data.errorMessage,
           icon: "error",
           type: "error",
-        }).then(setState({loading2:false}));;
+        }).then(location.reload());;
         handleProductClose();
       });
   };
@@ -437,9 +440,7 @@ function Dashboard(props) {
       sarparastwhatsappno:"",
           file: null,
           file2: null,
-        },setState({products: []},() => {
-          getProduct();
-        })));
+        },location.reload()));
         
       })
       .catch((err) => {
@@ -449,7 +450,7 @@ function Dashboard(props) {
           text: err.response.data.errorMessage,
           icon: "error",
           type: "error",
-        }).then(setState({loading2:false}));;
+        }).then(location.reload());;
         handleProductEditClose();
       });
   };
