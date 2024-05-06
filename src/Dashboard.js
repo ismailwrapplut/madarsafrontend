@@ -84,11 +84,11 @@ function Dashboard(props) {
   });
 
   useEffect(() => {
-    const token =  window.localStorage.getItem("token");
+    const token =  window.localStorage?.getItem("token");
     if (!token){
       navigate("/")
     }
-    setState((prevState) => ({ ...prevState, token:localStorage.getItem("token"), products: [] }));
+    setState((prevState) => ({ ...prevState, token:localStorage?.getItem("token"), products: [] }));
     console.log(state)
     getProduct();
   }, [state?.token]);
@@ -98,43 +98,43 @@ function Dashboard(props) {
     setState((prevState) => ({ ...prevState, loading: true }));
 
     let data = "?";
-    data = `${data}page=${state.page}`;
-    if (state.search) {
-      data = `${data}&search=${state.search}`;
+    data = `${data}page=${state?.page}`;
+    if (state?.search) {
+      data = `${data}&search=${state?.search}`;
     }
     axios
       .get(`https://madarsabackend.onrender.com/get-product${data}`, {
         headers: {
-          token: localStorage.getItem("token"),
+          token: localStorage?.getItem("token"),
         },
       })
       .then((res) => {
         setState((prevState) => ({
           ...prevState,
           loading: false,
-          products: res.data.products,
-          pages: res.data.pages,
+          products: res.data?.products,
+          pages: res.data?.pages,
         }));
       })
       .catch((err) => {
         swal({
-          text: err.response.data.errorMessage,
+          text: err.response?.data?.errorMessage,
           icon: "error",
           type: "error",
         });
         if (
-          err.response.data.errorMessage ===
+          err.response?.data?.errorMessage ===
           "Login Expired! Please click OK to Login Again"
         ) {
-          localStorage.removeItem("token");
-          localStorage.removeItem("user_id");
+          localStorage?.removeItem("token");
+          localStorage?.removeItem("user_id");
           navigate("/");
         } else  if (
-          err.response.data.errorMessage ===
+          err.response?.data?.errorMessage ===
           "User unauthorized!"
         ) {
-          localStorage.removeItem("token");
-          localStorage.removeItem("user_id");
+          localStorage?.removeItem("token");
+          localStorage?.removeItem("user_id");
           navigate("/");
         }
         setState((prevState) => ({
@@ -156,13 +156,13 @@ function Dashboard(props) {
         {
           headers: {
             "Content-Type": "application/json",
-            token: localStorage.getItem("token"),
+            token: localStorage?.getItem("token"),
           },
         }
       )
       .then((res) => {
         swal({
-          text: res.data.title,
+          text: res.data?.title,
           icon: "success",
           type: "success",
         });
@@ -192,20 +192,20 @@ function Dashboard(props) {
       setState((prevState) => ({
         ...prevState,
         file: e.target?.files[0],
-        fileName: e.target.files[0]?.name,
+        fileName: e.target?.files[0]?.name,
       }));
     }
-    if (e.target.name === "secondfile") {
+    if (e.target?.name === "secondfile") {
       setState((prevState) => ({
         ...prevState,
         file2: e.target?.files[0],
-        fileName2: e.target.files[0]?.name,
+        fileName2: e.target?.files[0]?.name,
       }));
     }
 
-    setState((prevState) => ({ ...prevState, [e.target.name]: e.target.value }));
+    setState((prevState) => ({ ...prevState, [e.target?.name]: e.target?.value }));
 
-    if (e.target.name === "search") {
+    if (e.target?.name === "search") {
       setState((prevState) => ({ ...prevState, page: 1, products: [] }), () => {
         getProduct();
       });
@@ -215,63 +215,63 @@ function Dashboard(props) {
   const addProduct = () => {
     setState((prevState) => ({ ...prevState, loading2: true }));
     const file = new FormData();
-    const fileArray = [state.file, state.file2];
-    file.append("studentprofilepic", state.file);
-    file.append("sarparastprofilepic", state.file2);
-    file.append("sarparastname", state.sarparastname);
-    file.append("sarparastfathername", state.sarparastfathername);
-    file.append("formDate", state.formDate);
-    file.append("formnumber", state.formnumber);
+    const fileArray = [state?.file, state?.file2];
+    file.append("studentprofilepic", state?.file);
+    file.append("sarparastprofilepic", state?.file2);
+    file.append("sarparastname", state?.sarparastname);
+    file.append("sarparastfathername", state?.sarparastfathername);
+    file.append("formDate", state?.formDate);
+    file.append("formnumber", state?.formnumber);
 
 
-    file.append("sarparastvillage", state.sarparastvillage);
-    file.append("sarparastpost", state.sarparastpost);
-    file.append("sarparasttehseel", state.sarparasttehseel);
-    file.append("sarparastdistt", state.sarparastdistt);
-    file.append("sarparaststate", state.sarparaststate);
-    file.append("sarparastaadharno", state.sarparastaadharno);
-    file.append("studentname", state.studentname);
-    file.append("studentfathername", state.studentfathername);
-    file.append("studentdateofbirth", state.studentdateofbirth);
-    file.append("studentvillage", state.studentvillage);
-    file.append("studentpost", state.studentpost);
-    file.append("studenttehseel", state.studenttehseel);
-    file.append("studentdistt", state.studentdistt);
-    file.append("studentstate", state.studentstate);
-    file.append("studentaadharno", state.studentaadharno);
-    file.append("studentname2", state.studentname2);
-    file.append("studentfathername2", state.studentfathername2);
-    file.append("studentdateofbirth2", state.studentdateofbirth2);
-    file.append("studentvillage2", state.studentvillage2);
-    file.append("studentpost2", state.studentpost2);
-    file.append("studenttehseel2", state.studenttehseel2);
-    file.append("studentdistt2", state.studentdistt2);
-    file.append("studentstate2", state.studentstate2);
-    file.append("studentaadharno2", state.studentaadharno2);
-    file.append("shoba", state.shoba);
-    file.append("dateshamsi", state.dateshamsi);
-    file.append("datekamari", state.datekamari);
-    file.append("darjarequested", state.darjarequested);
-    file.append("darjagiven", state.darjagiven);
-    file.append("beforethis", state.beforethis);
-    file.append("talibilmrishta", state.talibilmrishta);
-    file.append("sarparastmobileno", state.sarparastmobileno);
-    file.append("sarparastwhatsappno", state.sarparastwhatsappno);
+    file.append("sarparastvillage", state?.sarparastvillage);
+    file.append("sarparastpost", state?.sarparastpost);
+    file.append("sarparasttehseel", state?.sarparasttehseel);
+    file.append("sarparastdistt", state?.sarparastdistt);
+    file.append("sarparaststate", state?.sarparaststate);
+    file.append("sarparastaadharno", state?.sarparastaadharno);
+    file.append("studentname", state?.studentname);
+    file.append("studentfathername", state?.studentfathername);
+    file.append("studentdateofbirth", state?.studentdateofbirth);
+    file.append("studentvillage", state?.studentvillage);
+    file.append("studentpost", state?.studentpost);
+    file.append("studenttehseel", state?.studenttehseel);
+    file.append("studentdistt", state?.studentdistt);
+    file.append("studentstate", state?.studentstate);
+    file.append("studentaadharno", state?.studentaadharno);
+    file.append("studentname2", state?.studentname2);
+    file.append("studentfathername2", state?.studentfathername2);
+    file.append("studentdateofbirth2", state?.studentdateofbirth2);
+    file.append("studentvillage2", state?.studentvillage2);
+    file.append("studentpost2", state?.studentpost2);
+    file.append("studenttehseel2", state?.studenttehseel2);
+    file.append("studentdistt2", state?.studentdistt2);
+    file.append("studentstate2", state?.studentstate2);
+    file.append("studentaadharno2", state?.studentaadharno2);
+    file.append("shoba", state?.shoba);
+    file.append("dateshamsi", state?.dateshamsi);
+    file.append("datekamari", state?.datekamari);
+    file.append("darjarequested", state?.darjarequested);
+    file.append("darjagiven", state?.darjagiven);
+    file.append("beforethis", state?.beforethis);
+    file.append("talibilmrishta", state?.talibilmrishta);
+    file.append("sarparastmobileno", state?.sarparastmobileno);
+    file.append("sarparastwhatsappno", state?.sarparastwhatsappno);
     // Append other form fields as needed
 
     axios
       .post("https://madarsabackend.onrender.com/add-product", file, {
         headers: {
           "content-type": "multipart/form-data",
-          token: localStorage.getItem("token"),
+          token: localStorage?.getItem("token"),
         },
       }).then((res) => {
         setState((prevState)=>{setState({...prevState,loading2:false},()=>{
           console.log("the state is updated successfully"+state.loading2)
         })})
-        console.log(state.loading2)
+        console.log(state?.loading2)
         swal({
-          text: res.data.title,
+          text: res.data?.title,
           icon: "success",
           type: "success",
         })
@@ -328,10 +328,10 @@ function Dashboard(props) {
       })
       .catch((err) => {
         setState((prevState)=>{setState({...prevState,loading2:false},()=>{
-          console.log("the state is updated successfully"+state.loading2)
+          console.log("the state is updated successfully"+state?.loading2)
         })})
         swal({
-          text: err.response.data.errorMessage,
+          text: err.response?.data?.errorMessage,
           icon: "error",
           type: "error",
         }).then();;
@@ -342,62 +342,62 @@ function Dashboard(props) {
     setState((prevState) => ({ ...prevState, loading2: true }));
 
     const file = new FormData();
-    console.log(state.file);
-    file.append("id", state.id);
-    file.append("studentprofilepic", state.file);
-    file.append("sarparastprofilepic", state.file2);
-    file.append("sarparastname", state.sarparastname);
-    file.append("sarparastfathername", state.sarparastfathername);
-    file.append("formDate", state.formDate);
-    file.append("formnumber", state.formnumber);
+    console.log(state?.file);
+    file.append("id", state?.id);
+    file.append("studentprofilepic", state?.file);
+    file.append("sarparastprofilepic", state?.file2);
+    file.append("sarparastname", state?.sarparastname);
+    file.append("sarparastfathername", state?.sarparastfathername);
+    file.append("formDate", state?.formDate);
+    file.append("formnumber", state?.formnumber);
 
 
-    file.append("sarparastvillage", state.sarparastvillage);
-    file.append("sarparastpost", state.sarparastpost);
-    file.append("sarparasttehseel", state.sarparasttehseel);
-    file.append("sarparastdistt", state.sarparastdistt);
-    file.append("sarparaststate", state.sarparaststate);
-    file.append("sarparastaadharno", state.sarparastaadharno);
-    file.append("studentname", state.studentname);
-    file.append("studentfathername", state.studentfathername);
-    file.append("studentdateofbirth", state.studentdateofbirth);
-    file.append("studentvillage", state.studentvillage);
-    file.append("studentpost", state.studentpost);
-    file.append("studenttehseel", state.studenttehseel);
-    file.append("studentdistt", state.studentdistt);
-    file.append("studentstate", state.studentstate);
-    file.append("studentaadharno", state.studentaadharno);
-    file.append("studentname2", state.studentname2);
-    file.append("studentfathername2", state.studentfathername2);
-    file.append("studentdateofbirth2", state.studentdateofbirth2);
-    file.append("studentvillage2", state.studentvillage2);
-    file.append("studentpost2", state.studentpost2);
-    file.append("studenttehseel2", state.studenttehseel2);
-    file.append("studentdistt2", state.studentdistt2);
-    file.append("studentstate2", state.studentstate2);
-    file.append("studentaadharno2", state.studentaadharno2);
-    file.append("shoba", state.shoba);
-    file.append("dateshamsi", state.dateshamsi);
-    file.append("datekamari", state.datekamari);
-    file.append("darjarequested", state.darjarequested);
-    file.append("darjagiven", state.darjagiven);
-    file.append("beforethis", state.beforethis);
-    file.append("talibilmrishta", state.talibilmrishta);
-    file.append("sarparastmobileno", state.sarparastmobileno);
-    file.append("sarparastwhatsappno", state.sarparastwhatsappno);
+    file.append("sarparastvillage", state?.sarparastvillage);
+    file.append("sarparastpost", state?.sarparastpost);
+    file.append("sarparasttehseel", state?.sarparasttehseel);
+    file.append("sarparastdistt", state?.sarparastdistt);
+    file.append("sarparaststate", state?.sarparast);
+    file.append("sarparastaadharno", state?.sarparastaadharno);
+    file.append("studentname", state?.studentname);
+    file.append("studentfathername", state?.studentfathername);
+    file.append("studentdateofbirth", state?.studentdateofbirth);
+    file.append("studentvillage", state?.studentvillage);
+    file.append("studentpost", state?.studentpost);
+    file.append("studenttehseel", state?.studenttehseel);
+    file.append("studentdistt", state?.studentdistt);
+    file.append("studentstate", state?.studentstate);
+    file.append("studentaadharno", state?.studentaadharno);
+    file.append("studentname2", state?.studentname2);
+    file.append("studentfathername2", state?.studentfathername2);
+    file.append("studentdateofbirth2", state?.studentdateofbirth2);
+    file.append("studentvillage2", state?.studentvillage2);
+    file.append("studentpost2", state?.studentpost2);
+    file.append("studenttehseel2", state?.studenttehseel2);
+    file.append("studentdistt2", state?.studentdistt2);
+    file.append("studentstate2", state?.studentstate2);
+    file.append("studentaadharno2", state?.studentaadharno2);
+    file.append("shoba", state?.shoba);
+    file.append("dateshamsi", state?.dateshamsi);
+    file.append("datekamari", state?.datekamari);
+    file.append("darjarequested", state?.darjarequested);
+    file.append("darjagiven", state?.darjagiven);
+    file.append("beforethis", state?.beforethis);
+    file.append("talibilmrishta", state?.talibilmrishta);
+    file.append("sarparastmobileno", state?.sarparastmobileno);
+    file.append("sarparastwhatsappno", state?.sarparastwhatsappno);
     // Append other form fields as needed
 
     axios
       .post("https://madarsabackend.onrender.com/update-product", file, {
         headers: {
           "content-type": "multipart/form-data",
-          token: localStorage.getItem("token"),
+          token: localStorage?.getItem("token"),
         },
       }).then((res) => {
         setState((prevState)=>{setState({...prevState,loading2:false},()=>{
-          console.log("the state is updated successfully"+state.loading2)
+          console.log("the state is updated successfully"+state?.loading2)
         })})
-        console.log(state.loading2)
+        console.log(state?.loading2)
         swal({
           text: res.data.title,
           icon: "success",
@@ -457,7 +457,7 @@ function Dashboard(props) {
       })
       .catch((err) => {
         setState((prevState)=>{setState({...prevState,loading2:false},()=>{
-          console.log("the state is updated successfully"+state.loading2)
+          console.log("the state is updated successfully"+state?.loading2)
         })})
 
         swal({
@@ -577,7 +577,7 @@ function Dashboard(props) {
 
   return (
     <div>
-      {state.loading && <LinearProgress size={40} />}
+      {state?.loading && <LinearProgress size={40} />}
       <div className="no-printme">
         <h2>Dashboard</h2>
         <Button
@@ -593,7 +593,7 @@ function Dashboard(props) {
 
       {/* Edit Product */}
       <Dialog
-        open={state.openProductEditModal}
+        open={state?.openProductEditModal}
         onClose={handleProductClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
@@ -607,7 +607,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastname"
-            value={state.sarparastname}
+            value={state?.sarparastname}
             onChange={onChange}
             placeholder="Sarparast Name "
             required
@@ -619,7 +619,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastfathername"
-            value={state.sarparastfathername}
+            value={state?.sarparastfathername}
             onChange={onChange}
             placeholder="Sarparast Father Name"
             required
@@ -631,7 +631,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="formDate"
-            value={state.formDate}
+            value={state?.formDate}
             onChange={onChange}
             placeholder="Form Date"
             required
@@ -643,7 +643,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="formnumber"
-            value={state.formnumber}
+            value={state?.formnumber}
             onChange={onChange}
             placeholder="Form Number"
             required
@@ -655,7 +655,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastvillage"
-            value={state.sarparastvillage}
+            value={state?.sarparastvillage}
             onChange={onChange}
             placeholder="Sarparast Village"
             required
@@ -667,7 +667,7 @@ function Dashboard(props) {
             type="text"
             autoComplete="off"
             name="sarparastpost"
-            value={state.sarparastpost}
+            value={state?.sarparastpost}
             onChange={onChange}
             placeholder="Sarparast Post"
             required
