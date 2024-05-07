@@ -166,10 +166,9 @@ function Dashboard(props) {
           icon: "success",
           type: "success",
         });
-
-        setState((prevState) => ({ ...prevState, page: 1 ,products: []}), () => {
+        setState((prevState) => ({ ...prevState, page: 1 }), () => {
           pageChange(null, 1);
-          getProduct();
+          
 
         });
         
@@ -185,8 +184,10 @@ function Dashboard(props) {
   };
 
   const pageChange = async (event, page) => {
-    setState((prevState) => ({ ...prevState, page: page, products: [] }));
+    setState((prevState) => ({ ...prevState, page: page, products: [] }),()=>{
     getProduct();
+
+    });
   };
 
   const onChange = (e) => {
