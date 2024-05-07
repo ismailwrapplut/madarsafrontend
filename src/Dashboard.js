@@ -167,12 +167,12 @@ function Dashboard(props) {
           type: "success",
         });
 
-        setState((prevState) => ({ ...prevState, page: 1 }), () => {
+        setState((prevState) => ({ ...prevState, page: 1 ,products: []}), () => {
           pageChange(null, 1);
-        });
-        setState({ products: [] }, () => {
           getProduct();
+
         });
+        
       })
       .catch((err) => {
         swal({
