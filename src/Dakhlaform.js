@@ -292,7 +292,7 @@ const Dakhlaform = () => {
            
             </tr>
           </table>
-          <div className="box" style={{marginTop:-5}}>
+          <div className="box" style={{marginTop:-5,padding:"0px 10px"}}>
           <div className="thirdheader">
           <div style={{display:"inline-block", width:"85%"}}>
           <h2
@@ -322,7 +322,7 @@ const Dakhlaform = () => {
     <span>में :{product?.sarparastname} पिता :{product?.sarparastfathername} निवास स्थान  : {product?.sarparastvillage} विद्यार्थी से संबंध :{product?.talibilmrishta} पोस्ट :{product?.sarparastpost} तहसील  :{product?.sarparasttehseel} ज़िला :{product?.sarparastdistt} सूबा  :{product?.sarparaststate}<br></br>  आधार नंबर  :{product?.sarparastaadharno+" "} 
     
     </span>
-    मोबाइल नंबर :{product?.sarparastmobileno}
+    मोबाइल नंबर :{product?.sarparastmobileno+" "}
     वॉट्सएप्प नंबर  :{product?.sarparastwhatsappno}
   </h3>
         
