@@ -318,29 +318,21 @@ const Dakhlaform = () => {
 
           </div>
           <div style={{fontSize:13,display:"flex",flexDirection:"column"}}>
-  <h3 style={{ display: 'inline-block', direction: 'rtl', fontSize:13,textAlign:"right" }}>
-    <span>میں :{product?.sarparastname} ولد :{product?.sarparastfathername} سکونت  : {product?.sarparastvillage} طالب علم سے رشتہ :{product?.talibilmrishta}  
-    پوسٹ :{product?.sarparastpost} تحصیل :{product?.sarparasttehseel} ضلع :{product?.sarparastdistt} صوبہ :{product?.sarparaststate}<br></br>  آدھار نمبر :{product?.sarparastaadharno+" "} 
+  <h3 style={{ display: 'inline-block', direction: 'ltr', fontSize:13,textAlign:"left" }}>
+    <span>में :{product?.sarparastname} पिता :{product?.sarparastfathername} निवास स्थान  : {product?.sarparastvillage} विद्यार्थी से संबंध :{product?.talibilmrishta} पोस्ट :{product?.sarparastpost} तहसील  :{product?.sarparasttehseel} ज़िला :{product?.sarparastdistt} सूबा  :{product?.sarparaststate}<br></br>  आधार नंबर  :{product?.sarparastaadharno+" "} 
     
     </span>
-    موبائل نمبر :{product?.sarparastmobileno}
-    واٹسپ نمبر  :{product?.sarparastwhatsappno}
+    मोबाइल नंबर :{product?.sarparastmobileno}
+    वॉट्सएप्प नंबर  :{product?.sarparastwhatsappno}
   </h3>
         
         
-  <h4 style={{ direction: "rtl", marginTop: -7.5 ,fontSize:13,textAlign:"right"}}>
-  (1) بچے کی طرف سے ہونے والی شکایت پر براہ راست جامعہ کے ذمہ داروں سے رابطہ کروں گا ۔ اگر کسی سر پرست کو اہل جامعہ سے کوئی معقول شکایت ہو تو اسکو عوام میں پھیلانے کے بجائے خیر خواہانہ
-  و مہذب انداز میں ذمہ دار جامعہ کے سامنے رکھنا لازم ہوگا۔ 
-  <span style={{ color: "blue" }}>
-  (۲) دوران تعلیم بچے کے جامعہ سے غائب ہو جانے یا کسی حادثہ میں فوت ہو جانے پر یا خدا نخواستہ طالب علم کی موت واقع ہونے کی 
-    صورت میں
-    ذمہ داران جامعہ کے خلاف کوئی قانونی کارروائی نہیں کروں گا۔
-  </span>
-  یہ ادارہ کے ساتھ میرا عہد و پیمان ہے اور میں نیچے دستخط کر کے اپنے آپ کو تمام مذکورہ شرائط و عہد نامہ کا پابند بناتا ہوں۔
+  <h4 style={{ direction: "ltr", marginTop: -7.5 ,fontSize:13,textAlign:"left"}}> 
+  (१) बच्चे की तरफ से होने वाली शिकायत पर बराहिरासत जामिआ के ज़िम्मेदारों से राब्ता करूँगा। अगर किसी सरपरस्त को जामिआ को अहल जामिआ से कोई माकूल शिकायत हो तो अवाम में फैलाने की बजाये खैर खुवाहना व महज़्ज़ब अंदाज़ में ज़िम्मेदार जामिआ के सामने रखना लाज़िम होगा - <span style={{color:"blue"}}>(२) दौरान तालीम बच्चे के जामिआ से गायब हो जाने य किसी हादसे में फौत होजाने पर य खुदा न खस्ता तालिब ए इल्म की मौत वाक़ेय होने की सूरत में ज़िम्मेदारन जामिआ के खिलाफ कोई कानूनी कारवाही नहीं करूँगा -</span>  ये इदारा के साथ मेरा अहद व पैमान है और में निचे दस्तखत करके अपने आप को तमाम मज़्कूरह शरायत व अहद नामे का पाबंद बनता हूँ - 
 </h4>
 <table style={{width:"100%",marginTop:"40px"}}>
 <tr>
-<td style={{textAlign:"right",border:"none",direction:"rtl" ,fontSize:20}}>  نشان انگوٹھا والد / سرپرست </td>
+<td style={{textAlign:"right",border:"none",direction:"ltr" ,fontSize:20}}>  نشان انگوٹھا والد / سرپرست </td>
 <td style={{textAlign:"right",border:"none",direction:"ltr",fontSize:20}}> :دستخط والد / سرپرست </td>
 
 </tr>
