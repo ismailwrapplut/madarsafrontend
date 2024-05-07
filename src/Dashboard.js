@@ -270,7 +270,6 @@ function Dashboard(props) {
       })
       .then((res) => {
         // Set loading state to false on successful response
-        setState((prevState) => ({ ...prevState, loading2: false }));
         // Show success message
         swal({
           text: res.data?.title,
@@ -318,6 +317,7 @@ function Dashboard(props) {
           talibilmrishta: "",
           sarparastmobileno: "",
           sarparastwhatsappno: "",
+          loading2:false,
           file: null,
           file2: null,
           page: 1,
@@ -399,7 +399,6 @@ function Dashboard(props) {
       })
       .then((res) => {
         // Set loading state to false on successful response
-        setState(prevState => ({ ...prevState, loading2: false }));
         // Show success message
         swal({
           text: res.data.title,
@@ -438,6 +437,7 @@ function Dashboard(props) {
           studentpost2: "",
           studenttehseel2: "",
           studentdistt2: "",
+          loading2:false,
           studentstate2: "",
           studentaadharno2: "",
           shoba: "",
