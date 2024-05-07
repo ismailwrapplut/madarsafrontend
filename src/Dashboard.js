@@ -169,6 +169,8 @@ function Dashboard(props) {
 
         setState((prevState) => ({ ...prevState, page: 1 }), () => {
           pageChange(null, 1);
+        });
+        setState({ products: [] }, () => {
           getProduct();
         });
       })
