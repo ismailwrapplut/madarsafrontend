@@ -332,8 +332,9 @@ const Dakhlaform = () => {
 </h4>
 <table style={{width:"100%",marginTop:"40px"}}>
 <tr>
-<td style={{textAlign:"center",border:"none",direction:"rtl" ,fontSize:20}}>निशान अंगूठे का वालिद / सरपरस्त : </td>
-<td style={{textAlign:"left",border:"none",direction:"rtl",fontSize:20}}>दस्तखत वालिद / सरपरस्त : </td>
+<td style={{textAlign:"left",border:"none",fontSize:14}}>: दस्तखत वालिद / सरपरस्त</td>
+
+<td style={{textAlign:"center",border:"none",fontSize:14}}>: निशान अंगूठे का वालिद / सरपरस्त</td>
 
 </tr>
 </table>
