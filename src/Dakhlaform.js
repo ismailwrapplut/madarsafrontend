@@ -319,7 +319,7 @@ const Dakhlaform = () => {
           </div>
           <div style={{fontSize:13,display:"flex",flexDirection:"column"}}>
   <h3 style={{ display: 'inline-block', direction: 'ltr', fontSize:13,textAlign:"left" }}>
-    <span>में :{product?.sarparastname} पिता :{product?.sarparastfathername} निवास स्थान  : {product?.sarparastvillage} विद्यार्थी से संबंध :{product?.talibilmrishta} पोस्ट :{product?.sarparastpost} तहसील  :{product?.sarparasttehseel} ज़िला :{product?.sarparastdistt} सूबा  :{product?.sarparaststate}<br></br>  आधार नंबर  :{product?.sarparastaadharno+" "} 
+    <span>में :{product?.sarparastname} वल्द :{product?.sarparastfathername} निवास स्थान  : {product?.sarparastvillage} तालिब ए इल्म से रिश्ता :{product?.talibilmrishta} पोस्ट :{product?.sarparastpost} तहसील  :{product?.sarparasttehseel} ज़िला :{product?.sarparastdistt} सूबा  :{product?.sarparaststate}<br></br>  आधार नंबर  :{product?.sarparastaadharno+" "} 
     
     </span>
     मोबाइल नंबर :{product?.sarparastmobileno+" "}
@@ -328,12 +328,12 @@ const Dakhlaform = () => {
         
         
   <h4 style={{ direction: "ltr", marginTop: -7.5 ,fontSize:13,textAlign:"left"}}> 
-  (१) बच्चे की तरफ से होने वाली शिकायत पर बराहिरासत जामिआ के ज़िम्मेदारों से राब्ता करूँगा। अगर किसी सरपरस्त को जामिआ को अहल जामिआ से कोई माकूल शिकायत हो तो अवाम में फैलाने की बजाये खैर खुवाहना व महज़्ज़ब अंदाज़ में ज़िम्मेदार जामिआ के सामने रखना लाज़िम होगा - <span style={{color:"blue"}}>(२) दौरान तालीम बच्चे के जामिआ से गायब हो जाने य किसी हादसे में फौत होजाने पर य खुदा न खस्ता तालिब ए इल्म की मौत वाक़ेय होने की सूरत में ज़िम्मेदारन जामिआ के खिलाफ कोई कानूनी कारवाही नहीं करूँगा -</span>  ये इदारा के साथ मेरा अहद व पैमान है और में निचे दस्तखत करके अपने आप को तमाम मज़्कूरह शरायत व अहद नामे का पाबंद बनता हूँ - 
+  (१) बच्चे की तरफ से होने वाली शिकायत पर बराहेरास्त जामिआ के ज़िम्मेदारों से राब्ता करूँगा। अगर किसी सरपरस्त को अहले जामिआ से कोई माकूल शिकायत हो तो उसको अवाम में फैलाने की बजाये खैर खुवाहना व महज़्ज़ब अंदाज़ में ज़िम्मेदार जामिआ के सामने रखना लाज़िम होगा - <span style={{color:"blue"}}>(२) दौराने तालीम बच्चे के जामिआ से गायब हो जाने य किसी हादसे में फौत होजाने पर य खुदा न खस्ता तालिब ए इल्म की मौत वाक़ेय होने की सूरत में ज़िम्मेदारान जामिआ के खिलाफ कोई कानूनी कारवाही नहीं करूँगा -</span>  ये इदारे के साथ मेरा अहद व पैमान है और में नीचे दस्तखत करके अपने आप को तमाम मज़्कूरह शरायत व अहद नामे का पाबंद बनाता हूँ - 
 </h4>
 <table style={{width:"100%",marginTop:"40px"}}>
 <tr>
-<td style={{textAlign:"right",border:"none",direction:"ltr" ,fontSize:20}}>  نشان انگوٹھا والد / سرپرست </td>
-<td style={{textAlign:"right",border:"none",direction:"ltr",fontSize:20}}> :دستخط والد / سرپرست </td>
+<td style={{textAlign:"center",border:"none",direction:"rtl" ,fontSize:20}}>निशान अंगूठे का वालिद / सरपरस्त : </td>
+<td style={{textAlign:"left",border:"none",direction:"rtl",fontSize:20}}>दस्तखत वालिद / सरपरस्त : </td>
 
 </tr>
 </table>
