@@ -90,7 +90,6 @@ class Dashboard extends Component {
   componentDidMount = () => {
     let token = localStorage.getItem("token");
     if (!token) {
-      this.props.history.push('/');
       this.props.navigate("/");
     } else {
       this.setState({ token: token ,products:[]}, () => {
@@ -131,14 +130,12 @@ class Dashboard extends Component {
           localStorage.removeItem("token");
           localStorage.removeItem("user_id");
           this.props.navigate("/")
-          this.props.history.push("/")
 
 
         }
        else if(err.response.data.errorMessage==="User unauthorized!"){
           localStorage.removeItem("token");
           localStorage.removeItem("user_id");
-          this.props.history.push("/")
           this.props.navigate("/")
 
         }
