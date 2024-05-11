@@ -90,7 +90,7 @@ class Dashboard extends Component {
   componentDidMount = () => {
     let token = localStorage.getItem("token");
     if (!token) {
-      this.props.history.push('/');
+      history.push("/")
       this.props.navigate("/");
     } else {
       this.setState({ token: token ,products:[]}, () => {
@@ -130,7 +130,7 @@ class Dashboard extends Component {
         if(err.response.data.errorMessage==="Login Expired! Please click OK to Login Again"){
           localStorage.removeItem("token");
           localStorage.removeItem("user_id");
-          this.props.navigate("/")
+          history.push("/")
           this.props.history.push("/")
 
 
@@ -138,7 +138,7 @@ class Dashboard extends Component {
        else if(err.response.data.errorMessage==="User unauthorized!"){
           localStorage.removeItem("token");
           localStorage.removeItem("user_id");
-          this.props.history.push("/")
+          history.push("/")
           this.props.navigate("/")
 
         }
