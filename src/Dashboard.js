@@ -1811,7 +1811,7 @@ function Dashboard(props) {
         </Table>
         <br />
 
-        <Pagination count={state?.pages} page={state?.page} onChange={pageChange} variant="outlined" color="primary" />
+        <Pagination count={state?.page} page={state?.pages} onChange={pageChange} variant="outlined" color="primary" />
       </TableContainer>
       <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: 25, fontSize: 14 }}>Created By SmileWeb(+91 9868277865)</div>
 
