@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 //import { Route } from "react-router";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Login from "./Login";
 import Register from "./Register";
@@ -21,3 +22,4 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("root")
 );
+
