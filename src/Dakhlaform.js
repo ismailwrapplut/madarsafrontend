@@ -319,14 +319,14 @@ const Dakhlaform = () => {
           </div>
           <div style={{fontSize:13,display:"flex",flexDirection:"column"}}>
   <h3 style={{ display: 'inline-block', direction: 'ltr', fontSize:13,textAlign:"left" }}>
-  में:{product?.sarparastname} पुत्र:{product?.sarparastfathername} निवासी  : {product?.sarparastvillage} तालिब इल्म से रिश्ता :{product?.talibilmrishta} पोस्ट :{product?.sarparastpost} तहसील :{product?.sarparasttehseel} जिला :{product?.sarparastdistt} सूबा :{product?.sarparaststate} आधार कार्ड नं:  :{product?.sarparastaadharno+" "}मोबाइल नं :{product?.sarparastmobileno+" "}
+  में:{product?.sarparastname} पुत्र:{product?.sarparastfathername} निवासी  : {product?.sarparastvillage} तालिब इल्म से रिश्ता :{product?.talibilmrishta} पोस्ट :{product?.sarparastpost} तहसील :{product?.sarparasttehseel} ज़िला :{product?.sarparastdistt} सूबा :{product?.sarparaststate} <br/>आधार कार्ड नं:  :{product?.sarparastaadharno+" "}मोबाइल नं :{product?.sarparastmobileno+" "}
   </h3>
         
         
   <h4 style={{ direction: "ltr", marginTop: -7.5 ,fontSize:13,textAlign:"left"}}> 
  
-(१) बच्चे की तरफ से होने वाली शिकायत पर सीधे जामिया के जिम्मेदारों से संपर्क करूँगा, अगर किसी सरपरस्त को अहले जामिया से कोई विशेष शिकायत हो तो उस को अवाम में फैलाने के बजाय खैर खाहना और अदब के साथ जिम्मेदारे जामिया के सामने रखना लाजिम होगा।  
-(२) दौरान-ए-तालीम बच्चे के जामिया से गायब हो जाने या किसी हादसे में फूट हो जाने पर या खुदाना खस्ता तालिब इल्म की मौत होने की सूरत में जिम्मेदाराने जामिया के खिलाफ कोई कानूनी करीवाई नहीं करूँगा , यह मदरसा के साथ मेरा अहद और पैमान है , और में नीचे दस्तखत कर के अपने आप को तमाम जिक्र करदा शराइत व एहद नामा का पाबन्द बनता हूँ।  
+(१) बच्चे की तरफ से होने वाली शिकायत पर सीधे जामिया के ज़िम्मेदारों से संपर्क करूँगा, अगर किसी सरपरस्त को अहले जामिया से कोई विशेष शिकायत हो तो उस को अवाम में फैलाने के बजाय खैर खाहाना और अदब के साथ ज़िम्मेदारे जामिया के सामने रखना लाज़िम होगा।  
+(२) दौरान-ए-तालीम बच्चे के जामिया से गायब हो जाने या किसी हादसे में फौत हो जाने पर या खुदाना खस्ता तालिब इल्म की मौत होने की सूरत में ज़िम्मेदाराने जामिया के खिलाफ कोई कानूनी कारवाई नहीं करूँगा , यह मदरसा के साथ मेरा अहद और पैमान है , और में नीचे दस्तखत कर के अपने आप को तमाम ज़िक्र करदा शराइत व अहद नामा का पाबन्द बनाता हूँ।  
 </h4>
 <table style={{width:"100%",marginTop:"35px"}}>
 <tr>
