@@ -186,7 +186,7 @@ function Dashboard(props) {
   const pageChange = async (event, page) => {
     console.log(page)
     await setState((prevState) => ({ ...prevState, page: page, products: [] }));
-    getProduct
+    getProduct();
   };
 
   const onChange = (e) => {
