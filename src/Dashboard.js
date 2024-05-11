@@ -89,6 +89,7 @@ class Dashboard extends Component {
 
   componentDidMount = () => {
     let token = localStorage.getItem("token");
+    console.log(this.props)
     if (!token) {
       this.props.navigate("/");
     } else {
