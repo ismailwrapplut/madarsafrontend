@@ -19,3 +19,9 @@ body {
 h2 {
     color: #3f51b5;
 }
+@media only screen and (max-width: 600px) {
+  .secondhheader{
+    display: flex;
+    flex-direction: column;
+  }
+}
