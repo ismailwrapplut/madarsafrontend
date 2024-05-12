@@ -650,6 +650,7 @@ class Dashboard extends Component {
           </div>
         </div>
         <hr />
+        <div style={{padding:"30%"}}>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -680,6 +681,8 @@ class Dashboard extends Component {
     <span class="sr-only">Next</span>
   </a>
 </div>
+        </div>
+      
         {this.state.loading && <LinearProgress size={40} />}
         <div className="no-printme">
           <h2>Dashboard</h2>
