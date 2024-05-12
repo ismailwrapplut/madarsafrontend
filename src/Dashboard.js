@@ -594,7 +594,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-         <div className="secondheader" style={{backgroundColor:"#C1E78B"}}>
+         <div className="secondheader" style={{backgroundColor:"#C1E78B",padding:"20px"}}>
           <div className="secondheaderchild">
             <h2 style={{ color: "black", fontSize: "15px", marginBottom: 0 ,fontWeight:"bolder"}}>
               JAMIA ISLAMIA DARUL-ULOOM MOHAMMADIA
@@ -602,7 +602,7 @@ class Dashboard extends Component {
             <h2
               style={{
                 color: "black",
-                fontSize: "14px",
+                fontSize: "20px",
                 marginTop: 5,
                 fontWeight: 400,
               }}
@@ -612,7 +612,7 @@ class Dashboard extends Component {
             <h3
               style={{
                 color: "black",
-                fontSize: "14px",
+                fontSize: "20px",
                 marginTop: -10,
                 fontWeight: 600,
               }}
@@ -624,7 +624,7 @@ class Dashboard extends Component {
             <img src={logo} alt="logo" height={80} width={110} />
           </div>
           <div className="secondheaderchild">
-            <h2 style={{ color: "black", fontSize: "18px", marginBottom: 0,fontFamily:"Arabic Font" }}>
+            <h2 style={{ color: "black", fontSize: "24px", marginBottom: 0,fontFamily:"Arabic Font" }}>
               جامعہ اسلامیہ دارالعلوم محمدیه
             </h2>
             <h2
@@ -640,7 +640,7 @@ class Dashboard extends Component {
             <h3
               style={{
                 color: "black",
-                fontSize: "16px",
+                fontSize: "20px",
                 marginTop: -10,
                 fontWeight: 600,
               }}
