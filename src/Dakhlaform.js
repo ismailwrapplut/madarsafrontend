@@ -164,7 +164,11 @@ const Dakhlaform = () => {
               Form No: {product?.formnumber} فارم نمبر
             </h2>
             <h2 style={{ marginTop: 0, fontSize: 18, color: "black" }}>
-{product?.formDate}
+           
+{product?.formDate}  تاریخ داخلہ
+            </h2>
+            <h2 style={{ marginTop: 0, fontSize: 18, color: "black" }}>
+            درخواست داخلہ نمبر
             </h2>
           </div>
         </div>
