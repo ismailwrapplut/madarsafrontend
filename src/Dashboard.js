@@ -586,7 +586,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-         <div className="secondheader">
+         <div className="secondheader" style={{backgroundColor:"#C1E78B"}}>
           <div className="secondheaderchild">
             <h2 style={{ color: "black", fontSize: "15px", marginBottom: 0 ,fontWeight:"bolder"}}>
               JAMIA ISLAMIA DARUL-ULOOM MOHAMMADIA
@@ -641,6 +641,7 @@ class Dashboard extends Component {
             </h3>
           </div>
         </div>
+        <hr />
         {this.state.loading && <LinearProgress size={40} />}
         <div className="no-printme">
           <h2>Dashboard</h2>
