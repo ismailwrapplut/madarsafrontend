@@ -650,7 +650,7 @@ class Dashboard extends Component {
           </div>
         </div>
         <hr />
-        <div style={{padding:"5% 20%"}}>
+        <div style={{padding:"5% 10%"}}>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
