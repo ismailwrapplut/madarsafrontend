@@ -24,6 +24,8 @@ import swal from "sweetalert";
 import { withRouter } from "./utils";
 import axios from "axios";
 import "./Dashboard.css";
+import logo from "./logo.png";
+
 import { Link } from "react-router-dom";
 
 class Dashboard extends Component {
