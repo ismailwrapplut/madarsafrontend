@@ -584,6 +584,61 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
+         <div className="secondheader">
+          <div className="secondheaderchild">
+            <h2 style={{ color: "black", fontSize: "15px", marginBottom: 0 ,fontWeight:"bolder"}}>
+              JAMIA ISLAMIA DARUL-ULOOM MOHAMMADIA
+            </h2>
+            <h2
+              style={{
+                color: "black",
+                fontSize: "14px",
+                marginTop: 5,
+                fontWeight: 400,
+              }}
+            >
+              Meel Kherla,Po.Ladamka,Teh.Pahari.
+            </h2>
+            <h3
+              style={{
+                color: "black",
+                fontSize: "14px",
+                marginTop: -10,
+                fontWeight: 600,
+              }}
+            >
+              Distt:Bharatpur.Raj.Mob.No.9982742935
+            </h3>
+          </div>
+          <div>
+            <img src={logo} alt="logo" height={80} width={110} />
+          </div>
+          <div className="secondheaderchild">
+            <h2 style={{ color: "black", fontSize: "18px", marginBottom: 0,fontFamily:"Arabic Font" }}>
+              جامعہ اسلامیہ دارالعلوم محمدیه
+            </h2>
+            <h2
+              style={{
+                color: "black",
+                fontSize: "12px",
+                marginTop: 0,
+                fontWeight: 400,
+              }}
+            >
+            میل کھیڑلا, پوسٹ لاڈمکا, تحصیل پہاڑی, ضلع  ڈ یگ  (بھرت پور), راجستھان
+            </h2>
+            <h3
+              style={{
+                color: "black",
+                fontSize: "16px",
+                marginTop: -10,
+                fontWeight: 600,
+              }}
+            >
+              9982742935 -:رابطہ نمبر
+            </h3>
+          </div>
+        </div>
         {this.state.loading && <LinearProgress size={40} />}
         <div className="no-printme">
           <h2>Dashboard</h2>
