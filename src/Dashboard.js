@@ -25,6 +25,14 @@ import { withRouter } from "./utils";
 import axios from "axios";
 import "./Dashboard.css";
 import logo from "./logo.png";
+import one from "./1.jpeg"
+import two from "./2.jpeg"
+import three from "./3.jpeg"
+import four from "./4.jpeg"
+import five from "./5.jpeg"
+import six from "./6.jpeg"
+
+
 
 import { Link } from "react-router-dom";
 
@@ -642,6 +650,36 @@ class Dashboard extends Component {
           </div>
         </div>
         <hr />
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src={one} alt="First slide"/>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src={two} alt="Second slide"/>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src={three} alt="Fourth slide"/>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src={four} alt="Fifth slide"/>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src={five} alt="Sixth slide"/>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src={six} alt="Seventh slide"/>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
         {this.state.loading && <LinearProgress size={40} />}
         <div className="no-printme">
           <h2>Dashboard</h2>
