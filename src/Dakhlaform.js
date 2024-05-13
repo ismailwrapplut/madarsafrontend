@@ -77,13 +77,13 @@ const Dakhlaform = () => {
         </div>
         <div className="secondheader">
           <div className="secondheaderchild">
-            <h2 style={{ color: "black", fontSize: "15px", marginBottom: 0 ,fontWeight:"bolder"}}>
+            <h2 style={{ color: "black", fontSize: "20px", marginBottom: 0 ,fontWeight:"bolder"}}>
               JAMIA ISLAMIA DARUL-ULOOM MOHAMMADIA
             </h2>
             <h2
               style={{
                 color: "black",
-                fontSize: "14px",
+                fontSize: "18px",
                 marginTop: 5,
                 fontWeight: 400,
               }}
@@ -93,8 +93,8 @@ const Dakhlaform = () => {
             <h3
               style={{
                 color: "black",
-                fontSize: "14px",
-                marginTop: -10,
+                fontSize: "18px",
+                marginTop: 10,
                 fontWeight: 600,
               }}
             >
@@ -105,13 +105,13 @@ const Dakhlaform = () => {
             <img src={logo} alt="logo" height={80} width={110} />
           </div>
           <div className="secondheaderchild">
-            <h2 style={{ color: "black", fontSize: "18px", marginBottom: 0,fontFamily:"Arabic Font" }}>
+            <h2 style={{ color: "black", fontSize: "24px", marginBottom: 0,fontFamily:"Arabic Font" }}>
               جامعہ اسلامیہ دارالعلوم محمدیه
             </h2>
             <h2
               style={{
                 color: "black",
-                fontSize: "12px",
+                fontSize: "16px",
                 marginTop: 0,
                 fontWeight: 400,
               }}
@@ -121,8 +121,8 @@ const Dakhlaform = () => {
             <h3
               style={{
                 color: "black",
-                fontSize: "16px",
-                marginTop: -10,
+                fontSize: "20px",
+                marginTop: 10,
                 fontWeight: 600,
               }}
             >
@@ -130,7 +130,7 @@ const Dakhlaform = () => {
             </h3>
           </div>
         </div>
-        <hr className="star" style={{marginTop:-10}} />
+        <hr className="star" style={{marginTop:10}} />
         <div className="secondheader">
           <div>
             <img
@@ -146,7 +146,7 @@ const Dakhlaform = () => {
               style={{
                 color: "black",
                 backgroundColor: "white",
-                fontSize: "15px",
+                fontSize: "22px",
               }}
             >
             مطلوبہ  تفصیلات
@@ -158,7 +158,7 @@ const Dakhlaform = () => {
               style={{
                 color: "black",
                 backgroundColor: "white",
-                fontSize: "12px",
+                fontSize: "16px",
               }}
             >
               Form No: {product?.formnumber} فارم نمبر
@@ -176,7 +176,7 @@ const Dakhlaform = () => {
           <table style={{ width: "100%", marginTop: 8 }}>
             <tr>
               <th>مکمل پتہ سرپرست انگریزی/ہندی میں </th>
-              <th style={{textAlign:"right",marginRight:-10,}}>مکمل پتہ طالب علم</th>
+              <th style={{textAlign:"right",marginRight:10,}}>مکمل پتہ طالب علم</th>
               <th style={{borderLeft:"none",borderBottom:"none",borderRight:"1px solid black"}}></th>
 
             </tr>
@@ -237,7 +237,7 @@ const Dakhlaform = () => {
             </tr>
           </table>
         </div>
-        <h3 style={{direction:"rtl",fontSize:12,textAlign:"right"}}>
+        <h3 style={{direction:"rtl",fontSize:20,textAlign:"right"}}>
               
         (۱) ادارہ کے جملہ قوانین وضوابط کی پابندی اور ارباب جامعہ کی تمام وقتی تحریری و زبانی ہدایات کے مطابق عمل کرنا ضروری ہوگا (۲) اساتذہ، ذمہ داران جامعہ نیز علم و علماء کا ادب واحترام اور 
       
@@ -254,18 +254,18 @@ const Dakhlaform = () => {
 </span>(۵)
  غیر اخلاقی و غیر شرعی حرکتوں پر جامعہ کو باز پرس کرنے کا پورا پورا حق ہوگا ، اس پر کسی کو قانونی چارہ جوئی کا حق نہ ہوگا۔
         </h3> 
-        <h3 style={{direction:"rtl",fontSize:12,textAlign:"right"}}>
+        <h3 style={{direction:"rtl",fontSize:20,textAlign:"right"}}>
         میں  {product?.studentname} بن  {product?.studentfathername} 
 
           جامعہ کے شعبہ      {product?.shoba}                     داخلہ کا خواہش مند ہوں ، میں نے
               جامعہ کے قواعد وضوابط کا بغور مطالعہ کیا ہے، میں اپنی رضا ، ہوش و
              حواس کے ساتھ 
-             <span style={{ marginTop: -10, direction:"rtl" ,fontSize:13}}>
+             <span style={{ marginTop: 10, direction:"rtl" ,fontSize:21}}>
              عہد کرتا ہوں کہ جامعہ کے قوانین کی پابندی کروں گا ، جامعہ
             کے اساتذہ و دیگر عملہ کوکسی قسم کی شکایت کا موقع نہ دونگا ، خلاف ورزی
             کی صورت میں ذمہ داران جامعہ جو بھی سزا میرے لئے تجویز کرینگے وہ
             مجھے منظور ہوگی
-            <span style={{ color: "blue" ,fontSize:13}}>
+            <span style={{ color: "blue" ,fontSize:21}}>
           
               , اور مجھے اور نہ میرے سر پرست کو جامعہ کے خلاف کسی قسم کی قانونی
                  چارہ جوئی کا کوئی حق نہ ہوگا۔
@@ -274,21 +274,21 @@ const Dakhlaform = () => {
             تاریخ شمسی : {product?.dateshamsi}
          
   
-           <span style={{direction:"rtl",fontSize:13}}> تاریخ قمری :{product?.datekamari}</span>
+           <span style={{direction:"rtl",fontSize:21}}> تاریخ قمری :{product?.datekamari}</span>
            
             </span>
              </h3>
      
               <table style={{width:"100%"}}> 
               <tr>
-              <td style={{textAlign:"right",fontSize:15,direction:"rtl"}}> اس سے قبل کہاں تعلیم حاصل کی ہے :{product?.beforethis}</td>
-              <td style={{textAlign:"right",fontSize:15,direction:"rtl"}}>{"                       "} کس درجہ میں داخلہ مطلوب ہے:۔ :{product?.darjarequested}</td>
+              <td style={{textAlign:"right",fontSize:21,direction:"rtl"}}> اس سے قبل کہاں تعلیم حاصل کی ہے :{product?.beforethis}</td>
+              <td style={{textAlign:"right",fontSize:21,direction:"rtl"}}>{"                       "} کس درجہ میں داخلہ مطلوب ہے:۔ :{product?.darjarequested}</td>
               </tr>
             </table>
             <table style={{width:"100%",border:"2px solid black",height:40}}> 
             <tr>
-            <td style={{textAlign:"right",border:"none",fontSize:15}}>دستخط ناظم تعلیمات :۔</td>
-            <td style={{textAlign:"right",border:"none",fontSize:15,direction:"rtl"}}> 
+            <td style={{textAlign:"right",border:"none",fontSize:21}}>دستخط ناظم تعلیمات :۔</td>
+            <td style={{textAlign:"right",border:"none",fontSize:21,direction:"rtl"}}> 
             اس طالب علم کو درجہ  {" "+product?.darjagiven+" "}
              میں داخلہ دیا جائے 
              
@@ -296,7 +296,7 @@ const Dakhlaform = () => {
            
             </tr>
           </table>
-          <div className="box" style={{marginTop:-5,padding:"0px 10px"}}>
+          <div className="box" style={{marginTop:5,padding:"0px 10px"}}>
           <div className="thirdheader">
           <div style={{display:"inline-block", width:"85%"}}>
           <h2
@@ -304,7 +304,7 @@ const Dakhlaform = () => {
               style={{
                 color: "red",
                 backgroundColor: "black",
-                fontSize: "18px",
+                fontSize: "24px",
               }}
             >
              हलफ नामा सरपरस्त
@@ -313,30 +313,30 @@ const Dakhlaform = () => {
           <div style={{display:"inline-block" ,width:"15%"}}>
           <img
           src={product?.sarparastprofilepic}
-          width="80"
-          height="120"
+          width="120"
+          height="140"
           alt="talib ilm"
         />
       
           </div>
 
           </div>
-          <div style={{fontSize:13,display:"flex",flexDirection:"column"}}>
-  <h3 style={{ display: 'inline-block', direction: 'ltr', fontSize:13,textAlign:"left" }}>
+          <div style={{fontSize:20,display:"flex",flexDirection:"column"}}>
+  <h3 style={{ display: 'inline-block', direction: 'ltr', fontSize:20,textAlign:"left" }}>
   में:{product?.sarparastname} पुत्र:{product?.sarparastfathername} निवासी  : {product?.sarparastvillage} तालिब इल्म से रिश्ता :{product?.talibilmrishta} पोस्ट :{product?.sarparastpost} तहसील :{product?.sarparasttehseel} ज़िला :{product?.sarparastdistt} सूबा :{product?.sarparaststate} <br/>आधार कार्ड नं:  :{product?.sarparastaadharno+" "}मोबाइल नं :{product?.sarparastmobileno+" "}
   </h3>
         
         
-  <h4 style={{ direction: "ltr", marginTop: -7.5 ,fontSize:13,textAlign:"left"}}> 
+  <h4 style={{ direction: "ltr", marginTop: 7.5 ,fontSize:20,textAlign:"left"}}> 
  
 (१) बच्चे की तरफ से होने वाली शिकायत पर सीधे जामिया के ज़िम्मेदारों से संपर्क करूँगा, अगर किसी सरपरस्त को अहले जामिया से कोई विशेष शिकायत हो तो उस को अवाम में फैलाने के बजाय खैर खाहाना और अदब के साथ ज़िम्मेदारे जामिया के सामने रखना लाज़िम होगा।  
 (२) दौरान-ए-तालीम बच्चे के जामिया से गायब हो जाने या किसी हादसे में फौत हो जाने पर या खुदाना खस्ता तालिब इल्म की मौत होने की सूरत में ज़िम्मेदाराने जामिया के खिलाफ कोई कानूनी कारवाई नहीं करूँगा , यह मदरसा के साथ मेरा अहद और पैमान है , और में नीचे दस्तखत कर के अपने आप को तमाम ज़िक्र करदा शराइत व अहद नामा का पाबन्द बनाता हूँ।  
 </h4>
 <table style={{width:"100%",marginTop:"35px"}}>
 <tr>
-<td style={{textAlign:"left",border:"none",fontSize:12}}>दस्तखत पिता / सरपरस्त: </td>
+<td style={{textAlign:"left",border:"none",fontSize:20}}>दस्तखत पिता / सरपरस्त: </td>
 
-<td style={{textAlign:"center",border:"none",fontSize:12}}>निशान अंगूठा पिता / सरपरस्त: </td>
+<td style={{textAlign:"center",border:"none",fontSize:20}}>निशान अंगूठा पिता / सरपरस्त: </td>
 
 </tr>
 </table>
@@ -369,8 +369,8 @@ const Dakhlaform = () => {
       <div className="photosign" style={{width:"20%",display:"inline-block",marginBottom:"-14px"}}>
       <img
       src={product?.studentprofilepic}
-      width="65"
-      height="75"
+      width="85px"
+      height="95px"
       alt="talib ilm"
       style={{border:"1.5px solid black"}}
     />
