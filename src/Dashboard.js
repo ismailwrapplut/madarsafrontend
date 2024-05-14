@@ -1322,16 +1322,50 @@ class Dashboard extends Component {
             />
             <br />
             <br />
-            <input
-              id="standard-basic"
+            
+             <label for="select">Sarparast Village</label>
+            <select id="standard-basic"
               type="text"
               autoComplete="off"
               name="sarparastvillage"
               value={this.state.sarparastvillage}
               onChange={this.onChange}
               placeholder="Sarparast Village"
-              required
-            />
+              required>
+
+<option value="Sarai" >Sarai</option>
+<option value="Ladamka" >Ladamka</option>
+<option value="Sikiri" >Sikiri</option>
+<option value="Noabad" >Noabad</option>
+<option value="Pali" >Pali</option>
+<option value="Chhajju Khera" >Chhajju Khera</option>
+<option value="Pipal Kheraa" >Pipal Kheraa</option>
+<option value="Piproli" >Piproli</option>
+<option value="Jhantli" >Jhantli</option>
+<option value="Nakatpur" >Nakatpur</option>
+<option value="Gopalgarh" >Gopalgarh</option>
+<option value="Khunta Bas" >Khunta Bas</option>
+<option value="Jarla" >Jarla</option>
+<option value="Biwan" >Biwan</option>
+<option value="Mahon" >Mahon</option>
+<option value="Nagla Ahsanpur" >Nagla Ahsanpur</option>
+<option value="Singar" >Singar</option>
+<option value="Kameda" >Kameda</option>
+<option value="Bakhshuka" >Bakhshuka</option>
+<option value="Dolabas" >Dolabas</option>
+<option value="Rupraka" >Rupraka</option>
+<option value="Ghasera" >Ghasera</option>
+<option value="Malai" >Malai</option>
+<option value="Chhapra" >Chhapra</option>
+<option value="Rewasan" >Rewasan</option>
+<option value="Guraksar" >Guraksar</option>
+<option value="Bisru" >Bisru</option>
+<option value="Kot" >Kot</option>
+<option value="Utawar" >Utawar</option>
+<option value="Jhanda" >Jhanda</option>
+
+
+</select>
             <br />
             <br />
             <input
@@ -1346,28 +1380,64 @@ class Dashboard extends Component {
             />
             <br />
             <br />
-            <input
-              id="standard-basic"
+
+                         <label for="select">Sarparast Tehseel</label>
+            <select id="standard-basic"
               type="text"
               autoComplete="off"
               name="sarparasttehseel"
               value={this.state.sarparasttehseel}
               onChange={this.onChange}
               placeholder="Sarparast Tehseel"
-              required
-            />
+              required>
+<option value="Pahari">Pahari</option>
+<option value="Kama">Kama</option>
+<option value="Sikiri">Sikiri</option>
+<option value="Nagar">Nagar</option>
+<option value="Lachmangarh">Lachmangarh</option>
+<option value="Ramgarh">Ramgarh</option>
+<option value="Nogaon">Nogaon</option>
+<option value="Alwar">Alwar</option>
+<option value="Kishangarh">Kishangarh</option>
+<option value="Tijara">Tijara</option>
+<option value="Tapukra">Tapukra</option>
+<option value="Firozpurjhirka">Firozpurjhirka</option>
+<option value="Punhana">Punhana</option>
+<option value="Nagina">Nagina</option>
+<option value="Hodal">Hodal</option>
+<option value="Hathin">Hathin</option>
+<option value="Nuh">Nuh</option>
+<option value="Tauru">Tauru</option>
+<option value="Sohna">Sohna</option>
+<option value="Dhoj">Dhoj</option>
+<option value="Indri">Indri</option>
+
+</select>
             <br />
             <br />
-            <input
-              id="standard-basic"
+          
+             <label for="select">Sarparast District</label>
+            <select  id="standard-basic"
               type="text"
               autoComplete="off"
               name="sarparastdistt"
               value={this.state.sarparastdistt}
               onChange={this.onChange}
               placeholder="Sarparast Distt"
-              required
-            />
+              required>
+<option value="Deeg">Deeg</option>
+<option value="Alwar">Alwar</option>
+<option value="Khairthal">Khairthal</option>
+<option value="Nuh(Mewat)">Nuh(Mewat)</option>
+<option value="Palwal">Palwal</option>
+<option value="Bharatpur">Bharatpur</option>
+<option value="Gurugram">Gurugram</option>
+<option value="Faridabad">Faridabad</option>
+<option value="Mathura">Mathura</option>
+<option value="Duasa">Duasa</option>
+<option value="Ajmer">Ajmer</option>
+
+</select>
             <br />
             <br />
            <label for="standard-basic">Sarparast State</label>
@@ -1469,16 +1539,51 @@ class Dashboard extends Component {
             />
             <br />
             <br />
-            <input
-              id="standard-basic"
+            
+                <label for="select">Student Village</label>
+            <select  id="standard-basic"
               type="text"
               autoComplete="off"
               name="studentvillage"
               value={this.state.studentvillage}
               onChange={this.onChange}
               placeholder="Student's Village"
-              required
-            />
+              required>
+
+<option value="Sarai" >Sarai</option>
+<option value="Ladamka" >Ladamka</option>
+<option value="Sikiri" >Sikiri</option>
+<option value="Noabad" >Noabad</option>
+<option value="Pali" >Pali</option>
+<option value="Chhajju Khera" >Chhajju Khera</option>
+<option value="Pipal Kheraa" >Pipal Kheraa</option>
+<option value="Piproli" >Piproli</option>
+<option value="Jhantli" >Jhantli</option>
+<option value="Nakatpur" >Nakatpur</option>
+<option value="Gopalgarh" >Gopalgarh</option>
+<option value="Khunta Bas" >Khunta Bas</option>
+<option value="Jarla" >Jarla</option>
+<option value="Biwan" >Biwan</option>
+<option value="Mahon" >Mahon</option>
+<option value="Nagla Ahsanpur" >Nagla Ahsanpur</option>
+<option value="Singar" >Singar</option>
+<option value="Kameda" >Kameda</option>
+<option value="Bakhshuka" >Bakhshuka</option>
+<option value="Dolabas" >Dolabas</option>
+<option value="Rupraka" >Rupraka</option>
+<option value="Ghasera" >Ghasera</option>
+<option value="Malai" >Malai</option>
+<option value="Chhapra" >Chhapra</option>
+<option value="Rewasan" >Rewasan</option>
+<option value="Guraksar" >Guraksar</option>
+<option value="Bisru" >Bisru</option>
+<option value="Kot" >Kot</option>
+<option value="Utawar" >Utawar</option>
+<option value="Jhanda" >Jhanda</option>
+
+
+</select>
+
             <br />
             <br />
             <input
@@ -1493,28 +1598,65 @@ class Dashboard extends Component {
             />
             <br />
             <br />
-            <input
-              id="standard-basic"
+           
+                <label for="select">Student Tehseel</label>
+            <select id="standard-basic"
               type="text"
               autoComplete="off"
               name="studenttehseel"
               value={this.state.studenttehseel}
               onChange={this.onChange}
               placeholder="Student Tehseel"
-              required
-            />
+              required>
+<option value="Pahari">Pahari</option>
+<option value="Kama">Kama</option>
+<option value="Sikiri">Sikiri</option>
+<option value="Nagar">Nagar</option>
+<option value="Lachmangarh">Lachmangarh</option>
+<option value="Ramgarh">Ramgarh</option>
+<option value="Nogaon">Nogaon</option>
+<option value="Alwar">Alwar</option>
+<option value="Kishangarh">Kishangarh</option>
+<option value="Tijara">Tijara</option>
+<option value="Tapukra">Tapukra</option>
+<option value="Firozpurjhirka">Firozpurjhirka</option>
+<option value="Punhana">Punhana</option>
+<option value="Nagina">Nagina</option>
+<option value="Hodal">Hodal</option>
+<option value="Hathin">Hathin</option>
+<option value="Nuh">Nuh</option>
+<option value="Tauru">Tauru</option>
+<option value="Sohna">Sohna</option>
+<option value="Dhoj">Dhoj</option>
+<option value="Indri">Indri</option>
+
+</select>
+
             <br />
             <br />
-            <input
-              id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentdistt"
-              value={this.state.studentdistt}
-              onChange={this.onChange}
-              placeholder="Student Distt"
-              required
-            />
+
+              <label for="select">Student District</label>
+            <select  id="standard-basic"
+               type="text"
+               autoComplete="off"
+               name="studentdistt"
+               value={this.state.studentdistt}
+               onChange={this.onChange}
+               placeholder="Student Distt"
+               required>
+<option value="Deeg">Deeg</option>
+<option value="Alwar">Alwar</option>
+<option value="Khairthal">Khairthal</option>
+<option value="Nuh(Mewat)">Nuh(Mewat)</option>
+<option value="Palwal">Palwal</option>
+<option value="Bharatpur">Bharatpur</option>
+<option value="Gurugram">Gurugram</option>
+<option value="Faridabad">Faridabad</option>
+<option value="Mathura">Mathura</option>
+<option value="Duasa">Duasa</option>
+<option value="Ajmer">Ajmer</option>
+
+</select>
             <br />
             <br />
         
