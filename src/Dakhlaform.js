@@ -374,8 +374,8 @@ const Dakhlaform = () => {
       alt="talib ilm"
       style={{border:"1.5px solid black"}}
     />
-    <p style={{color:"blue",fontSize:10,padding:0,margin:0,fontWeight:"bold",marginTop:"-8px"}}>PRINCIPAL</p>
-    <img src={"/signMain.png"} width={50} style={{margin:0,padding:0,marginTop:"-16px",paddingBottom:"12px"}}/>
+    <p style={{color:"blue",fontSize:10,padding:0,margin:0,fontWeight:"bold",marginTop:"8px"}}>PRINCIPAL</p>
+    <img src={"/sign.png"} width={50} style={{margin:0,padding:0,marginTop:"-16px",paddingBottom:"12px"}}/>
       </div>
     <div className="maindetails" style={{width:"80%",display:"inline-block",margin:0,marginLeft:25}}>
 
