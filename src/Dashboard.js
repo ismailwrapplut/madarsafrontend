@@ -19,6 +19,9 @@ import {
 import { Pagination } from "@material-ui/lab";
 import { Audio } from "react-loader-spinner";
 import Loader from "react-js-loader";
+import Select from 'react-select';
+import CreatableSelect from 'react-select/creatable';
+
 
 import swal from "sweetalert";
 import { withRouter } from "./utils";
@@ -201,37 +204,114 @@ class Dashboard extends Component {
   //   // this.props.history.push('/');
   //   this.props.navigate("/");
   // };
-
-  onChange = (e) => {
-    if (e.target.name === "firstfile") {
-      console.log(e.target.files[0]);
-      this.setState(
-        { file: e.target?.files[0], fileName: e.target.files[0]?.name },
-        () => {
-          console.log(this.state.file);
-        }
-      );
-    }
-    if (e.target.name === "secondfile") {
-      console.log(e.target.files[0]);
-
-      this.setState(
-        {
-          file2: e.target?.files[0],
-          fileName2: e.target.files[0]?.name,
-        },
-        () => {
-          console.log(this.state.file2);
-        }
-      );
-    }
-
-    this.setState({ [e.target.name]: e.target.value }, () => {});
-
-    if (e.target.name === "search") {
-      this.setState({ page: 1 ,products:[]}, () => {
-        this.getProduct();
+   villageOptions = [
+    { value: 'Sarai', label: 'Sarai' },
+    { value: 'Ladamka', label: 'Ladamka' },
+    { value: 'Sikiri', label: 'Sikiri' },
+    { value: 'Noabad', label: 'Noabad' },
+    { value: 'Pali', label: 'Pali' },
+    { value: 'Chhajju Khera', label: 'Chhajju Khera' },
+    { value: 'Pipal Kheraa', label: 'Pipal Kheraa' },
+    { value: 'Piproli', label: 'Piproli' },
+    { value: 'Jhantli', label: 'Jhantli' },
+    { value: 'Nakatpur', label: 'Nakatpur' },
+    { value: 'Gopalgarh', label: 'Gopalgarh' },
+    { value: 'Khunta Bas', label: 'Khunta Bas' },
+    { value: 'Jarla', label: 'Jarla' },
+    { value: 'Biwan', label: 'Biwan' },
+    { value: 'Mahon', label: 'Mahon' },
+    { value: 'Nagla Ahsanpur', label: 'Nagla Ahsanpur' },
+    { value: 'Singar', label: 'Singar' },
+    { value: 'Kameda', label: 'Kameda' },
+    { value: 'Bakhshuka', label: 'Bakhshuka' },
+    { value: 'Dolabas', label: 'Dolabas' },
+    { value: 'Rupraka', label: 'Rupraka' },
+    { value: 'Ghasera', label: 'Ghasera' },
+    { value: 'Malai', label: 'Malai' },
+    { value: 'Chhapra', label: 'Chhapra' },
+    { value: 'Rewasan', label: 'Rewasan' },
+    { value: 'Guraksar', label: 'Guraksar' },
+    { value: 'Bisru', label: 'Bisru' },
+    { value: 'Kot', label: 'Kot' },
+    { value: 'Utawar', label: 'Utawar' },
+    { value: 'Jhanda', label: 'Jhanda' },
+  ];
+  
+  tehseelOptions = [
+    { value: 'Pahari', label: 'Pahari' },
+    { value: 'Kama', label: 'Kama' },
+    { value: 'Sikiri', label: 'Sikiri' },
+    { value: 'Nagar', label: 'Nagar' },
+    { value: 'Lachmangarh', label: 'Lachmangarh' },
+    { value: 'Ramgarh', label: 'Ramgarh' },
+    { value: 'Nogaon', label: 'Nogaon' },
+    { value: 'Alwar', label: 'Alwar' },
+    { value: 'Kishangarh', label: 'Kishangarh' },
+    { value: 'Tijara', label: 'Tijara' },
+    { value: 'Tapukra', label: 'Tapukra' },
+    { value: 'Firozpurjhirka', label: 'Firozpurjhirka' },
+    { value: 'Punhana', label: 'Punhana' },
+    { value: 'Nagina', label: 'Nagina' },
+    { value: 'Hodal', label: 'Hodal' },
+    { value: 'Hathin', label: 'Hathin' },
+    { value: 'Nuh', label: 'Nuh' },
+    { value: 'Tauru', label: 'Tauru' },
+    { value: 'Sohna', label: 'Sohna' },
+    { value: 'Dhoj', label: 'Dhoj' },
+    { value: 'Indri', label: 'Indri' },
+  ];
+  
+  districtOptions = [
+    { value: 'Deeg', label: 'Deeg' },
+    { value: 'Alwar', label: 'Alwar' },
+    { value: 'Khairthal', label: 'Khairthal' },
+    { value: 'Nuh(Mewat)', label: 'Nuh(Mewat)' },
+    { value: 'Palwal', label: 'Palwal' },
+    { value: 'Bharatpur', label: 'Bharatpur' },
+    { value: 'Gurugram', label: 'Gurugram' },
+    { value: 'Faridabad', label: 'Faridabad' },
+    { value: 'Mathura', label: 'Mathura' },
+    { value: 'Duasa', label: 'Duasa' },
+    { value: 'Ajmer', label: 'Ajmer' },
+  ];
+  onChange = (e, actionMeta) => {
+    if (actionMeta && actionMeta.name) {
+      // Handling react-select change
+      this.setState({ [actionMeta.name]: e ? e.value : '' }, () => {
+        console.log(`${actionMeta.name} updated to ${e ? e.value : ''}`);
       });
+    } else {
+      // Handling standard input change
+      console.log(e.target);
+      if (e.target?.name === "firstfile") {
+        console.log(e.target.files[0]);
+        this.setState(
+          { file: e.target?.files[0], fileName: e.target.files[0]?.name },
+          () => {
+            console.log(this.state.file);
+          }
+        );
+      }
+      if (e.target?.name === "secondfile") {
+        console.log(e.target.files[0]);
+        this.setState(
+          {
+            file2: e.target?.files[0],
+            fileName2: e.target?.files[0]?.name,
+          },
+          () => {
+            console.log(this.state.file2);
+          }
+        );
+      }
+      console.log(e.target?.name);
+      this.setState({ [e.target?.name]: e.target?.value }, () => {});
+  
+      if (e.target?.name === "search") {
+        this.setState({ page: 1, products: [] }, () => {
+          this.getProduct();
+        });
+      }
     }
   };
 
@@ -1324,48 +1404,17 @@ class Dashboard extends Component {
             <br />
             
              <label for="select">Sarparast Village</label>
-            <select id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="sarparastvillage"
-              value={this.state.sarparastvillage}
-              onChange={this.onChange}
-              placeholder="Sarparast Village"
-              required>
-
-<option value="Sarai" >Sarai</option>
-<option value="Ladamka" >Ladamka</option>
-<option value="Sikiri" >Sikiri</option>
-<option value="Noabad" >Noabad</option>
-<option value="Pali" >Pali</option>
-<option value="Chhajju Khera" >Chhajju Khera</option>
-<option value="Pipal Kheraa" >Pipal Kheraa</option>
-<option value="Piproli" >Piproli</option>
-<option value="Jhantli" >Jhantli</option>
-<option value="Nakatpur" >Nakatpur</option>
-<option value="Gopalgarh" >Gopalgarh</option>
-<option value="Khunta Bas" >Khunta Bas</option>
-<option value="Jarla" >Jarla</option>
-<option value="Biwan" >Biwan</option>
-<option value="Mahon" >Mahon</option>
-<option value="Nagla Ahsanpur" >Nagla Ahsanpur</option>
-<option value="Singar" >Singar</option>
-<option value="Kameda" >Kameda</option>
-<option value="Bakhshuka" >Bakhshuka</option>
-<option value="Dolabas" >Dolabas</option>
-<option value="Rupraka" >Rupraka</option>
-<option value="Ghasera" >Ghasera</option>
-<option value="Malai" >Malai</option>
-<option value="Chhapra" >Chhapra</option>
-<option value="Rewasan" >Rewasan</option>
-<option value="Guraksar" >Guraksar</option>
-<option value="Bisru" >Bisru</option>
-<option value="Kot" >Kot</option>
-<option value="Utawar" >Utawar</option>
-<option value="Jhanda" >Jhanda</option>
-
-
-</select>
+             <CreatableSelect
+             id="standard-basic"
+             value={this.villageOptions.find(option => option.value === this.state.sarparastvillage)}
+             onChange={this.onChange}
+             options={this.villageOptions}
+             name="sarparastvillage"
+             isClearable
+             required
+             placeholder="Select or type Saparast Village"
+           />
+        
             <br />
             <br />
             <input
@@ -1382,66 +1431,35 @@ class Dashboard extends Component {
             <br />
 
                          <label for="select">Sarparast Tehseel</label>
-            <select id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="sarparasttehseel"
-              value={this.state.sarparasttehseel}
-              onChange={this.onChange}
-              placeholder="Sarparast Tehseel"
-              required>
-<option value="Pahari">Choose</option>
+                         <CreatableSelect
+                         id="standard-basic"
+                         required
+             value={this.tehseelOptions.find(option => option.value === this.state.sarparasttehseel)}
 
-<option value="Pahari">Pahari</option>
-<option value="Kama">Kama</option>
-<option value="Sikiri">Sikiri</option>
-<option value="Nagar">Nagar</option>
-<option value="Lachmangarh">Lachmangarh</option>
-<option value="Ramgarh">Ramgarh</option>
-<option value="Nogaon">Nogaon</option>
-<option value="Alwar">Alwar</option>
-<option value="Kishangarh">Kishangarh</option>
-<option value="Tijara">Tijara</option>
-<option value="Tapukra">Tapukra</option>
-<option value="Firozpurjhirka">Firozpurjhirka</option>
-<option value="Punhana">Punhana</option>
-<option value="Nagina">Nagina</option>
-<option value="Hodal">Hodal</option>
-<option value="Hathin">Hathin</option>
-<option value="Nuh">Nuh</option>
-<option value="Tauru">Tauru</option>
-<option value="Sohna">Sohna</option>
-<option value="Dhoj">Dhoj</option>
-<option value="Indri">Indri</option>
-
-</select>
+                         name="sarparasttehseel"
+               
+                         onChange={this.onChange}
+                         options={this.tehseelOptions}
+                         isClearable
+                         placeholder="Select or type... Sarparast Tehseel"
+                       />
+          
             <br />
             <br />
           
              <label for="select">Sarparast District</label>
-            <select  id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="sarparastdistt"
-              value={this.state.sarparastdistt}
-              onChange={this.onChange}
-              placeholder="Sarparast Distt"
-              required>
-<option value="Pahari">Choose</option>
+             <CreatableSelect
+             id="standard-basic"
+             name="sarparastdistt"
+             value={this.districtOptions.find(option => option.value === this.state.sarparastdistt)}
 
-<option value="Deeg">Deeg</option>
-<option value="Alwar">Alwar</option>
-<option value="Khairthal">Khairthal</option>
-<option value="Nuh(Mewat)">Nuh(Mewat)</option>
-<option value="Palwal">Palwal</option>
-<option value="Bharatpur">Bharatpur</option>
-<option value="Gurugram">Gurugram</option>
-<option value="Faridabad">Faridabad</option>
-<option value="Mathura">Mathura</option>
-<option value="Duasa">Duasa</option>
-<option value="Ajmer">Ajmer</option>
-
-</select>
+             onChange={this.onChange}
+             options={this.districtOptions}
+             isClearable
+             required
+             placeholder="Select or type... Sarparast Distt"
+           />
+       
             <br />
             <br />
            <label for="standard-basic">Sarparast State</label>
@@ -1547,50 +1565,18 @@ class Dashboard extends Component {
             <br />
             
                 <label for="select">Student Village</label>
-            <select  id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studentvillage"
-              value={this.state.studentvillage}
-              onChange={this.onChange}
-              placeholder="Student's Village"
-              required>
-<option value="Pahari">Choose</option>
-
-<option value="Sarai" >Sarai</option>
-<option value="Ladamka" >Ladamka</option>
-<option value="Sikiri" >Sikiri</option>
-<option value="Noabad" >Noabad</option>
-<option value="Pali" >Pali</option>
-<option value="Chhajju Khera" >Chhajju Khera</option>
-<option value="Pipal Kheraa" >Pipal Kheraa</option>
-<option value="Piproli" >Piproli</option>
-<option value="Jhantli" >Jhantli</option>
-<option value="Nakatpur" >Nakatpur</option>
-<option value="Gopalgarh" >Gopalgarh</option>
-<option value="Khunta Bas" >Khunta Bas</option>
-<option value="Jarla" >Jarla</option>
-<option value="Biwan" >Biwan</option>
-<option value="Mahon" >Mahon</option>
-<option value="Nagla Ahsanpur" >Nagla Ahsanpur</option>
-<option value="Singar" >Singar</option>
-<option value="Kameda" >Kameda</option>
-<option value="Bakhshuka" >Bakhshuka</option>
-<option value="Dolabas" >Dolabas</option>
-<option value="Rupraka" >Rupraka</option>
-<option value="Ghasera" >Ghasera</option>
-<option value="Malai" >Malai</option>
-<option value="Chhapra" >Chhapra</option>
-<option value="Rewasan" >Rewasan</option>
-<option value="Guraksar" >Guraksar</option>
-<option value="Bisru" >Bisru</option>
-<option value="Kot" >Kot</option>
-<option value="Utawar" >Utawar</option>
-<option value="Jhanda" >Jhanda</option>
-
-
-</select>
-
+                <CreatableSelect
+                id="standard-basic"
+                value={this.villageOptions.find(option => option.value === this.state.studentvillage)}
+                onChange={this.onChange}
+                options={this.villageOptions}
+                name="studentvillage"
+                isClearable
+                required
+                placeholder="Select or type Student Village"
+              />
+           
+      
             <br />
             <br />
             <input
@@ -1607,67 +1593,36 @@ class Dashboard extends Component {
             <br />
            
                 <label for="select">Student Tehseel</label>
-            <select id="standard-basic"
-              type="text"
-              autoComplete="off"
-              name="studenttehseel"
-              value={this.state.studenttehseel}
-              onChange={this.onChange}
-              placeholder="Student Tehseel"
-              required>
-                <option value="Pahari">Choose</option>
+                <CreatableSelect
+                id="standard-basic"
+                required
+    value={this.tehseelOptions.find(option => option.value === this.state.studenttehseel)}
 
-<option value="Pahari">Pahari</option>
-<option value="Kama">Kama</option>
-<option value="Sikiri">Sikiri</option>
-<option value="Nagar">Nagar</option>
-<option value="Lachmangarh">Lachmangarh</option>
-<option value="Ramgarh">Ramgarh</option>
-<option value="Nogaon">Nogaon</option>
-<option value="Alwar">Alwar</option>
-<option value="Kishangarh">Kishangarh</option>
-<option value="Tijara">Tijara</option>
-<option value="Tapukra">Tapukra</option>
-<option value="Firozpurjhirka">Firozpurjhirka</option>
-<option value="Punhana">Punhana</option>
-<option value="Nagina">Nagina</option>
-<option value="Hodal">Hodal</option>
-<option value="Hathin">Hathin</option>
-<option value="Nuh">Nuh</option>
-<option value="Tauru">Tauru</option>
-<option value="Sohna">Sohna</option>
-<option value="Dhoj">Dhoj</option>
-<option value="Indri">Indri</option>
-
-</select>
+                name="studenttehseel"
+      
+                onChange={this.onChange}
+                options={this.tehseelOptions}
+                isClearable
+                placeholder="Select or type... student Tehseel"
+              />
+         
 
             <br />
             <br />
 
               <label for="select">Student District</label>
-            <select  id="standard-basic"
-               type="text"
-               autoComplete="off"
-               name="studentdistt"
-               value={this.state.studentdistt}
-               onChange={this.onChange}
-               placeholder="Student Distt"
-               required>
-                <option value="Pahari">Choose</option>
-
-<option value="Deeg">Deeg</option>
-<option value="Alwar">Alwar</option>
-<option value="Khairthal">Khairthal</option>
-<option value="Nuh(Mewat)">Nuh(Mewat)</option>
-<option value="Palwal">Palwal</option>
-<option value="Bharatpur">Bharatpur</option>
-<option value="Gurugram">Gurugram</option>
-<option value="Faridabad">Faridabad</option>
-<option value="Mathura">Mathura</option>
-<option value="Duasa">Duasa</option>
-<option value="Ajmer">Ajmer</option>
-
-</select>
+              <CreatableSelect
+              id="standard-basic"
+              name="studentdistt"
+              value={this.districtOptions.find(option => option.value === this.state.studentdistt)}
+ 
+              onChange={this.onChange}
+              options={this.districtOptions}
+              isClearable
+              required
+              placeholder="Select or type... student Distt"
+            />
+         
             <br />
             <br />
         
