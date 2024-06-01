@@ -394,7 +394,7 @@ const Dakhlaform = () => {
     </tr>
     <tr>
     <td style={{fontSize:11,fontWeight:"900",margin:0,fontFamily:"serif",textAlign:"left",border:"none",margin:"0px",padding:"0px"}}>Date Of Birth</td>
-    <td style={{fontSize:11,color:"blue",fontWeight:"bold",margin:0,fontFamily:"serif",textAlign:"left",border:"none",margin:"0px",padding:"0px"}}>:{product?.studentdateofbirth}</td>
+    <td style={{fontSize:11,color:"blue",fontWeight:"bold",margin:0,fontFamily:"serif",textAlign:"left",border:"none",margin:"0px",padding:"0px"}}>:{product?.studentdateofbirth?.split("-")[2]}-{product?.studentdateofbirth?.split("-")[1]}-{product?.studentdateofbirth?.split("-")[0]}</td>
     </tr>
     <tr>
     <td style={{fontSize:11,fontWeight:"900",margin:0,fontFamily:"serif",textAlign:"left",border:"none",margin:"0px",padding:"0px"}}>Class</td>
