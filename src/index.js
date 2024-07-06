@@ -8,6 +8,7 @@ import Register from "./Register";
 import Dashboard from "./Dashboard";
 import "./Login.css";
 import Dakhlaform from "./Dakhlaform";
+import Students from "./students";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -16,6 +17,8 @@ ReactDOM.render(
       <Route path="/register" element={<Register />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/dakhlaform" element={<Dakhlaform />} />
+      <Route path="/students" element={<Students />} />
+
 
     </Routes>
   </BrowserRouter>,

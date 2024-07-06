@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import {
   Button,
   TextField,
@@ -15,6 +15,7 @@ import {
   TableCell,
   TablePagination,
 } from "@material-ui/core";
+import Webcam from "react-webcam";
 
 import { Pagination } from "@material-ui/lab";
 import { Audio } from "react-loader-spinner";
@@ -91,7 +92,7 @@ class Dashboard extends Component {
       file2: "",
       fileName: "",
       fileName2: "",
-
+      
       page: 1,
       search: "",
       products: [],
@@ -99,6 +100,12 @@ class Dashboard extends Component {
       loading: false,
       loading2: false,
     };
+    this.webcamRef=createRef();
+    this.webcamRef2=createRef();
+
+    this.capture = this.capture.bind(this);
+    this.capture2 = this.capture2.bind(this);
+
   }
 
   componentDidMount = () => {
@@ -113,7 +120,20 @@ class Dashboard extends Component {
       });
     }
   };
-
+  capture() {
+    if (this.webcamRef?.current) {
+      const imageSrc = this.webcamRef?.current?.getScreenshot();
+      this.setState({ file: imageSrc });
+      console.log(imageSrc);
+    }
+  }
+  capture2() {
+    if (this.webcamRef2?.current) {
+      const imageSrc = this.webcamRef2?.current?.getScreenshot();
+      this.setState({ file2: imageSrc });
+      console.log(imageSrc);
+    }
+  }
   getProduct = () => {
     this.setState({ loading: true });
 
@@ -314,15 +334,26 @@ class Dashboard extends Component {
       }
     }
   };
-
+  base64ToBlob(base64) {
+    const byteString = atob(base64.split(',')[1]);
+    const ab = new ArrayBuffer(byteString.length);
+    const ia = new Uint8Array(ab);
+    for (let i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+    }
+    return new Blob([ab], { type: 'image/jpeg' });
+  }
   addProduct = () => {
     this.setState({ loading2: true });
     //  console.log(fileInput)
     const file = new FormData();
     const fileArray = [this.state.file, this.state.file2];
+    const blob = this.base64ToBlob(this.state.file);
+    const blob2 = this.base64ToBlob(this.state.file2);
+
     console.log(this.state);
-    file.append("studentprofilepic", this.state.file);
-    file.append("sarparastprofilepic", this.state.file2);
+    file.append("studentprofilepic", blob, "studentprofilepic.jpg");
+    file.append("sarparastprofilepic", blob2,"sarparastprofilepic.jpg");
     file.append("sarparastname", this.state.sarparastname);
     file.append("sarparastfathername", this.state.sarparastfathername);
     file.append("formDate", this.state.formDate);
@@ -672,6 +703,11 @@ class Dashboard extends Component {
   };
 
   render() {
+    const videoConstraints = {
+      width: 300,
+      height: 300,
+      facingMode: "user"
+    };
     return (
       <div>
          <div className="secondheader" style={{backgroundColor:"#C1E78B",padding:"20px"}}>
@@ -1908,47 +1944,38 @@ class Dashboard extends Component {
             <br />
             <br />
             <div>
-              <label for="fileInput" class="btn">
-                Select Student Photo
-              </label>
-              <input
-                className="submit"
-                type="file"
-                accept="image/png,image/jpeg,image/jpg"
-                name="firstfile"
-                style={{ visibility: "hidden" }}
-                onChange={(e) => this.onChange(e)}
-                // onChange={(e) => {
-                //   this.setState({
-                //     fileName: e.target.files[0].name,
-                //     file: e.target.files[0],
-                //   });
-                //   console.log(this.state.file);
-                // }}
-                id="fileInput"
-              />
+            {this.state.file ? (
+        <img src={this.state.file} alt="webcam" />
+      ) : (
+        <Webcam 
+        audio={false} 
+        height={300} 
+        width={300} 
+        ref={this.webcamRef} 
+        screenshotFormat="image/jpeg"
+        videoConstraints={videoConstraints}
+      />
+      )}
+      <div className="btn-container">
+        <button onClick={this.capture}>Capture Student photo</button>
+      </div>
             </div>
             <div>
-              <label for="fileInput2" class="btn">
-                Select Sarparast Photo
-              </label>
-              <input
-                className="submit"
-                type="file"
-                accept="image/png,image/jpeg,image/jpg"
-                name="secondfile"
-                onChange={(e) => this.onChange(e)}
-                style={{ visibility: "hidden" }}
-                // onChange={(e) => {
-                //   console.log(e.target.files[0])
-                //   this.setState({
-                //     fileName2: e.target.files[0].name,
-                //     file2: e.target.files[0],
-                //   });
-                //   console.log(this.state.file2);
-                // }}
-                id="fileInput2"
-              />
+            {this.state.file2 ? (
+        <img src={this.state.file2} alt="webcam" />
+      ) : (
+        <Webcam 
+        audio={false} 
+        height={300} 
+        width={300} 
+        ref={this.webcamRef2} 
+        screenshotFormat="image/jpeg"
+        videoConstraints={videoConstraints}
+      />
+      )}
+      <div className="btn-container">
+        <button onClick={this.capture2}>Capture Sarparast photo</button>
+      </div>
             </div>
           </DialogContent>
 
@@ -1996,8 +2023,8 @@ class Dashboard extends Component {
                   this.state.talibilmrishta === "" ||
                   this.state.sarparastmobileno === "" ||
                   this.state.sarparastwhatsappno === "" ||
-                  this.state.fileName === "" ||
-                  this.state.fileName2 === ""
+                  this.state.file === "" ||
+                  this.state.file2 === ""
                 }
                 onClick={(e) => this.addProduct()}
                 color="primary"
@@ -2016,7 +2043,7 @@ class Dashboard extends Component {
         <br />
 
         <TableContainer>
-          {/* <TextField
+          <TextField
             id="standard-basic"
             className="no-printme"
             type="search"
@@ -2027,7 +2054,7 @@ class Dashboard extends Component {
             placeholder="Search by Student name"
             style={{ width: "190px" }}
             required
-          /> */}
+          />
           <Button
             className="button_style no-printme"
             variant="outlined"
