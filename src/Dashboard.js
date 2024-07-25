@@ -110,6 +110,7 @@ class Dashboard extends Component {
 
   componentDidMount = () => {
     let token = localStorage.getItem("token");
+    alert("payment of ₹2000 is remaining for the software")
     console.log(this.props)
     if (!token) {
       this.props.navigate("/");
