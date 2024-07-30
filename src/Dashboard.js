@@ -110,7 +110,7 @@ class Dashboard extends Component {
 
   componentDidMount = () => {
     let token = localStorage.getItem("token");
-    alert("payment of ₹2000 is remaining for the software")
+    alert("payment for the software is pending")
     console.log(this.props)
     if (!token) {
       this.props.navigate("/");
@@ -600,6 +600,7 @@ class Dashboard extends Component {
   };
 
   handleProductOpen = () => {
+    alert("Payment for the software is pending")
     this.setState({
       openProductModal: true,
       id: "",
